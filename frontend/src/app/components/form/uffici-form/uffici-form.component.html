@@ -48,8 +48,9 @@
                                     <th>Tipo</th>
                                     <th>Contatto</th>
                                     <th class="text-end">
-                                        <button type="button" class="btn btn-danger px-4" title="Aggiungi contatto">
-                                            <fa-icon [icon]="faPlusCircle" size="1x" (click)="onAddClick()"></fa-icon>
+                                        <button type="button" class="btn btn-danger px-4" title="Aggiungi contatto"
+                                            (click)="onAddContactClick()">
+                                            <fa-icon [icon]="faPlusCircle" size="1x"></fa-icon>
                                         </button>
                                     </th>
                                 </tr>
@@ -60,11 +61,13 @@
                                     <td>{{item.contatto}}</td>
                                     <td class="text-end">
                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                            <button type="button" class="btn btn-danger px-3" title="Modifica contatto">
-                                                <fa-icon [icon]="faEdit" size="1x" (click)="onEditClick()"></fa-icon>
+                                            <button type="button" class="btn btn-danger px-3" title="Modifica contatto"
+                                                (click)="onContactEditClick(item.id)">
+                                                <fa-icon [icon]="faEdit" size="1x"></fa-icon>
                                             </button>
-                                            <button type="button" class="btn btn-danger px-3" title="Cancella contatto">
-                                                <fa-icon [icon]="faTrashAlt" size="1x" (click)="onDelClick()"></fa-icon>
+                                            <button type="button" class="btn btn-danger px-3" title="Cancella contatto"
+                                                (click)="onDelClick()">
+                                                <fa-icon [icon]="faTrashAlt" size="1x"></fa-icon>
                                             </button>
                                         </div>
                                     </td>
@@ -81,8 +84,9 @@
                                 <tr>
                                     <th>Ufficio</th>
                                     <th class="text-end">
-                                        <button type="button" class="btn btn-danger px-4" title="Aggiungi ufficio">
-                                            <fa-icon [icon]="faPlusCircle" size="1x" (click)="onAddClick()"></fa-icon>
+                                        <button type="button" class="btn btn-danger px-4" title="Aggiungi ufficio"
+                                            (click)="onAddClick()">
+                                            <fa-icon [icon]="faPlusCircle" size="1x"></fa-icon>
                                         </button>
                                     </th>
                                 </tr>
@@ -141,19 +145,7 @@
                         </table>
                     </div>
                 </div>
-                <div class="row form-group my-3">
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-success">
-                            <i class="bi bi-save2"></i> Salva
-                        </button>
-                    </div>
-                </div>
             </div>
-
-
-
-
-
         </div>
         <div class="col-sm-12 col-md-2">
             <div class="row">
@@ -190,5 +182,8 @@
     </div>
 </div>
 <div class="modal-footer">
+    <button type="submit" class="btn btn-danger me-2" (click)="onSubmitClick()">
+        <i class="bi bi-save2"></i> Salva
+    </button>
     <button type="button" class="btn btn-danger" (click)="bsModalRef.hide()">{{ closeBtnName }}</button>
 </div>
