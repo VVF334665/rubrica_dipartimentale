@@ -4,28 +4,28 @@ import * as navBarActions from './navBarStore.actions';
 import _ from 'lodash';
 
 const init = [{
-    pathRouter: '\\',
+    pathRouter: '/home',
     label: 'Uff. Centrali',
     icon: 'account_balance',
     status: true,
     id: 0,
     show: true
 }, {
-    pathRouter: '\\',
+    pathRouter: '/sedi',
     label: 'Sedi',
     icon: 'home_work',
     status: false,
     id: 1,
     show: true
 }, {
-    pathRouter: '\\',
+    pathRouter: '/login',
     label: 'Login',
     icon: 'person',
     status: false,
     id: 2,
     show: true
 }, {
-    pathRouter: '\\',
+    pathRouter: '/logout',
     label: 'Logout',
     icon: 'personlogout',
     status: false,

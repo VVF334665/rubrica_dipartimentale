@@ -1,4 +1,5 @@
-export interface IContatto{
-  tipo:string;
-  contatto:string;
+export interface IContatto {
+    id: number;
+    tipo: string;
+    contatto: string;
 }

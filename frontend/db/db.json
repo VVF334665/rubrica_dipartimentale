@@ -12,7 +12,7 @@
     },
     "ufficiRubrica": [
         {
-            "codiceUfficio": "00.0",
+            "codiceUfficio": "300",
             "codiceUfficioSuperiore": "",
             "nomeTitolare": "Prefetto Franceschelli",
             "nomeUfficio": "Capo Dipartimento",
@@ -22,18 +22,22 @@
             "tipologiaUfficio": "centrali",
             "contatti": [
                 {
+                    "id": 1,
                     "tipo": "telefono",
                     "contatto": "444444444444"
                 },
                 {
+                    "id": 2,
                     "tipo": "email",
                     "contatto": "444444444444"
                 },
                 {
+                    "id": 3,
                     "tipo": "pec",
                     "contatto": "444444444444"
                 },
                 {
+                    "id": 4,
                     "tipo": "voip",
                     "contatto": "444444444444"
                 }
@@ -43,13 +47,15 @@
                     "cognome": "Cognome",
                     "nome": "Nome",
                     "qualifica": "qualifica",
-                    "codiceUfficio": "00.0",
+                    "codiceUfficio": "300",
                     "contatti": [
                         {
+                            "id": 5,
                             "tipo": "telefono",
                             "contatto": "1234567"
                         },
                         {
+                            "id": 6,
                             "tipo": "email",
                             "contatto": "nome.cognome@vigilfuoco.it"
                         }
@@ -59,13 +65,15 @@
                     "cognome": "Cognome",
                     "nome": "Nome",
                     "qualifica": "qualifica",
-                    "codiceUfficio": "00.0",
+                    "codiceUfficio": "300",
                     "contatti": [
                         {
+                            "id": 7,
                             "tipo": "telefono",
                             "contatto": "1234567"
                         },
                         {
+                            "id": 8,
                             "tipo": "email",
                             "contatto": "nome.cognome@vigilfuoco.it"
                         }
@@ -75,13 +83,15 @@
                     "cognome": "Cognome",
                     "nome": "Nome",
                     "qualifica": "qualifica",
-                    "codiceUfficio": "00.0",
+                    "codiceUfficio": "300",
                     "contatti": [
                         {
+                            "id": 9,
                             "tipo": "telefono",
                             "contatto": "1234567"
                         },
                         {
+                            "id": 10,
                             "tipo": "email",
                             "contatto": "nome.cognome@vigilfuoco.it"
                         }
@@ -91,13 +101,15 @@
                     "cognome": "Cognome",
                     "nome": "Nome",
                     "qualifica": "qualifica",
-                    "codiceUfficio": "00.0",
+                    "codiceUfficio": "300",
                     "contatti": [
                         {
+                            "id": 11,
                             "tipo": "telefono",
                             "contatto": "1234567"
                         },
                         {
+                            "id": 12,
                             "tipo": "email",
                             "contatto": "nome.cognome@vigilfuoco.it"
                         }
@@ -106,24 +118,25 @@
             ],
             "children": [
                 {
-                    "codiceUfficio": "00.1000",
-                    "codiceUfficioSuperiore": "00.0",
+                    "codiceUfficio": "301",
+                    "codiceUfficioSuperiore": "300",
                     "nomeUfficio": "Direzione centrale per la Difesa Civile e le attività di Protezione Civile",
                     "nomeTitolare": "figlio1",
                     "coloreSfondo": "#495380",
                     "descrizioneUfficio": "figlio1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores aliquid optio nihil eos. Officiis, dignissimos delectus. Sit rerum unde repellat deleniti dignissimos, dolor cupiditate odio facere nihil aut, necessitatibus sunt.",
+                    "contatti": [],
                     "children": [
                         {
-                            "codiceUfficio": "00.10001",
-                            "codiceUfficioSuperiore": "00.1000",
+                            "codiceUfficio": "301",
+                            "codiceUfficioSuperiore": "301",
                             "coloreSfondo": "#495380",
                             "nomeUfficio": "figlio1.1",
                             "nomeTitolare": "nome titolare",
                             "descrizioneUfficio": "figlio1.1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores aliquid optio nihil eos. Officiis, dignissimos delectus. Sit rerum unde repellat deleniti dignissimos, dolor cupiditate odio facere nihil aut, necessitatibus sunt.",
                             "children": [
                                 {
-                                    "codiceUfficio": "00.1003",
-                                    "codiceUfficioSuperiore": "00.10001",
+                                    "codiceUfficio": "302",
+                                    "codiceUfficioSuperiore": "301",
                                     "coloreSfondo": "#495380",
                                     "nomeUfficio": "figlio1.1.1",
                                     "nomeTitolare": "nome titolare",
@@ -134,13 +147,15 @@
                                             "cognome": "Cognome",
                                             "nome": "Nome",
                                             "qualifica": "qualifica",
-                                            "codiceUfficio": "00.0",
+                                            "codiceUfficio": "302",
                                             "contatti": [
                                                 {
+                                                    "id": 13,
                                                     "tipo": "telefono",
                                                     "contatto": "1234567"
                                                 },
                                                 {
+                                                    "id": 14,
                                                     "tipo": "email",
                                                     "contatto": "nome.cognome@vigilfuoco.it"
                                                 }
@@ -154,13 +169,15 @@
                                     "cognome": "Cognome",
                                     "nome": "Nome",
                                     "qualifica": "qualifica",
-                                    "codiceUfficio": "00.0",
+                                    "codiceUfficio": "301",
                                     "contatti": [
                                         {
+                                            "id": 15,
                                             "tipo": "telefono",
                                             "contatto": "1234567"
                                         },
                                         {
+                                            "id": 16,
                                             "tipo": "email",
                                             "contatto": "nome.cognome@vigilfuoco.it"
                                         }
@@ -171,15 +188,15 @@
                     ]
                 },
                 {
-                    "codiceUfficio": "00.1001",
-                    "codiceUfficioSuperiore": "00.0",
+                    "codiceUfficio": "303",
+                    "codiceUfficioSuperiore": "300",
                     "coloreSfondo": "#495380",
                     "nomeUfficio": "figlio2",
                     "nomeTitolare": "nome titolare",
                     "descrizioneUfficio": "figlio2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores aliquid optio nihil eos. Officiis, dignissimos delectus. Sit rerum unde repellat deleniti dignissimos, dolor cupiditate odio facere nihil aut, necessitatibus sunt.",
                     "children": [
                         {
-                            "codiceUfficio": "00.1002",
+                            "codiceUfficio": "304",
                             "codiceUfficioSuperiore": "00.1001",
                             "coloreSfondo": "#495380",
                             "nomeUfficio": "figlio2.1",
@@ -193,7 +210,7 @@
             "id": "4c3c"
         },
         {
-            "codiceUfficio": "01.0",
+            "codiceUfficio": "305",
             "codiceUfficioSuperiore": "",
             "nomeUfficio": "Capo del Corpo Nazionale dei Vigili del Fuoco Vice Capo Dipartimento Vicario",
             "nomeTitolare": "Ing. Carlo Dall'Oppio",
@@ -206,13 +223,15 @@
                     "cognome": "Cognome",
                     "nome": "Nome",
                     "qualifica": "qualifica",
-                    "codiceUfficio": "00.0",
+                    "codiceUfficio": "305",
                     "contatti": [
                         {
+                            "id": 17,
                             "tipo": "telefono",
                             "contatto": "1234567"
                         },
                         {
+                            "id": 18,
                             "tipo": "email",
                             "contatto": "nome.cognome@vigilfuoco.it"
                         }
@@ -222,13 +241,15 @@
                     "cognome": "Cognome",
                     "nome": "Nome",
                     "qualifica": "qualifica",
-                    "codiceUfficio": "00.0",
+                    "codiceUfficio": "305",
                     "contatti": [
                         {
+                            "id": 19,
                             "tipo": "telefono",
                             "contatto": "1234567"
                         },
                         {
+                            "id": 20,
                             "tipo": "email",
                             "contatto": "nome.cognome@vigilfuoco.it"
                         }
@@ -237,16 +258,16 @@
             ],
             "children": [
                 {
-                    "codiceUfficio": "01.1000",
-                    "codiceUfficioSuperiore": "01.0",
+                    "codiceUfficio": "306",
+                    "codiceUfficioSuperiore": "305",
                     "nomeUfficio": "figlio3",
                     "nomeTitolare": "figlio3",
                     "coloreSfondo": "#840101",
                     "descrizioneUfficio": "figlio3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores aliquid optio nihil eos. Officiis, dignissimos delectus. Sit rerum unde repellat deleniti dignissimos, dolor cupiditate odio facere nihil aut, necessitatibus sunt.",
                     "children": [
                         {
-                            "codiceUfficio": "01.1002",
-                            "codiceUfficioSuperiore": "01.1000",
+                            "codiceUfficio": "307",
+                            "codiceUfficioSuperiore": "306",
                             "nomeUfficio": "sottofiglio3.1",
                             "nomeTitolare": "sottofiglio3.1",
                             "coloreSfondo": "#840101",
@@ -256,16 +277,16 @@
                     ]
                 },
                 {
-                    "codiceUfficio": "01.1001",
-                    "codiceUfficioSuperiore": "01.0",
+                    "codiceUfficio": "308",
+                    "codiceUfficioSuperiore": "305",
                     "coloreSfondo": "#840101",
                     "nomeUfficio": "figlio4",
                     "nomeTitolare": "nome titolare",
                     "descrizioneUfficio": "figlio4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores aliquid optio nihil eos. Officiis, dignissimos delectus. Sit rerum unde repellat deleniti dignissimos, dolor cupiditate odio facere nihil aut, necessitatibus sunt.",
                     "children": [
                         {
-                            "codiceUfficio": "01.1002",
-                            "codiceUfficioSuperiore": "01.1001",
+                            "codiceUfficio": "309",
+                            "codiceUfficioSuperiore": "308",
                             "coloreSfondo": "#840101",
                             "nomeUfficio": "figlio4.1",
                             "nomeTitolare": "nome titolare",
@@ -278,7 +299,7 @@
             "id": "83b3"
         },
         {
-            "codiceUfficio": "02.0",
+            "codiceUfficio": "309",
             "codiceUfficioSuperiore": "",
             "nomeUfficio": "Ufficio di collegamento del Capo Dipartimento e del Capo del CNVVF",
             "nomeTitolare": "Ing. Carlo Dall'Oppio",
@@ -288,8 +309,8 @@
             "tipologiaUfficio": "centrali",
             "children": [
                 {
-                    "codiceUfficio": "02.1000",
-                    "codiceUfficioSuperiore": "02.0",
+                    "codiceUfficio": "310",
+                    "codiceUfficioSuperiore": "309",
                     "nomeUfficio": "figlio5",
                     "nomeTitolare": "figlio5",
                     "coloreSfondo": "#ff7c7c",
@@ -297,16 +318,16 @@
                     "children": []
                 },
                 {
-                    "codiceUfficio": "02.1001",
-                    "codiceUfficioSuperiore": "02.0",
+                    "codiceUfficio": "311",
+                    "codiceUfficioSuperiore": "309",
                     "coloreSfondo": "#ff7c7c",
                     "nomeUfficio": "figlio6",
                     "nomeTitolare": "nome titolare",
                     "descrizioneUfficio": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores aliquid optio nihil eos. Officiis, dignissimos delectus. Sit rerum unde repellat deleniti dignissimos, dolor cupiditate odio facere nihil aut, necessitatibus sunt.",
                     "children": [
                         {
-                            "codiceUfficio": "02.1002",
-                            "codiceUfficioSuperiore": "02.1001",
+                            "codiceUfficio": "312",
+                            "codiceUfficioSuperiore": "311",
                             "coloreSfondo": "#ff7c7c",
                             "nomeUfficio": "figlio6.1",
                             "nomeTitolare": "nome titolare",
@@ -319,7 +340,7 @@
             "id": "8065"
         },
         {
-            "codiceUfficio": "03.0",
+            "codiceUfficio": "313",
             "codiceUfficioSuperiore": "",
             "nomeUfficio": "Ufficio number X",
             "nomeTitolare": "Nome e Cognome",
@@ -329,8 +350,8 @@
             "tipologiaUfficio": "centrali",
             "children": [
                 {
-                    "codiceUfficio": "03.1000",
-                    "codiceUfficioSuperiore": "03.0",
+                    "codiceUfficio": "314",
+                    "codiceUfficioSuperiore": "313",
                     "nomeUfficio": "figlio7",
                     "nomeTitolare": "figlio7",
                     "coloreSfondo": "#ffdcdc",
@@ -338,16 +359,16 @@
                     "children": []
                 },
                 {
-                    "codiceUfficio": "03.1001",
-                    "codiceUfficioSuperiore": "03.0",
+                    "codiceUfficio": "315",
+                    "codiceUfficioSuperiore": "313",
                     "coloreSfondo": "#ffdcdc",
                     "nomeUfficio": "figlio8",
                     "nomeTitolare": "nome titolare",
                     "descrizioneUfficio": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores aliquid optio nihil eos. Officiis, dignissimos delectus. Sit rerum unde repellat deleniti dignissimos, dolor cupiditate odio facere nihil aut, necessitatibus sunt.",
                     "children": [
                         {
-                            "codiceUfficio": "03.1002",
-                            "codiceUfficioSuperiore": "03.1001",
+                            "codiceUfficio": "316",
+                            "codiceUfficioSuperiore": "315",
                             "coloreSfondo": "#ffdcdc",
                             "nomeUfficio": "figlio8.1",
                             "nomeTitolare": "nome titolare",
@@ -360,7 +381,7 @@
             "id": "a96c"
         },
         {
-            "codiceUfficio": "04.0",
+            "codiceUfficio": "317",
             "codiceUfficioSuperiore": "",
             "nomeUfficio": "Opera Nazionale Assistenza",
             "nomeTitolare": "nome titolare",
@@ -370,16 +391,16 @@
             "tipologiaUfficio": "centrali",
             "children": [
                 {
-                    "codiceUfficio": "04.1000",
-                    "codiceUfficioSuperiore": "04.0",
+                    "codiceUfficio": "318",
+                    "codiceUfficioSuperiore": "317",
                     "nomeUfficio": "figlio9",
                     "nomeTitolare": "figlio9",
                     "coloreSfondo": "#e1e1e1",
                     "descrizioneUfficio": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores aliquid optio nihil eos. Officiis, dignissimos delectus. Sit rerum unde repellat deleniti dignissimos, dolor cupiditate odio facere nihil aut, necessitatibus sunt.",
                     "children": [
                         {
-                            "codiceUfficio": "04.1001",
-                            "codiceUfficioSuperiore": "04.1000",
+                            "codiceUfficio": "319",
+                            "codiceUfficioSuperiore": "318",
                             "nomeUfficio": "figlio9.1",
                             "nomeTitolare": "figlio9.1",
                             "coloreSfondo": "#e1e1e1",
@@ -387,16 +408,16 @@
                             "children": []
                         },
                         {
-                            "codiceUfficio": "04.1002",
-                            "codiceUfficioSuperiore": "04.1000",
+                            "codiceUfficio": "320",
+                            "codiceUfficioSuperiore": "318",
                             "coloreSfondo": "#e1e1e1",
                             "nomeUfficio": "figlio9.2",
                             "nomeTitolare": "nome titolare",
                             "descrizioneUfficio": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores aliquid optio nihil eos. Officiis, dignissimos delectus. Sit rerum unde repellat deleniti dignissimos, dolor cupiditate odio facere nihil aut, necessitatibus sunt.",
                             "children": [
                                 {
-                                    "codiceUfficio": "04.1002",
-                                    "codiceUfficioSuperiore": "04.1002",
+                                    "codiceUfficio": "321",
+                                    "codiceUfficioSuperiore": "320",
                                     "coloreSfondo": "#e1e1e1",
                                     "nomeUfficio": "figlio9.2.1",
                                     "nomeTitolare": "nome titolare",
@@ -408,16 +429,16 @@
                     ]
                 },
                 {
-                    "codiceUfficio": "04.1001",
-                    "codiceUfficioSuperiore": "04.0",
+                    "codiceUfficio": "322",
+                    "codiceUfficioSuperiore": "317",
                     "coloreSfondo": "#e1e1e1",
                     "nomeUfficio": "figlio10",
                     "nomeTitolare": "Nome ritolare",
                     "descrizioneUfficio": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores aliquid optio nihil eos. Officiis, dignissimos delectus. Sit rerum unde repellat deleniti dignissimos, dolor cupiditate odio facere nihil aut, necessitatibus sunt.",
                     "children": [
                         {
-                            "codiceUfficio": "04.1002",
-                            "codiceUfficioSuperiore": "04.1001",
+                            "codiceUfficio": "323",
+                            "codiceUfficioSuperiore": "322",
                             "coloreSfondo": "#e1e1e1",
                             "nomeUfficio": "figlio10.1",
                             "nomeTitolare": "nome titolare",
@@ -440,13 +461,15 @@
                     "cognome": "Cognome",
                     "nome": "Nome",
                     "qualifica": "qualifica",
-                    "codiceUfficio": "00.0",
+                    "codiceUfficio": "300",
                     "contatti": [
                         {
+                            "id": 21,
                             "tipo": "telefono",
                             "contatto": "1234567"
                         },
                         {
+                            "id": 22,
                             "tipo": "email",
                             "contatto": "nome.cognome@vigilfuoco.it"
                         }
@@ -456,13 +479,15 @@
                     "cognome": "Cognome",
                     "nome": "Nome",
                     "qualifica": "qualifica",
-                    "codiceUfficio": "00.0",
+                    "codiceUfficio": "300",
                     "contatti": [
                         {
+                            "id": 23,
                             "tipo": "telefono",
                             "contatto": "1234567"
                         },
                         {
+                            "id": 24,
                             "tipo": "email",
                             "contatto": "nome.cognome@vigilfuoco.it"
                         }
@@ -472,13 +497,15 @@
                     "cognome": "Cognome",
                     "nome": "Nome",
                     "qualifica": "qualifica",
-                    "codiceUfficio": "00.0",
+                    "codiceUfficio": "300",
                     "contatti": [
                         {
+                            "id": 25,
                             "tipo": "telefono",
                             "contatto": "1234567"
                         },
                         {
+                            "id": 26,
                             "tipo": "email",
                             "contatto": "nome.cognome@vigilfuoco.it"
                         }
@@ -488,13 +515,15 @@
                     "cognome": "Cognome",
                     "nome": "Nome",
                     "qualifica": "qualifica",
-                    "codiceUfficio": "00.0",
+                    "codiceUfficio": "300",
                     "contatti": [
                         {
+                            "id": 27,
                             "tipo": "telefono",
                             "contatto": "1234567"
                         },
                         {
+                            "id": 28,
                             "tipo": "email",
                             "contatto": "nome.cognome@vigilfuoco.it"
                         }
@@ -531,10 +560,12 @@
                                             "codiceUfficio": "00.0",
                                             "contatti": [
                                                 {
+                                                    "id": 29,
                                                     "tipo": "telefono",
                                                     "contatto": "1234567"
                                                 },
                                                 {
+                                                    "id": 30,
                                                     "tipo": "email",
                                                     "contatto": "nome.cognome@vigilfuoco.it"
                                                 }
@@ -551,10 +582,12 @@
                                     "codiceUfficio": "00.0",
                                     "contatti": [
                                         {
+                                            "id": 31,
                                             "tipo": "telefono",
                                             "contatto": "1234567"
                                         },
                                         {
+                                            "id": 32,
                                             "tipo": "email",
                                             "contatto": "nome.cognome@vigilfuoco.it"
                                         }
@@ -600,7 +633,7 @@
             "id": "b801"
         },
         {
-            "id": "03",
+            "codiceUfficio": "03",
             "codice": "03",
             "codDistaccamento": "0",
             "nomeUfficio": "DIREZIONE REGIONALE VV.F. LIGURIA",
