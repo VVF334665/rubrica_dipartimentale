@@ -1,8 +1,13 @@
-<div class="row divGlobal">
-    <div class="m-0 p-0" style="max-width: 5rem;">
-        <vvfrubrica-side-bar></vvfrubrica-side-bar>
+<div style="display: flex;min-height: 100%;;background-color: #ac1a17;">
+  <vvfrubrica-side-bar style="width: 80px;height: 100vh; position: fixed"></vvfrubrica-side-bar>
+  <div id="mainBody" style="padding-left: 80px;width:100%;box-sizing: border-box;">
+    <div id="container" style="display: flex;flex-direction: column;align-items: center;width: 100%">
+      <div
+        style="display: flex;flex-direction: column;align-items: center;width: 100%;margin: 8px 8px 0;box-sizing: border-box;">
+        <div style="background-color: #f4f4ed;border-radius: 16px;margin-right: 8px;margin-left: 8px;">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
     </div>
-    <div class="col divCenter topBottomLeftBordefRadius">
-        <router-outlet></router-outlet>
-    </div>
+  </div>
 </div>

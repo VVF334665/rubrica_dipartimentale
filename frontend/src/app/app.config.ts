@@ -13,6 +13,7 @@ import { AuthUserEffects } from './store/effects/authuser.effects';
 import { RubricaEffects } from './store/effects/rubrica.effects';
 import { authInterceptor } from './interceptors/auth.interceptor';
 import { cfVariableReducer } from './store/reducers/cf-variable.reducer';
+import { NavBarStoreEffects } from './store/NavBarStore/navBarStore.effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -23,7 +24,7 @@ export const appConfig: ApplicationConfig = {
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
     provideRouterStore(),
     provideHttpClient(),
-    provideEffects(AuthUserEffects), provideAnimationsAsync(),
+    provideEffects([AuthUserEffects, NavBarStoreEffects]), provideAnimationsAsync(),
     provideHttpClient(withInterceptors([authInterceptor]),withFetch()), // Registra l'intercettore
     //provideStore({cfVariable : cfVariableReducer}),
   ],
