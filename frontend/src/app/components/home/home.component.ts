@@ -11,7 +11,7 @@ import { IOffice } from '../../models/IOffice';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../store/states/app.state';
 import { UfficiComponent } from '../uffici/uffici.component';
-import { SideBarComponent } from '../side-bar/side-bar.component';
+import { SideBarComponent } from '../navigation-bar/side-bar/side-bar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SottoufficiComponent } from '../sottouffici/sottouffici.component';
 import { ToprightbarComponent } from '../toprightbar/toprightbar.component';
