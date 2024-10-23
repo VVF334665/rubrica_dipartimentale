@@ -1,0 +1,40 @@
+.mat-toolbar {
+    background-color: var(--sideBarColor); /* #ac1a17; */
+    color: white;
+}
+
+.mat-button {
+    color: white;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.custom-toolbar {
+    display: flex;
+    flex-direction: column;
+}
+
+.toolbar-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.full-height-toolbar {
+    height: 100vh;
+}
+
+.spacer-button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+img {
+    max-width: 90%;
+    max-height: 90%;
+    display: block;
+    margin: auto;
+}

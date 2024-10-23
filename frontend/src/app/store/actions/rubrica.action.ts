@@ -1,6 +1,5 @@
 import { createAction, props } from "@ngrx/store";
 import { IOffice } from "../../models/IOffice";
-import { IContatto } from "../../models/IContatto";
 
 export enum RubricaActionType {
     GetHomeRubrica = '[Get Home Rubrica] Get Home Rubrica',
@@ -48,10 +47,6 @@ export enum RubricaActionType {
     SetIdSelectedOfficeComponent = '[Set IdSelectedOfficeComponent] Set IdSelectedOfficeComponent',
     SetIdSelectedOfficeComponentSuccess = '[Set IdSelectedOfficeComponent Success] Set IdSelectedOfficeComponent Success',
     SetIdSelectedOfficeComponentError = '[Set IdSelectedOfficeComponent Errore] Set IdSelectedOfficeComponent Error',
-
-    SetContatto = '[Set Contatto] Set Contatto',
-    SetContattoSuccess = '[Set Contatto Success] Set Contatto Success',
-    SetContattoError = '[Set Contatto Errore] Set Contatto Error',
 }
 
 export const GetHomeRubrica = createAction(
@@ -232,18 +227,4 @@ export const SetIdSelectedOfficeComponentSuccess = createAction(
 
 export const SetIdSelectedOfficeComponentError = createAction(
     RubricaActionType.SetIdSelectedOfficeComponentError
-);
-
-export const SetContatto = createAction(
-    RubricaActionType.SetContatto,
-    props<{ contatto: IContatto, codiceUfficio: string }>()
-);
-
-export const SetContattoSuccess = createAction(
-    RubricaActionType.SetContattoSuccess,
-    //props<{rubrica: Array<IOffice>}>()
-);
-
-export const SetContattoError = createAction(
-    RubricaActionType.SetContattoError
 );

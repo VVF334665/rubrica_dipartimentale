@@ -1,5 +1,4 @@
 import { IOffice } from "../../models/IOffice";
-import { Office } from "../../models/Office";
 import { RubricaActionType } from "../actions/rubrica.action";
 import { inizializeRubricaState, IRubricaState } from "../states/rubrica.state";
 
@@ -61,47 +60,6 @@ export function rubricaReducer(
             return temp;
         case RubricaActionType.SetIdSelectedOfficeComponent:
             temp['idSelectedOfficeComponent'] = action.id;
-            return temp;
-        case RubricaActionType.SetContatto:
-            let office: IOffice = { ...(temp.ufficioSelezionato ?? { codiceUfficio: '', nomeTitolare: '', nomeUfficio: '', contatti: [], children: [] }) }; // || { tipo: '', contatto: '' };
-            //let arrayContatto = [...office.contatti ?? []];
-            //arrayContatto.push(action.contatto);
-
-            if (temp.ufficioSelezionato?.codiceUfficio == action.codiceUfficio) {
-                //let office: IOffice = { ...(temp.ufficioSelezionato ?? { codiceUfficio: '', nomeTitolare: '', nomeUfficio: '', contatti: [], children: [] }) }; // || { tipo: '', contatto: '' };
-                let arrayContatto = [...(office.contatti ?? [])]
-                arrayContatto.push(action.contatto);
-                return temp;
-            }
-
-            let a: Array<IOffice> = [];
-            for (let o of (temp.ufficioSelezionato?.children ?? [])) {
-                if (o.codiceUfficio == action.codiceUfficio) {
-
-                    console.log('codice uguale');
-
-                    let temp: IOffice = { ...o };
-
-                    let arrayContatto = [...o.contatti ?? []];
-                    arrayContatto.push(action.contatto);
-
-                    temp.contatti = [...arrayContatto];
-                    o = { ...temp };
-                    console.log('office nel ciclo: ', o);
-
-                    // break;
-                }
-                a.push(o);
-            }
-
-            //let office: IOffice = { ...(temp.ufficioSelezionato ?? { codiceUfficio: '', nomeTitolare: '', nomeUfficio: '', contatti: [], children: [] }) }; // || { tipo: '', contatto: '' };
-            office.children = [...a];
-            temp.ufficioSelezionato = { ...office };
-            console.log('ufficioSelezionato: ', temp.ufficioSelezionato);
-
-            //let zz: Office= new Office();;
-            //zz.setOffices(temp.elencoUfficiSelezionati ?? [])
-            //temp.elencoUfficiSelezionati
             return temp;
         default:
             return rubricaState
