@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CercaComponent } from '../cerca/cerca.component';
-import { faAddressBook } from '@fortawesome/free-solid-svg-icons';
+import { faAddressBook, faEdit, faPlusCircle, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import {
     selectElencoUfficiSelezionati,
     selectHome,
@@ -57,6 +57,9 @@ import { selectLoggedUser } from '../../store/selectors/authuser.selector';
 })
 export class HomeComponent {
     faAddressBook = faAddressBook;
+    faPlusCircle = faPlusCircle;
+    faTrashAlt = faTrashAlt;
+    faEdit = faEdit;
     // bsModalRef?: BsModalRef | null;
 
     homeItems$ = this._storeApp$.select(selectHome);

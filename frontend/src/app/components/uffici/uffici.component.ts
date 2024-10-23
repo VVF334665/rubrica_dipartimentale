@@ -70,7 +70,7 @@ export class UfficiComponent {
 
     onAddClick() {
         const initialState = {
-            title: 'Aggiungi ufficio in: '+this.itemDst.nomeUfficio,
+            title: 'Aggiungi ufficio in: ' + this.itemDst.nomeUfficio,
             list: []
         };
 
@@ -91,6 +91,13 @@ export class UfficiComponent {
     }
 
     openModal(initialState: object) {
-        this.bsModalRef = this.modalService.show(UfficiFormComponent, { initialState, class: 'gray modal-xl', backdrop: 'static' });
+        let config = {
+            backdrop: true,
+            // backdrop: 'static',
+            ignoreBackdropClick: true,
+            initialState, class: 'gray modal-xl',
+        };
+
+        this.bsModalRef = this.modalService.show(UfficiFormComponent, config);
     }
 }
