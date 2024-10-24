@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../store/states/app.state';
 import { IOffice } from '../../models/IOffice';
 import { selectUfficioSelezionato } from '../../store/selectors/rubrica.selector';
 import { NgForOf, NgIf } from '@angular/common';
-import { faAddressBook } from '@fortawesome/free-solid-svg-icons';
+import { faAddressBook, faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @Component({
@@ -16,9 +16,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 })
 export class PersonaleComponent {
     faAddressBook = faAddressBook;
+    faEdit = faEdit;
+    faTrashAlt = faTrashAlt;
 
     ufficioSelezionato$ = this._storeApp$.select(selectUfficioSelezionato);
     ufficioSelezionato?: IOffice = { codiceUfficio: "", coloreSfondo: "#ffffff", nomeUfficio: "", nomeTitolare: "", children: [] };
+
+    @Input()
+    visualizeActionBar: boolean = false;
 
     constructor(private _storeApp$: Store<AppState>) { }
 
@@ -30,4 +35,13 @@ export class PersonaleComponent {
         );
     }
 
+    onEditPersonClick(id: number) {
+
+    }
+
+    onDelPersonClick(id: number) {
+        if (confirm('Conferma cancellazione?')) {
+            console.log('cancellato !!!');
+        }
+    }
 }

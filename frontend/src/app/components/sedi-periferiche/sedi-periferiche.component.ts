@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ToprightbarComponent } from '../toprightbar/toprightbar.component';
 import { CercaComponent } from '../cerca/cerca.component';
 import { Store } from '@ngrx/store';
@@ -20,10 +20,13 @@ import {
 } from '../../store/actions/rubrica.action';
 import { UfficiComponent } from '../uffici/uffici.component';
 import { NgForOf, NgIf } from '@angular/common';
-import { faAddressBook } from '@fortawesome/free-solid-svg-icons';
+import { faAddressBook, faEdit, faPlusCircle, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SottoufficiComponent } from '../sottouffici/sottouffici.component';
 import { PersonaleComponent } from '../personale/personale.component';
+import { selectLoggedUser } from '../../store/selectors/authuser.selector';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { ContattiFormComponent } from '../form/contatti-form/contatti-form.component';
 
 @Component({
     selector: 'vvfrubrica-sedi-periferiche',
@@ -43,6 +46,9 @@ import { PersonaleComponent } from '../personale/personale.component';
 })
 export class SediPerifericheComponent {
     faAddressBook = faAddressBook;
+    faPlusCircle = faPlusCircle;
+    faTrashAlt = faTrashAlt;
+    faEdit = faEdit;
 
     homeItems$ = this._storeApp$.select(selectUfficiPeriferici);
     homeItems: Array<IOffice> = [];
@@ -56,13 +62,28 @@ export class SediPerifericheComponent {
     elencoUfficiSelezionati$ = this._storeApp$.select(selectElencoUfficiSelezionati);
     elencoUfficiSelezionati: Array<IOffice | null> | null = null;
 
-    constructor(private _storeApp$: Store<AppState>) { }
+    loggedUser$: any = this._storeApp$.select(selectLoggedUser);
+    loggedUser: any = {};
+
+    visualizeActionBar: boolean = false;
+    modal?: BsModalRef;
+
+    constructor(private _storeApp$: Store<AppState>, private modalService: BsModalService) { }
 
     ngOnInit() {
         this._storeApp$.dispatch({ type: RubricaActionType.GetUfficiPeriferici });
         this.homeItems$.subscribe(items => {
             this.homeItems = [...(items.rubrica ?? [])];
             //this.testVar.setOffices(this.homeItems);
+        });
+
+        this.loggedUser$.subscribe((loggedUser: any) => {
+            this.loggedUser = { ...loggedUser };
+
+            this.visualizeActionBar = false;
+            if (Object.keys(this.loggedUser).length > 0) {
+                this.visualizeActionBar = true;
+            }
         });
 
         this.ufficioSelezionato$.subscribe(
@@ -134,5 +155,35 @@ export class SediPerifericheComponent {
 
     popOfficeInList() {
         this._storeApp$.dispatch(DelElencoUfficiSelezionati());
+    }
+
+    onAddContactClick(codiceUfficio: string = '') {
+        const initialState = {
+            title: 'Aggiungi Contatto: ',
+            //ufficio: this.itemDst,
+        };
+
+        this.openModal(initialState);
+    }
+
+    onEditContactClick(codiceUfficio: string = '', idContatto: number = 0) {
+        const initialState = {
+            title: 'Aggiungi Contatto: ',
+            contatto: this.ufficioSelezionato?.contatti?.filter(child => child.id == idContatto)[0]
+            //ufficio: this.itemDst,
+        };
+
+        this.openModal(initialState);
+    }
+
+    openModal(initialState: object) {
+        let config = {
+            backdrop: true,
+            // backdrop: 'static',
+            ignoreBackdropClick: true,
+            initialState, class: 'gray modal-sm',
+        };
+
+        this.modal = this.modalService.show(ContattiFormComponent, config);
     }
 }

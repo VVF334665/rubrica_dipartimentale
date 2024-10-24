@@ -1,15 +1,29 @@
+<hr>
 <h1>
     <fa-icon [icon]="faAddressBook" size="1x" [style.fill-opacity]=".2" class="mx-auto"></fa-icon>
     Elenco contatti
 </h1>
-<hr>
-<div class="divPersonale">
+<!-- <hr> -->
+<div class="divPersonale mt-3 pt-4">
     <div *ngFor="let persona of ufficioSelezionato?.personale" class="divPersonaleChild"
         style="border-color: {{ufficioSelezionato?.coloreSfondo}};">
         <div class="divCerchio">
             <span class="circle" style="background-color: {{ufficioSelezionato?.coloreSfondo}}">
                 <span>{{persona.cognome.charAt(0).toUpperCase()+persona.nome.charAt(0).toUpperCase()}}</span>
             </span>
+        </div>
+        <div class="divPersonaleButtom ps-2" *ngIf="visualizeActionBar">
+            <ul class="nav nav-pills flex-column mx-auto my-auto">
+                <!-- <li class="nav-item">
+                <fa-icon [icon]="faPlusCircle" size="1x" (click)="onAddClick()"></fa-icon>
+                </li> -->
+                <li class="nav-item">
+                    <fa-icon [icon]="faEdit" size="1x" (click)="onEditPersonClick(persona.id)"></fa-icon>
+                </li>
+                <li class="nav-item">
+                    <fa-icon [icon]="faTrashAlt" size="1x" (click)="onDelPersonClick(persona.id)"></fa-icon>
+                </li>
+            </ul>
         </div>
         <div class="divDatiPersona">
             <p><strong>{{persona.qualifica}} {{persona.cognome}} {{persona.nome}}</strong></p>

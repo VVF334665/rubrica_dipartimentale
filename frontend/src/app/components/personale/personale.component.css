@@ -9,6 +9,14 @@ h1 {
     align-items: stretch;
 }
 
+.divPersonaleButtom {
+    max-width: 3rem;
+}
+
+.divPersonaleButtom ul>li{
+    cursor: pointer;
+}
+
 .divPersonale .divPersonaleChild {
     border: 1px solid red;
     background-color: white;

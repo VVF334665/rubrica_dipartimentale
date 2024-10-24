@@ -22,6 +22,7 @@ export function authUserReducer(
 
             let jwtService = new JwtService(action.token, jwtKey);
             temp.decodeToken = jwtService.decode();
+            temp.loggedUser = temp.decodeToken.name;
 
             return temp;
 

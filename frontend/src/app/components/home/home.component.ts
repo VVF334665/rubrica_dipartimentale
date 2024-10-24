@@ -30,6 +30,8 @@ import {
 } from '../../store/actions/rubrica.action';
 import { UfficiFormComponent } from '../form/uffici-form/uffici-form.component';
 import { selectLoggedUser } from '../../store/selectors/authuser.selector';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { ContattiFormComponent } from '../form/contatti-form/contatti-form.component';
 // import { ModalModule } from 'ngx-bootstrap/modal';
 // import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
@@ -81,7 +83,9 @@ export class HomeComponent {
     visualizeActionBar: boolean = false;
     //testVar: Office = new Office();
 
-    constructor(private _storeApp$: Store<AppState>) { }
+    modal?: BsModalRef;
+
+    constructor(private _storeApp$: Store<AppState>, private modalService: BsModalService) { }
 
     ngOnInit() {
         this.loggedUser$.subscribe((loggedUser: any) => {
@@ -103,18 +107,24 @@ export class HomeComponent {
             items => {
                 this.ufficioSelezionato = { ...items };
 
-                if (Object.keys(this.ufficioSelezionato ?? {}).length > 0) {
+                /*if (Object.keys(this.ufficioSelezionato ?? {}).length > 0) {
                     let txtHomeTabSelected = 'ufficiDipendenti';
 
                     if (this.ufficioSelezionato?.children.length == 0) {
                         txtHomeTabSelected = 'componenti';
                     }
                     this._storeApp$.dispatch(SetHomeTabSelected({ homeTabSelected: txtHomeTabSelected }));
-                }
+                }*/
             }
         );
 
-        this.leftComponentSelected$.subscribe(comp => this.leftComponentSelected = comp);
+        this.leftComponentSelected$.subscribe(comp => {
+            if (comp) {
+                this.leftComponentSelected = comp
+            } else {
+                this.leftComponentSelected = 'ufficiDipendenti';
+            }
+        });
         this.elencoUfficiSelezionati$.subscribe(ele => this.elencoUfficiSelezionati = ele);
         this._storeApp$.dispatch(SetIdSelectedOfficeComponent({ id: this.homeItems[0]?.codiceUfficio }));
     }
@@ -176,5 +186,47 @@ export class HomeComponent {
 
     popOfficeInList() {
         this._storeApp$.dispatch(DelElencoUfficiSelezionati());
+    }
+
+    onAddContactClick(codiceUfficio: string = '') {
+        const initialState = {
+            title: 'Aggiungi Contatto: ',
+            //ufficio: this.itemDst,
+        };
+
+        this.openModal(initialState);
+    }
+
+    onEditContactClick(codiceUfficio: string = '', idContatto: number = 0) {
+        const initialState = {
+            title: 'Aggiungi Contatto: ',
+            contatto: this.ufficioSelezionato?.contatti?.filter(child => child.id == idContatto)[0]
+            //ufficio: this.itemDst,
+        };
+
+        this.openModal(initialState);
+    }
+
+    onDelContactClick(codiceUfficio: string = '', idContatto: number = 0) {
+        if (confirm('Cancellare contatto?')) {
+            //if (typeof (this.ufficioSelezionato?.contatti) !== 'undefined') {
+            //    if (this.ufficioSelezionato?.contatti?.length > 0) {
+            // this.ufficioSelezionato?.contatti = this.ufficioSelezionato?.contatti?.filter(contact => contact.id != idContatto) ?? [];
+            //    }
+            //u}
+            console.log('Cancellato !!!!!');
+
+        }
+    }
+
+    openModal(initialState: object) {
+        let config = {
+            backdrop: true,
+            // backdrop: 'static',
+            ignoreBackdropClick: true,
+            initialState, class: 'gray modal-sm',
+        };
+
+        this.modal = this.modalService.show(ContattiFormComponent, config);
     }
 }

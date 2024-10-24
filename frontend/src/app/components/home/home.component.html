@@ -12,7 +12,8 @@
     <!-- <div class="col-sm-12 col-md-5"  style="max-height: 100vh; overflow-y: hidden;"> -->
     <div class="col-sm-12 col-md-5" style="max-height: 100vh; overflow-y: auto;">
         <vvfrubrica-uffici *ngFor="let item of homeItems" [itemDst]="item" [visualizeActionBar]="visualizeActionBar"
-            (back)="receiveBack($event)"></vvfrubrica-uffici>
+            (back)="receiveBack($event)">
+        </vvfrubrica-uffici>
     </div>
     <div class="col-sm-12 col-md-7">
         <!-- <div class="row ">
@@ -36,17 +37,45 @@
                     </vvfrubrica-sottouffici>
                 </div>
                 <div *ngIf="leftComponentSelected=='componenti'" class="divPersonaleContainer">
-                    <vvfrubrica-personale></vvfrubrica-personale>
+                    <!-- <h2 class="text-center">
+                        <fa-icon [icon]="faAddressBook" size="1x" [style.fill-opacity]=".2" class="mx-auto"></fa-icon>
+                        Contatti
+                    </h2> -->
+                    <!-- <hr> -->
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr *ngFor="let contatto of ufficioSelezionato?.contatti"
+                                    class="m-0 p-0 text-start fs-5">
+                                    <td class="col-1 m-0 p-0 align-middle" *ngIf="visualizeActionBar">
+                                        <div class="btn-group m-0 p-0">
+                                            <button class="btn btn-danger"
+                                                (click)="onEditContactClick(ufficioSelezionato?.codiceUfficio, contatto?.id)">
+                                                <fa-icon [icon]="faEdit" size="1x"></fa-icon>
+                                            </button>
+                                            <button class="btn btn-danger" (click)="onDelContactClick(ufficioSelezionato?.codiceUfficio, contatto?.id)">
+                                                <fa-icon [icon]="faTrashAlt" size="1x"></fa-icon>
+                                            </button>
+                                        </div>
+                                    </td>
+                                    <td class="col-2">{{contatto.tipo}}:</td>
+                                    <td>{{contatto.contatto}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <vvfrubrica-personale [visualizeActionBar]="visualizeActionBar"></vvfrubrica-personale>
                 </div>
-                <div class="divBorder" *ngIf="leftComponentSelected=='contatti'"
+                <!-- <div class="divBorder" *ngIf="leftComponentSelected=='contatti'"
                     style="border-color: {{ufficioSelezionato?.coloreSfondo}};">
                     <h2 class="text-center">
                         <fa-icon [icon]="faAddressBook" size="1x" [style.fill-opacity]=".2" class="mx-auto"></fa-icon>
                         Contatti
                     </h2>
-                    <hr>
+                    <hr> -->
+                <!--
                     <div class="table-responsive">
-                        <table class="table table-striped">
+                        <table class="table table-striped px-2">
                             <tbody>
                                 <tr *ngFor="let contatto of ufficioSelezionato?.contatti" class="m-0 p-0">
                                     <!-- <td class="m-0 p-0">
@@ -57,13 +86,13 @@
                                                 size="1x"></fa-icon></button>
                                     </div>
                                 </td> -->
-                                    <td class="col-2">{{contatto.tipo}}:</td>
+                <!-- <td class="col-2">{{contatto.tipo}}:</td>
                                     <td>{{contatto.contatto}}</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                </div>
+                </div> -->
                 <div class="divBorder" *ngIf="leftComponentSelected=='descrizione'"
                     style="border-color: {{ufficioSelezionato?.coloreSfondo}};">
                     <h2 class="text-center">
