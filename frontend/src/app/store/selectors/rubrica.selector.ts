@@ -41,3 +41,9 @@ export const selectIdSelectedOfficeComponent = createSelector(
     selectRubricaState,
     (state: any) => state.idSelectedOfficeComponent
 );
+
+
+export const selectPersonaDaModificare = createSelector(
+    selectRubricaState,
+    (state: any) => state.personaDaModificare
+);

@@ -6,6 +6,10 @@ import { selectUfficioSelezionato } from '../../store/selectors/rubrica.selector
 import { NgForOf, NgIf } from '@angular/common';
 import { faAddressBook, faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { PersonaleFormComponent } from '../form/personale-form/personale-form.component';
+import { IPersonale } from '../../models/IPersonale';
+import { SetPersonaDaMoficiare } from '../../store/actions/rubrica.action';
 
 @Component({
     selector: 'vvfrubrica-personale',
@@ -25,7 +29,9 @@ export class PersonaleComponent {
     @Input()
     visualizeActionBar: boolean = false;
 
-    constructor(private _storeApp$: Store<AppState>) { }
+    modal?: BsModalRef;
+
+    constructor(private _storeApp$: Store<AppState>, private modalService: BsModalService) { }
 
     ngOnInit() {
         this.ufficioSelezionato$.subscribe(
@@ -36,12 +42,23 @@ export class PersonaleComponent {
     }
 
     onEditPersonClick(id: number) {
+        let temp: IPersonale | undefined = this.ufficioSelezionato?.personale?.find(pers => pers.id == id)
+        this._storeApp$.dispatch(SetPersonaDaMoficiare({ persona: temp }))
 
+        const initialState = {
+            title: 'Modifica personale: ', // + off?.nomeUfficio,
+        };
+
+        this.openModal(initialState);
     }
 
     onDelPersonClick(id: number) {
         if (confirm('Conferma cancellazione?')) {
             console.log('cancellato !!!');
         }
+    }
+
+    openModal(initialState: object) {
+        this.modal = this.modalService.show(PersonaleFormComponent, { initialState, class: 'gray modal-lg', backdrop: 'static' });
     }
 }

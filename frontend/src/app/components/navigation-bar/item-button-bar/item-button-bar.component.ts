@@ -48,9 +48,9 @@ export class ItemButtonBarComponent {
   }
 
   selectItem() {
-    console.log('test123');
+    // console.log('test123');
     this.router.navigateByUrl(this.dataIN.pathRouter).then(t => console.log(t));
-    console.log('test111');
+    // console.log('test111');
     this.store.dispatch(navBarActions.changeItemActive({id: this.dataIN.id}));
   }
 

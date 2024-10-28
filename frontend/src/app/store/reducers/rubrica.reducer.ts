@@ -1,5 +1,4 @@
 import { IOffice } from "../../models/IOffice";
-import { Office } from "../../models/Office";
 import { RubricaActionType } from "../actions/rubrica.action";
 import { inizializeRubricaState, IRubricaState } from "../states/rubrica.state";
 
@@ -21,6 +20,8 @@ export function rubricaReducer(
                 d?.push(action.rubrica[0] ?? null);
                 temp['elencoUfficiSelezionati'] = d;
             }
+
+            // temp['personaDaModificare'] = null;
 
             return temp;
         case RubricaActionType.GetUfficiPerifericiSuccess:
@@ -60,7 +61,7 @@ export function rubricaReducer(
             temp['homeTabSelected'] = action.homeTabSelected;
             return temp;
         case RubricaActionType.SetIdSelectedOfficeComponent:
-            temp['idSelectedOfficeComponent'] = action.id;
+            temp['personaDaModificare'] = action.persona;
             return temp;
         case RubricaActionType.SetContatto:
             let office: IOffice = { ...(temp.ufficioSelezionato ?? { codiceUfficio: '', nomeTitolare: '', nomeUfficio: '', contatti: [], children: [] }) }; // || { tipo: '', contatto: '' };
@@ -103,7 +104,10 @@ export function rubricaReducer(
             //zz.setOffices(temp.elencoUfficiSelezionati ?? [])
             //temp.elencoUfficiSelezionati
             return temp;
+        case RubricaActionType.SetPersonaDaMoficiare:
+            temp['personaDaModificare'] = action.persona;
+            return temp;
         default:
-            return rubricaState
+            return temp;
     }
 }

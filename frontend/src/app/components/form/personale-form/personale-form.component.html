@@ -1,1 +1,48 @@
-<p>personale-form works!</p>
+<form [formGroup]="personaForm" (ngSubmit)="onSubmit()">
+    <input type="hidden" class="form-control" id="idPersona" value="" formControlName="id">
+
+    <div class="modal-header my-2 py-2">
+        <h4 class="modal-title pull-left">{{ title }}</h4>
+        <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modal.hide()">
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+        </button>
+    </div>
+
+    <div class="modal-body">
+        <div class="mb-3 row">
+            <label for="idContatto" class="form-label col-2">Qualifica:</label>
+            <input type="text" class="form-control" id="qualifica" value="" formControlName="qualifica">
+        </div>
+
+        <div class="mb-3 row">
+            <label for="idContatto" class="form-label col-2">Cognome:</label>
+            <input type="text" class="form-control" id="cognome" value="" formControlName="cognome">
+        </div>
+
+
+        <div class="mb-3 row">
+            <label for="idContatto" class="form-label col-2">Nome:</label>
+            <input type="text" class="form-control" id="nome" value="" formControlName="nome">
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <tbody>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Contatto</th>
+                    </tr>
+                    <tr *ngFor="let contatto of persona?.contatti">
+                        <td>{{contatto.tipo}}</td>
+                        <td>{{contatto.contatto}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <!-- <button type="submit" class="btn btn-danger" [disabled]="contattoForm.invalid">Salva</button> -->
+        <button type="button" class="btn btn-danger" (click)="modal.hide()">{{ closeBtnName }}</button>
+    </div>
+</form>

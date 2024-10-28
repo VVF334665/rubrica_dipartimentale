@@ -1,6 +1,7 @@
 import { createAction, props } from "@ngrx/store";
 import { IOffice } from "../../models/IOffice";
 import { IContatto } from "../../models/IContatto";
+import { IPersonale } from "../../models/IPersonale";
 
 export enum RubricaActionType {
     GetHomeRubrica = '[Get Home Rubrica] Get Home Rubrica',
@@ -52,6 +53,13 @@ export enum RubricaActionType {
     SetContatto = '[Set Contatto] Set Contatto',
     SetContattoSuccess = '[Set Contatto Success] Set Contatto Success',
     SetContattoError = '[Set Contatto Errore] Set Contatto Error',
+
+    SetPersonaDaMoficiare = '[Set PersonaDaMoficiare] Set PersonaDaMoficiare',
+    SetPersonaDaMoficiareSuccess = '[Set PersonaDaMoficiare Success] Set PersonaDaMoficiare Success',
+    SetPersonaDaMoficiareError = '[Set PersonaDaMoficiare Errore] Set PersonaDaMoficiare Error',
+    GetPersonaDaMoficiare = '[Get PersonaDaMoficiare] Get PersonaDaMoficiare',
+    GetPersonaDaMoficiareSuccess = '[Get PersonaDaMoficiare Success] Get PersonaDaMoficiare Success',
+    GetPersonaDaMoficiareError = '[Get PersonaDaMoficiare Errore] Get PersonaDaMoficiare Error',
 }
 
 export const GetHomeRubrica = createAction(
@@ -246,4 +254,34 @@ export const SetContattoSuccess = createAction(
 
 export const SetContattoError = createAction(
     RubricaActionType.SetContattoError
+);
+
+export const SetPersonaDaMoficiare = createAction(
+    RubricaActionType.SetPersonaDaMoficiare,
+    props<{ persona: IPersonale | undefined }>()
+    // props<{ persona: IPersonale | undefined, codiceUfficio: string }>()
+);
+
+export const SetPersonaDaMoficiareSuccess = createAction(
+    RubricaActionType.SetPersonaDaMoficiareSuccess,
+    //props<{rubrica: Array<IOffice>}>()
+);
+
+export const SetPersonaDaMoficiareError = createAction(
+    RubricaActionType.SetPersonaDaMoficiareError
+);
+
+export const GetPersonaDaMoficiare = createAction(
+    RubricaActionType.GetPersonaDaMoficiare,
+    props<{ persona: IPersonale | undefined }>()
+    // props<{ persona: IPersonale | undefined, codiceUfficio: string }>()
+);
+
+export const GetPersonaDaMoficiareSuccess = createAction(
+    RubricaActionType.GetPersonaDaMoficiareSuccess,
+    //props<{rubrica: Array<IOffice>}>()
+);
+
+export const GetPersonaDaMoficiareError = createAction(
+    RubricaActionType.GetPersonaDaMoficiareError
 );

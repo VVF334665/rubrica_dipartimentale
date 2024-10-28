@@ -44,6 +44,7 @@
             ],
             "personale": [
                 {
+                    "id": 1,
                     "cognome": "Cognome",
                     "nome": "Nome",
                     "qualifica": "qualifica",
@@ -62,6 +63,7 @@
                     ]
                 },
                 {
+                    "id": 2,
                     "cognome": "Cognome",
                     "nome": "Nome",
                     "qualifica": "qualifica",
@@ -80,6 +82,7 @@
                     ]
                 },
                 {
+                    "id": 3,
                     "cognome": "Cognome",
                     "nome": "Nome",
                     "qualifica": "qualifica",
@@ -98,6 +101,7 @@
                     ]
                 },
                 {
+                    "id": 4,
                     "cognome": "Cognome",
                     "nome": "Nome",
                     "qualifica": "qualifica",
@@ -166,6 +170,7 @@
                             ],
                             "personale": [
                                 {
+                                    "id": 6,
                                     "cognome": "Cognome",
                                     "nome": "Nome",
                                     "qualifica": "qualifica",
@@ -220,6 +225,7 @@
             "tipologiaUfficio": "centrali",
             "personale": [
                 {
+                    "id": 7,
                     "cognome": "Cognome",
                     "nome": "Nome",
                     "qualifica": "qualifica",
@@ -238,6 +244,7 @@
                     ]
                 },
                 {
+                    "id": 8,
                     "cognome": "Cognome",
                     "nome": "Nome",
                     "qualifica": "qualifica",
@@ -458,6 +465,7 @@
             "tipologiaUfficio": "periferia",
             "personale": [
                 {
+                    "id": 10,
                     "cognome": "Cognome",
                     "nome": "Nome",
                     "qualifica": "qualifica",
@@ -476,6 +484,7 @@
                     ]
                 },
                 {
+                    "id": 11,
                     "cognome": "Cognome",
                     "nome": "Nome",
                     "qualifica": "qualifica",
@@ -494,6 +503,7 @@
                     ]
                 },
                 {
+                    "id": 12,
                     "cognome": "Cognome",
                     "nome": "Nome",
                     "qualifica": "qualifica",
@@ -512,6 +522,7 @@
                     ]
                 },
                 {
+                    "id": 13,
                     "cognome": "Cognome",
                     "nome": "Nome",
                     "qualifica": "qualifica",
@@ -554,6 +565,7 @@
                                     "children": [],
                                     "personale": [
                                         {
+                                            "id": 14,
                                             "cognome": "Cognome",
                                             "nome": "Nome",
                                             "qualifica": "qualifica",
@@ -576,6 +588,7 @@
                             ],
                             "personale": [
                                 {
+                                    "id": 15,
                                     "cognome": "Cognome",
                                     "nome": "Nome",
                                     "qualifica": "qualifica",

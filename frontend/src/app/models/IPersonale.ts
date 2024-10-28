@@ -4,7 +4,7 @@ export interface IPersonale {
     id: number;
     cognome: string;
     nome: string;
-    qualifica: string;
+    qualifica?: string;
     codiceUfficio: string;
-    contatti: Array<IContatto>;
+    contatti?: Array<IContatto>;
 }

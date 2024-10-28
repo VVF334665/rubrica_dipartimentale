@@ -12,7 +12,7 @@ import { provideEffects } from '@ngrx/effects';
 import { AuthUserEffects } from './store/effects/authuser.effects';
 import { RubricaEffects } from './store/effects/rubrica.effects';
 import { authInterceptor } from './interceptors/auth.interceptor';
-import { cfVariableReducer } from './store/reducers/cf-variable.reducer';
+// import { cfVariableReducer } from './store/reducers/cf-variable.reducer';
 import { NavBarStoreEffects } from './store/NavBarStore/navBarStore.effects';
 import { ModalModule } from 'ngx-bootstrap/modal';
 // import { cfVariableReducer } from './store/reducers/cf-variable.reducer';
