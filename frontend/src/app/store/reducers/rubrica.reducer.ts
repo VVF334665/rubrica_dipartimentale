@@ -61,7 +61,7 @@ export function rubricaReducer(
             temp['homeTabSelected'] = action.homeTabSelected;
             return temp;
         case RubricaActionType.SetIdSelectedOfficeComponent:
-            temp['personaDaModificare'] = action.persona;
+            temp['idSelectedOfficeComponent'] = action.id;
             return temp;
         case RubricaActionType.SetContatto:
             let office: IOffice = { ...(temp.ufficioSelezionato ?? { codiceUfficio: '', nomeTitolare: '', nomeUfficio: '', contatti: [], children: [] }) }; // || { tipo: '', contatto: '' };
@@ -114,6 +114,6 @@ export function rubricaReducer(
             console.log('Contatto Salvato !!!!!!');
             return temp;
         default:
-            return temp;
+            return rubricaState
     }
 }
