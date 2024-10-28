@@ -10,14 +10,16 @@ const init = [{
     status: true,
     id: 0,
     show: true
-}, {
+},
+/*{
     pathRouter: '/sedi',
     label: 'Sedi',
     icon: 'home_work',
     status: false,
     id: 1,
     show: true
-}, {
+},*/
+{
     pathRouter: '/sedi-periferiche',
     label: 'Sedi',
     icon: 'home_work',
