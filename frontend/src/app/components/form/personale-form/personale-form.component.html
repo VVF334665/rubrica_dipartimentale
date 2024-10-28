@@ -10,31 +10,65 @@
 
     <div class="modal-body">
         <div class="mb-3 row">
-            <label for="idContatto" class="form-label col-2">Qualifica:</label>
-            <input type="text" class="form-control" id="qualifica" value="" formControlName="qualifica">
+            <label for="qualifica" class="col-sm-2 col-form-label">Qualifica:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="qualifica" formControlName="qualifica">
+            </div>
         </div>
 
         <div class="mb-3 row">
-            <label for="idContatto" class="form-label col-2">Cognome:</label>
-            <input type="text" class="form-control" id="cognome" value="" formControlName="cognome">
+            <label for="cognome" class="col-sm-2 col-form-label">Cognome:</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="cognome" formControlName="cognome">
+            </div>
+            <label for="nome" class="col-sm-1 col-form-label">Nome:</label>
+            <div class="col-sm-5">
+                <input type="text" class="form-control" id="nome" formControlName="nome">
+            </div>
         </div>
 
+        <div class="row">
+            <label for="idContatto" class="col-sm-2 col-form-label ">Ufficio:</label>
+            <div class="col-10">
+                <div class="input-group mb-3">
+                    <input type="hidden" class="form-control" id="codiceUfficio" value=""
+                        formControlName="codiceUfficio">
+                    <input type="text" class="form-control" placeholder="seleziona ufficio" aria-label="Ufficio"
+                        aria-describedby="btnUfficio" formControlName="nomeUfficio">
+                    <button class="btn btn-danger" type="button" id="btnUfficio">...</button>
+                </div>
+                persona:{{(persona != null && persona != undefined)? persona.codiceUfficio : ''}} -
+                ufficiosel:{{ufficioSelezionato?.codiceUfficio?? ''}}
+
+            </div>
+        </div>
 
         <div class="mb-3 row">
-            <label for="idContatto" class="form-label col-2">Nome:</label>
-            <input type="text" class="form-control" id="nome" value="" formControlName="nome">
+            <label for="idContatto" class="form-label col-2">Ufficio:</label>
+            <input type="text" class="form-control" id="codiceUfficio" value="" formControlName="codiceUfficio">
         </div>
 
-        <div class="table-responsive">
+        <div class="table-responsive  border rounded">
             <table class="table table-striped">
                 <tbody>
                     <tr>
                         <th>Tipo</th>
                         <th>Contatto</th>
+                        <th></th>
                     </tr>
                     <tr *ngFor="let contatto of persona?.contatti">
                         <td>{{contatto.tipo}}</td>
                         <td>{{contatto.contatto}}</td>
+                        <td class="text-end">
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-danger px-3" title="Modifica personale">
+                                    <fa-icon [icon]="faEdit" size="1x" (click)="onEditClick(contatto.id)"></fa-icon>
+                                </button>
+                                <button type="button" class="btn btn-danger px-3" title="Cancella personale">
+                                    <fa-icon [icon]="faTrashAlt" size="1x" (click)="onDelClick(contatto.id)"></fa-icon>
+                                </button>
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
             </table>

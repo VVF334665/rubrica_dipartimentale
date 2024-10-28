@@ -3,30 +3,46 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { IPersonale } from '../../../models/IPersonale';
 import { AppState } from '../../../store/states/app.state';
 import { Store } from '@ngrx/store';
-import { selectPersonaDaModificare } from '../../../store/selectors/rubrica.selector';
+import { selectPersonaDaModificare, selectUfficioSelezionato } from '../../../store/selectors/rubrica.selector';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgFor } from '@angular/common';
+import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ContattiFormComponent } from '../contatti-form/contatti-form.component';
+import { DelContattoPersonale } from '../../../store/actions/rubrica.action';
+import { IOffice } from '../../../models/IOffice';
 
 @Component({
     selector: 'vvfrubrica-personale-form',
     standalone: true,
-    imports: [FormsModule,ReactiveFormsModule,NgFor],
+    imports: [FormsModule, ReactiveFormsModule, NgFor, FontAwesomeModule],
     templateUrl: './personale-form.component.html',
     styleUrl: './personale-form.component.css'
 })
 export class PersonaleFormComponent {
+    faEdit = faEdit;
+    faTrashAlt = faTrashAlt;
+
     title: string = '';
     closeBtnName?: string = 'Chiudi';
+
     persona$ = this._storeApp$.select(selectPersonaDaModificare);
     persona: IPersonale = { id: 0, cognome: '', nome: '', codiceUfficio: '' };
+    ufficioSelezionato$ = this._storeApp$.select(selectUfficioSelezionato);
+    ufficioSelezionato: IOffice | null = null;
+
     personaForm: FormGroup;
 
-    constructor(public modal: BsModalRef, private _storeApp$: Store<AppState>, private fb: FormBuilder) {
+    modalContatti?: BsModalRef;
+
+    constructor(public modal: BsModalRef, private _storeApp$: Store<AppState>, private fb: FormBuilder, private modalService: BsModalService) {
         this.personaForm = this.fb.group({
             id: 0,
             cognome: [''],
             nome: [''],
             qualifica: [''],
+            codiceUfficio: [''],
+            nomeUfficio: [''],
         });
     }
 
@@ -34,22 +50,45 @@ export class PersonaleFormComponent {
         this.persona$.subscribe(pers => {
             this.persona = pers;
 
-            if (this.persona){
+            if (this.persona) {
                 this.personaForm.setValue({
-                    id:this.persona.id,
+                    id: this.persona.id,
                     cognome: this.persona.cognome,
                     nome: this.persona.nome,
-                    qualifica: this.persona.qualifica
+                    qualifica: this.persona.qualifica,
+                    codiceUfficio: this.persona.codiceUfficio,
+                    nomeUfficio: this.ufficioSelezionato?.nomeUfficio ?? '',
                 });
             }
         });
+
+        this.ufficioSelezionato$.subscribe(items => {
+            this.ufficioSelezionato = { ...items }
+            this.personaForm.patchValue({ nomeUfficio: this.ufficioSelezionato?.nomeUfficio ?? '' });
+        });
     }
 
-    onSubmit(){
+    onSubmit() { }
 
+    onEditClick(idContatto: number) {
+        let temp = this.persona.contatti?.find(cont => cont.id === idContatto);
+
+        const initialState = {
+            contatto: temp,
+            title: 'Aggiungi contatto ',
+        };
+
+        this.openModal(initialState);
+    }
+
+    onDelClick(idContatto: number) {
+        if (confirm('Conferma cancellazione?')) {
+            let temp = this.persona.contatti?.find(cont => cont.id === idContatto);
+            this._storeApp$.dispatch(DelContattoPersonale({ contatto: temp }));
+        }
     }
 
     openModal(initialState: object) {
-        // this.modal = this.modalService.show(PersonaleFormComponent, { initialState, class: 'gray modal-xl', backdrop: 'static' });
+        this.modalContatti = this.modalService.show(ContattiFormComponent, { initialState, class: 'gray modal-sm', backdrop: 'static' });
     }
 }

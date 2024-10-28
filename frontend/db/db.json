@@ -131,7 +131,7 @@
                     "contatti": [],
                     "children": [
                         {
-                            "codiceUfficio": "301",
+                            "codiceUfficio": "351",
                             "codiceUfficioSuperiore": "301",
                             "coloreSfondo": "#495380",
                             "nomeUfficio": "figlio1.1",
@@ -140,7 +140,7 @@
                             "children": [
                                 {
                                     "codiceUfficio": "302",
-                                    "codiceUfficioSuperiore": "301",
+                                    "codiceUfficioSuperiore": "351",
                                     "coloreSfondo": "#495380",
                                     "nomeUfficio": "figlio1.1.1",
                                     "nomeTitolare": "nome titolare",
@@ -174,7 +174,7 @@
                                     "cognome": "Cognome",
                                     "nome": "Nome",
                                     "qualifica": "qualifica",
-                                    "codiceUfficio": "301",
+                                    "codiceUfficio": "351",
                                     "contatti": [
                                         {
                                             "id": 15,
@@ -202,7 +202,7 @@
                     "children": [
                         {
                             "codiceUfficio": "304",
-                            "codiceUfficioSuperiore": "00.1001",
+                            "codiceUfficioSuperiore": "303",
                             "coloreSfondo": "#495380",
                             "nomeUfficio": "figlio2.1",
                             "nomeTitolare": "nome titolare",

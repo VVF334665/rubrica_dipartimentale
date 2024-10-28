@@ -54,6 +54,17 @@ export enum RubricaActionType {
     SetContattoSuccess = '[Set Contatto Success] Set Contatto Success',
     SetContattoError = '[Set Contatto Errore] Set Contatto Error',
 
+    DelContatto = '[Del Contatto] Del Contatto',
+    DelContattoSuccess = '[Del Contatto Success] Del Contatto Success',
+    DelContattoError = '[Del Contatto Errore] Del Contatto Error',
+
+    SaveContattoPersonale = '[Save Contatto Personale] Save Contatto Personale',
+    SaveContattoPersonaleSuccess = '[Save Contatto Success] Save Contatto Personale Success',
+    SaveContattoPersonaleError = '[Save Contatto Errore] Save Contatto Personale Error',
+    DelContattoPersonale = '[Del Contatto Personale] Del Contatto Personale',
+    DelContattoPersonaleSuccess = '[Del Contatto Success] Del Contatto Personale Success',
+    DelContattoPersonaleError = '[Del Contatto Errore] Del Contatto Personale Error',
+
     SetPersonaDaMoficiare = '[Set PersonaDaMoficiare] Set PersonaDaMoficiare',
     SetPersonaDaMoficiareSuccess = '[Set PersonaDaMoficiare Success] Set PersonaDaMoficiare Success',
     SetPersonaDaMoficiareError = '[Set PersonaDaMoficiare Errore] Set PersonaDaMoficiare Error',
@@ -284,4 +295,19 @@ export const GetPersonaDaMoficiareSuccess = createAction(
 
 export const GetPersonaDaMoficiareError = createAction(
     RubricaActionType.GetPersonaDaMoficiareError
+);
+
+export const DelContattoPersonale = createAction(
+    RubricaActionType.DelContattoPersonale,
+    props<{ contatto: IContatto | undefined }>()
+    // props<{ persona: IPersonale | undefined, codiceUfficio: string }>()
+);
+
+export const DelContattoPersonaleSuccess = createAction(
+    RubricaActionType.DelContattoPersonaleSuccess,
+    //props<{rubrica: Array<IOffice>}>()
+);
+
+export const DelContattoPersonaleError = createAction(
+    RubricaActionType.DelContattoPersonaleError
 );

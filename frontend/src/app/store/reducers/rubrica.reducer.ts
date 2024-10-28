@@ -107,6 +107,12 @@ export function rubricaReducer(
         case RubricaActionType.SetPersonaDaMoficiare:
             temp['personaDaModificare'] = action.persona;
             return temp;
+        case RubricaActionType.DelContattoPersonale:
+            console.log('Contatto Cancellato !!!!!!');
+            return temp;
+        case RubricaActionType.SaveContattoPersonale:
+            console.log('Contatto Salvato !!!!!!');
+            return temp;
         default:
             return temp;
     }
