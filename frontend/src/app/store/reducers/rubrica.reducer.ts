@@ -24,6 +24,9 @@ export function rubricaReducer(
             // temp['personaDaModificare'] = null;
 
             return temp;
+        case RubricaActionType.GetElencoUfficiSuccess:
+            temp['elencoUffici'] = action.uffici ?? [];
+            return temp;
         case RubricaActionType.GetUfficiPerifericiSuccess:
             // temp['rubricaUfficiPeriferici'] = action.rubricaUfficiPeriferici;
             temp['rubrica'] = action.rubrica;

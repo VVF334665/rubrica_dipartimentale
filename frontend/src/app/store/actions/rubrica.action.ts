@@ -12,6 +12,10 @@ export enum RubricaActionType {
     GetUfficiPerifericiSuccess = '[Get Uffici Periferici] Get Uffici Periferici Success',
     GetUfficiPerifericiError = '[Get Uffici Periferici] Get Uffici Periferici Error',
 
+    GetElencoUffici = '[Get Elenco Uffici] Get Uffici',
+    GetElencoUfficiSuccess = '[Get Elenco Uffici] Get Uffici Success',
+    GetElencoUfficiError = '[Get Elenco Uffici] Get Uffici Error',
+
     GetPersonale = '[Get Personale] Get Personale',
     GetPersonaleSuccess = '[Get Personale] Get Personale',
     GetPersonaleError = '[Get Personale] Get Personale Error',
@@ -99,6 +103,21 @@ export const GetUfficiPerifericiSuccess = createAction(
 
 export const GetUfficiPerifericiError = createAction(
     RubricaActionType.GetUfficiPerifericiError
+);
+
+
+export const GetElencoUffici = createAction(
+    RubricaActionType.GetElencoUffici,
+    //props<{rubrica: Array<IOffice>}>()
+);
+
+export const GetElencoUfficiSuccess = createAction(
+    RubricaActionType.GetElencoUfficiSuccess,
+    //props<{rubrica: Array<IOffice>}>()
+);
+
+export const GetElencoUfficiError = createAction(
+    RubricaActionType.GetElencoUfficiError
 );
 
 export const GetPersonale = createAction(

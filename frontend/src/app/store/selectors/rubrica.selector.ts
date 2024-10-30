@@ -9,6 +9,14 @@ export const selectHome = createSelector(
     (state: any) => state
 );
 
+
+export const selectElencoUffici = createSelector(
+    selectRubricaState,
+    // (state:Array<IOffice>) => state
+    // (state: any) => state.rubricaUfficiPeriferici
+    (state: any) => state.elencoUffici
+);
+
 export const selectUfficiPeriferici = createSelector(
     selectRubricaState,
     // (state:Array<IOffice>) => state

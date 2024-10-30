@@ -3,6 +3,8 @@ export const environment = {
     homeLink: '/',
     apiCreateToken: 'http://localhost:3000/createtoken',
     apiGetHome: 'http://localhost:3000/ufficiRubrica?tipologiaUfficio=',  // https://localhost:7252/api/Rubrica/Ufficio/Read?CodiceUfficio=UfficiCentrali
+    apiElencoUffici: 'http://localhost:3000/elencoUffici',
+
     apiGetUfficiPeriferici: 'http://localhost:3000/GetChildSedeFromWauc?id=',
     apiGetChildSedeFromWauc: 'http://localhost:3000/GetChildSedeFromWauc?id=',
 

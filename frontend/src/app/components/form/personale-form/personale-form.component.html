@@ -35,7 +35,7 @@
                         formControlName="codiceUfficio">
                     <input type="text" class="form-control" placeholder="seleziona ufficio" aria-label="Ufficio"
                         aria-describedby="btnUfficio" formControlName="nomeUfficio">
-                    <button class="btn btn-danger" type="button" id="btnUfficio">...</button>
+                    <button class="btn btn-danger" type="button" id="btnUfficio" (click)="onClickUffici()">...</button>
                 </div>
                 persona:{{(persona != null && persona != undefined)? persona.codiceUfficio : ''}} -
                 ufficiosel:{{ufficioSelezionato?.codiceUfficio?? ''}}
