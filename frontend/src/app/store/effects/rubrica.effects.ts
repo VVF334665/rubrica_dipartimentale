@@ -39,6 +39,21 @@ export class RubricaEffects {
         )
     );
 
+    loadElencoUffici$ = createEffect(
+        () => this.actions$.pipe(
+            ofType(RubricaActionType.GetElencoUffici),
+            exhaustMap(
+                () => this.rubricaService$.getElencoUffici()
+                    .pipe(
+                        map((result: any) => {
+                            return ({ type: RubricaActionType.GetElencoUfficiSuccess, uffici: result })
+                        }),
+                        catchError(() => of({ type: RubricaActionType.GetElencoUfficiError }))
+                    )
+            )
+        )
+    );
+
     constructor(
         private actions$: Actions,
         private rubricaService$: RubricaService,

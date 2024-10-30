@@ -8,6 +8,7 @@ import { IOffice } from '../models/IOffice';
 })
 export class RubricaService {
     private host: string = environment.apiGetHome;
+    private hostElencoUffici: string = environment.apiElencoUffici;
 
     constructor(private http: HttpClient) { }
 
@@ -33,5 +34,10 @@ export class RubricaService {
             return this.http.get<IOffice[]>(this.host + queryString);
         }
         return [];
+    }
+
+    getElencoUffici(){
+        let queryString: string = "";
+        return this.http.get<IOffice[]>(this.hostElencoUffici + queryString);
     }
 }

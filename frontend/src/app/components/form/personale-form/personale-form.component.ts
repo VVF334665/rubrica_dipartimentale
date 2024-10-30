@@ -11,6 +11,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ContattiFormComponent } from '../contatti-form/contatti-form.component';
 import { DelContattoPersonale } from '../../../store/actions/rubrica.action';
 import { IOffice } from '../../../models/IOffice';
+import { ElencoUfficiComponent } from '../../elenco-uffici/elenco-uffici.component';
 
 @Component({
     selector: 'vvfrubrica-personale-form',
@@ -34,6 +35,7 @@ export class PersonaleFormComponent {
     personaForm: FormGroup;
 
     modalContatti?: BsModalRef;
+    modalElencoUffici?: BsModalRef;
 
     constructor(public modal: BsModalRef, private _storeApp$: Store<AppState>, private fb: FormBuilder, private modalService: BsModalService) {
         this.personaForm = this.fb.group({
@@ -90,5 +92,17 @@ export class PersonaleFormComponent {
 
     openModal(initialState: object) {
         this.modalContatti = this.modalService.show(ContattiFormComponent, { initialState, class: 'gray modal-sm', backdrop: 'static' });
+    }
+
+    onClickUffici(){
+        let obj:string='ElencoUfficiComponent';
+
+        const initialState = {
+            //title: 'Aggiungi contatto ',
+            codiceUfficioPrecedente: this.persona.codiceUfficio
+        };
+
+        this.modalElencoUffici = this.modalService.show(ElencoUfficiComponent, { initialState, class: 'gray modal-lg m-auto', backdrop: 'static' });
+
     }
 }

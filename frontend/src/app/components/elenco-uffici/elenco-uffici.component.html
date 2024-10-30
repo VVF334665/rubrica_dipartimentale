@@ -1,0 +1,29 @@
+<div class="modal-header my-2 py-2">
+    <h4 class="modal-title pull-left">{{ title }}</h4>
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modal.hide()">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col">
+            <div class="input-group mb-3">
+                <input type="hidden" class="form-control" id="codiceUfficio" value="codiceUfficio">
+                <input type="text" class="form-control" placeholder="cerca ufficio" aria-label="Cerca"
+                    aria-describedby="btnSearch" [(ngModel)]="search" value="search"
+                    (keydown.enter)="onKeydown($event)" />
+                <button class="btn btn-danger" type="button" id="btnSearch" (click)="onSearch()" title="Cerca">
+                    <fa-icon [icon]="faSearch"></fa-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+    <select class="form-select" size="15" name="" id="">
+        <option *ngFor="let ufficio of elencoUffici" [value]="ufficio.codiceUfficio"
+            [selected]="ufficio.codiceUfficio==codiceUfficioPrecedente?'selected':''">{{ufficio.nomeUfficio}}</option>
+    </select>
+</div>
+<div class="modal-footer">
+    <!-- <button type="submit" class="btn btn-danger" [disabled]="contattoForm.invalid">Salva</button> -->
+    <button type="button" class="btn btn-danger" (click)="modal.hide()">{{ closeBtnName }}</button>
+</div>
