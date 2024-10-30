@@ -1,27 +1,31 @@
-<div class="row m mt-5 vh-100">
-    <div class="col"></div>
-    <div class="col-4 my-auto vh-100">
-        <div class="form-group border rounded p-4">
-            <h2>Login</h2>
-            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-                <div class="form-group">
-                    <label for="username">username</label>
-                    <input id="username" type="text" class="form-control" formControlName="username"
-                        placeholder="Inserisci la tua username" />
+<div class="d-flex align-items-center justify-content-center" style="min-height: calc(100vh - 16px);">
+    <mat-card appearance="outlined" class="col-3"
+        style="padding: 16px;border-radius: 16px; background-color: transparent;">
+        <mat-card-header>
+            <mat-card-title style="font-weight: 600;">Accedi</mat-card-title>
+            <mat-card-subtitle style="font-size: small;color:grey;">neccessario per la gestione della
+                rubrica</mat-card-subtitle>
+        </mat-card-header>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <mat-card-content>
+                <div class="form-group row justify-content-start">
+                    <mat-form-field appearance="outline" style="margin-top: 8px;">
+                        <mat-label>Username/Email</mat-label>
+                        <input matInput placeholder="Inserisci la tua email" formControlName="username">
+                        <mat-hint>&Egrave; facoltativo il &#64;vigilfuoco.it</mat-hint>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" style="margin-top: 16px;">
+                        <mat-label>Password</mat-label>
+                        <input matInput type="password" placeholder="Inserisci la tua password" formControlName="password">
+                        <mat-error *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+                            La password è obbligatoria.
+                        </mat-error>
+                    </mat-form-field>
                 </div>
-
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input id="password" type="password" class="form-control" formControlName="password"
-                        placeholder="Inserisci la tua password" />
-                    <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error">
-                        La password è obbligatoria.
-                    </div>
-                </div>
-
-                <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Accedi</button>
-            </form>
-        </div>
-    </div>
-    <div class="col"></div>
+            </mat-card-content>
+            <mat-card-actions align="end">
+                <button type="submit" mat-button [disabled]="loginForm.invalid">Accedi</button>
+            </mat-card-actions>
+        </form>
+    </mat-card>
 </div>
