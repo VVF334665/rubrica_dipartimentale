@@ -1,10 +1,10 @@
-<div style="display: flex;min-height: 100%;;background-color: #ac1a17;">
+<div style="display: flex;min-height: 100vh;background-color: #ac1a17;">
   <vvfrubrica-side-bar style="width: 80px;height: 100vh; position: fixed"></vvfrubrica-side-bar>
-  <div id="mainBody" style="padding-left: 80px;width:100%;box-sizing: border-box;">
-    <div id="container" style="display: flex;flex-direction: column;align-items: center;width: 100%">
+  <div style="padding-left: 80px;width:100vw;box-sizing: border-box;">
+    <div style="display: flex;flex-direction: column;align-items: center;width: 100%">
       <div
-        style="display: flex;flex-direction: column;align-items: center;width: 100%;margin: 8px 8px 0;box-sizing: border-box;">
-        <div style="background-color: #f4f4ed;border-radius: 16px;margin-right: 8px;margin-left: 8px;">
+        style="display: flex;flex-direction: column;align-items: center;width: 100%;padding: 8px 8px;box-sizing: border-box;">
+        <div style="background-color: #f4f4ed;border-radius: 16px;width:100%;min-height: calc(100vh - 16px);">
           <router-outlet></router-outlet>
         </div>
       </div>

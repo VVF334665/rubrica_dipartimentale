@@ -1,35 +1,31 @@
-<div class="row mt-5 vh-100 align-top">
-    <div class="col"></div>
-    <div class="col-sm-12 col-md-7 align-top">
-        <div class="row align-top p-4">
-            <div class="col-sm-12 col-md-2 text-end align-middle mt-4 me-4">
-                <fa-icon [icon]="faAddressBook" size="10x" [style.fill-opacity]=".2" class="mx-auto"></fa-icon>
-            </div>
-            <div class="col align-top">
-                <div class="form-group align-top p-4">
-                    <h2>Login</h2>
-                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-                        <div class="form-group" class="mb-2">
-                            <label for="username">Utente</label>
-                            <input id="username" type="text" class="form-control" formControlName="username"
-                                placeholder="Inserisci la tua username" />
-                        </div>
-
-                        <div class="form-group mb-2">
-                            <label for="password">Password</label>
-                            <input id="password" type="password" class="form-control"
-                                formControlName="password" placeholder="Inserisci la tua password" />
-                            <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
-                                class="error">
-                                La password è obbligatoria.
-                            </div>
-                        </div>
-
-                        <button type="submit" class="btn btn-danger" [disabled]="loginForm.invalid">Accedi</button>
-                    </form>
+<div class="d-flex align-items-center justify-content-center" style="min-height: calc(100vh - 16px);">
+    <mat-card appearance="outlined" class="col-3"
+        style="padding: 16px;border-radius: 16px; background-color: transparent;">
+        <mat-card-header>
+            <mat-card-title style="font-weight: 600;">Accedi</mat-card-title>
+            <mat-card-subtitle style="font-size: small;color:grey;">neccessario per la gestione della
+                rubrica</mat-card-subtitle>
+        </mat-card-header>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <mat-card-content>
+                <div class="form-group row justify-content-start">
+                    <mat-form-field appearance="outline" style="margin-top: 8px;">
+                        <mat-label>Username/Email</mat-label>
+                        <input matInput placeholder="Inserisci la tua email" formControlName="username">
+                        <mat-hint>&Egrave; facoltativo il &#64;vigilfuoco.it</mat-hint>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" style="margin-top: 16px;">
+                        <mat-label>Password</mat-label>
+                        <input matInput type="password" placeholder="Inserisci la tua password" formControlName="password">
+                        <mat-error *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+                            La password è obbligatoria.
+                        </mat-error>
+                    </mat-form-field>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="col"></div>
+            </mat-card-content>
+            <mat-card-actions align="end">
+                <button type="submit" mat-button [disabled]="loginForm.invalid">Accedi</button>
+            </mat-card-actions>
+        </form>
+    </mat-card>
 </div>
