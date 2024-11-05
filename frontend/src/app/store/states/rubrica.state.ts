@@ -9,7 +9,8 @@ export interface IRubricaState {
     idSelectedOfficeComponent: string;
     personaDaModificare: IPersonale | null;
     rubricaUfficiPeriferici: Array<IOffice>;
-    elencoUffici: Array<IOffice>
+    elencoUffici: Array<IOffice>,
+    ufficioDaModificare: IOffice | null,
 }
 
 export const inizializeRubricaState: IRubricaState = {
@@ -20,5 +21,6 @@ export const inizializeRubricaState: IRubricaState = {
     idSelectedOfficeComponent: '',
     personaDaModificare: { id: 0, cognome: '', nome: '', codiceUfficio: '' },
     rubricaUfficiPeriferici: [],
-    elencoUffici: []
+    elencoUffici: [],
+    ufficioDaModificare: null,
 }

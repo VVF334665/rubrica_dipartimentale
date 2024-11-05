@@ -1,5 +1,5 @@
 import { IOffice } from "../../models/IOffice";
-import { RubricaActionType } from "../actions/rubrica.action";
+import { RubricaActionType, SaveContatto } from "../actions/rubrica.action";
 import { inizializeRubricaState, IRubricaState } from "../states/rubrica.state";
 
 export function rubricaReducer(
@@ -43,7 +43,7 @@ export function rubricaReducer(
         case RubricaActionType.SetUfficioSelezionato:
             temp['ufficioSelezionato'] = action.ufficioSelezionato;
             return temp;
-        case RubricaActionType.AddElencoUfficiSelezionati:
+        case RubricaActionType.AddElencoUfficiSelezionati: SaveContatto
             {
                 let d: Array<IOffice | null> | null = [...(temp['elencoUfficiSelezionati'] ?? [])];
                 d?.push(action.ufficioSelezionato);
@@ -66,7 +66,7 @@ export function rubricaReducer(
         case RubricaActionType.SetIdSelectedOfficeComponent:
             temp['idSelectedOfficeComponent'] = action.id;
             return temp;
-        case RubricaActionType.SetContatto:
+        case RubricaActionType.SaveContatto:
             let office: IOffice = { ...(temp.ufficioSelezionato ?? { codiceUfficio: '', nomeTitolare: '', nomeUfficio: '', contatti: [], children: [] }) }; // || { tipo: '', contatto: '' };
             //let arrayContatto = [...office.contatti ?? []];
             //arrayContatto.push(action.contatto);
@@ -81,18 +81,13 @@ export function rubricaReducer(
             let a: Array<IOffice> = [];
             for (let o of (temp.ufficioSelezionato?.children ?? [])) {
                 if (o.codiceUfficio == action.codiceUfficio) {
-
-                    console.log('codice uguale');
-
+                    // console.log('codice uguale');
                     let temp: IOffice = { ...o };
-
                     let arrayContatto = [...o.contatti ?? []];
                     arrayContatto.push(action.contatto);
-
                     temp.contatti = [...arrayContatto];
                     o = { ...temp };
-                    console.log('office nel ciclo: ', o);
-
+                    // console.log('office nel ciclo: ', o);
                     // break;
                 }
                 a.push(o);
@@ -101,17 +96,32 @@ export function rubricaReducer(
             //let office: IOffice = { ...(temp.ufficioSelezionato ?? { codiceUfficio: '', nomeTitolare: '', nomeUfficio: '', contatti: [], children: [] }) }; // || { tipo: '', contatto: '' };
             office.children = [...a];
             temp.ufficioSelezionato = { ...office };
-            console.log('ufficioSelezionato: ', temp.ufficioSelezionato);
+            // console.log('ufficioSelezionato: ', temp.ufficioSelezionato);
 
             //let zz: Office= new Office();;
             //zz.setOffices(temp.elencoUfficiSelezionati ?? [])
             //temp.elencoUfficiSelezionati
             return temp;
+        case RubricaActionType.SavePersonale:
+            console.log('Persona Salvata !!!!!!');
+            return temp;
+        case RubricaActionType.SaveUfficio:
+            console.log('Ufficio Salvato !!!!!!');
+            return temp;
         case RubricaActionType.SetPersonaDaMoficiare:
             temp['personaDaModificare'] = action.persona;
             return temp;
+        case RubricaActionType.DelPersonale:
+            console.log('Persona Cancellata !!!!!!');
+            return temp;
         case RubricaActionType.DelContattoPersonale:
             console.log('Contatto Cancellato !!!!!!');
+            return temp;
+        case RubricaActionType.DelContatto:
+            console.log('Contatto Cancellato !!!!!!');
+            return temp;
+        case RubricaActionType.DelUfficio:
+            console.log('Ufficio Cancellato !!!!!!');
             return temp;
         case RubricaActionType.SaveContattoPersonale:
             console.log('Contatto Salvato !!!!!!');

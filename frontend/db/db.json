@@ -14,7 +14,7 @@
         {
             "codiceUfficio": "300",
             "codiceUfficioSuperiore": "",
-            "nomeTitolare": "Prefetto Franceschelli",
+            "nomeTitolare": "Prefetto",
             "nomeUfficio": "Capo Dipartimento",
             "coloreSfondo": "#495380",
             "ordineVisualizzazione": 1,
@@ -218,7 +218,7 @@
             "codiceUfficio": "305",
             "codiceUfficioSuperiore": "",
             "nomeUfficio": "Capo del Corpo Nazionale dei Vigili del Fuoco Vice Capo Dipartimento Vicario",
-            "nomeTitolare": "Ing. Carlo Dall'Oppio",
+            "nomeTitolare": "Capo del Corpo",
             "coloreSfondo": "#840101",
             "ordineVisualizzazione": 2,
             "descrizioneUfficio": "222 Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores aliquid optio nihil eos. Officiis, dignissimos delectus. Sit rerum unde repellat deleniti dignissimos, dolor cupiditate odio facere nihil aut, necessitatibus sunt.",
@@ -309,7 +309,7 @@
             "codiceUfficio": "309",
             "codiceUfficioSuperiore": "",
             "nomeUfficio": "Ufficio di collegamento del Capo Dipartimento e del Capo del CNVVF",
-            "nomeTitolare": "Ing. Carlo Dall'Oppio",
+            "nomeTitolare": "titolare",
             "coloreSfondo": "#ff7c7c",
             "ordineVisualizzazione": 3,
             "descrizioneUfficio": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores aliquid optio nihil eos. Officiis, dignissimos delectus. Sit rerum unde repellat deleniti dignissimos, dolor cupiditate odio facere nihil aut, necessitatibus sunt.",
@@ -631,13 +631,13 @@
             "codiceUfficio": "02",
             "codice": "02",
             "codDistaccamento": "0",
-            "nomeUfficio": "DIREZIONE REGIONALE VV.F. LOMBARDIA",
+            "nomeUfficio": "Direzione Regionale VV.F. LOMBARDIA",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "MI",
             "coordinate": "45.46489,9.17972",
@@ -649,14 +649,14 @@
             "codiceUfficio": "03",
             "codice": "03",
             "codDistaccamento": "0",
-            "nomeUfficio": "DIREZIONE REGIONALE VV.F. LIGURIA",
+            "nomeUfficio": "Direzione Regionale VV.F. LIGURIA",
             "tipologiaUfficio": "periferia",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "GE",
             "coordinate": "44.40921,8.90521",
@@ -667,14 +667,14 @@
             "codiceUfficio": "04",
             "codice": "04",
             "codDistaccamento": "0",
-            "nomeUfficio": "DIREZIONE REGIONALE VV.F. VENETO",
+            "nomeUfficio": "Direzione Regionale VV.F. VENETO",
             "tipologiaUfficio": "periferia",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "PD",
             "coordinate": "45.40998,11.87337",
@@ -686,14 +686,14 @@
             "codiceUfficio": "05",
             "codice": "05",
             "codDistaccamento": "0",
-            "nomeUfficio": "DIREZIONE REGIONALE VV.F. FRIULI VENEZIA GIULIA",
+            "nomeUfficio": "Direzione Regionale VV.F. FRIULI VENEZIA GIULIA",
             "tipologiaUfficio": "periferia",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "TS",
             "coordinate": "45.64855,13.76876",
@@ -705,14 +705,14 @@
             "codiceUfficio": "06",
             "codice": "06",
             "codDistaccamento": "0",
-            "nomeUfficio": "DIREZIONE REGIONALE VV.F. EMILIA ROMAGNA",
+            "nomeUfficio": "Direzione Regionale VV.F. EMILIA ROMAGNA",
             "tipologiaUfficio": "periferia",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "BO",
             "coordinate": "44.535506,11.368185",
@@ -724,14 +724,14 @@
             "codiceUfficio": "07",
             "codice": "07",
             "codDistaccamento": "0",
-            "nomeUfficio": "DIREZIONE REGIONALE VV.F. TOSCANA",
+            "nomeUfficio": "Direzione Regionale VV.F. TOSCANA",
             "tipologiaUfficio": "periferia",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "FI",
             "coordinate": "43.78091,11.26828",
@@ -743,14 +743,14 @@
             "codiceUfficio": "09",
             "codice": "09",
             "codDistaccamento": "0",
-            "nomeUfficio": "DIREZIONE REGIONALE VV.F. MARCHE",
+            "nomeUfficio": "Direzione Regionale VV.F. MARCHE",
             "tipologiaUfficio": "periferia",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "AN",
             "coordinate": "43.60838,13.51542",
@@ -762,14 +762,14 @@
             "codiceUfficio": "10",
             "codice": "10",
             "codDistaccamento": "0",
-            "nomeUfficio": "DIREZIONE REGIONALE VV.F. LAZIO",
+            "nomeUfficio": "Direzione Regionale VV.F. LAZIO",
             "tipologiaUfficio": "periferia",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "RM",
             "coordinate": "41.82691,12.45946",
@@ -781,14 +781,14 @@
             "codiceUfficio": "12",
             "codice": "12",
             "codDistaccamento": "0",
-            "nomeUfficio": "DIREZIONE REGIONALE VV.F. UMBRIA",
+            "nomeUfficio": "Direzione Regionale VV.F. UMBRIA",
             "tipologiaUfficio": "periferia",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "PG",
             "coordinate": "43.10535,12.39194",
@@ -800,14 +800,14 @@
             "codiceUfficio": "13",
             "codice": "13",
             "codDistaccamento": "0",
-            "nomeUfficio": "DIREZIONE REGIONALE VV.F. CAMPANIA",
+            "nomeUfficio": "Direzione Regionale VV.F. CAMPANIA",
             "tipologiaUfficio": "periferia",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "NA",
             "coordinate": "40.86588,14.29312",
@@ -819,14 +819,14 @@
             "codiceUfficio": "15",
             "codice": "15",
             "codDistaccamento": "0",
-            "nomeUfficio": "DIREZIONE REGIONALE VV.F. PUGLIA",
+            "nomeUfficio": "Direzione Regionale VV.F. PUGLIA",
             "tipologiaUfficio": "periferia",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "BA",
             "coordinate": "41.11185,16.90165",
@@ -838,14 +838,14 @@
             "codiceUfficio": "16",
             "codice": "16",
             "codDistaccamento": "0",
-            "nomeUfficio": "DIREZIONE REGIONALE VV.F. CALABRIA",
+            "nomeUfficio": "Direzione Regionale VV.F. CALABRIA",
             "tipologiaUfficio": "periferia",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "CZ",
             "coordinate": "38.91112,16.57481",
@@ -857,14 +857,14 @@
             "codiceUfficio": "17",
             "codice": "17",
             "codDistaccamento": "0",
-            "nomeUfficio": "DIREZIONE REGIONALE VV.F. SARDEGNA",
+            "nomeUfficio": "Direzione Regionale VV.F. SARDEGNA",
             "tipologiaUfficio": "periferia",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "CA",
             "coordinate": "39.247166,9.117922",
@@ -876,14 +876,14 @@
             "codiceUfficio": "18",
             "codice": "18",
             "codDistaccamento": "0",
-            "nomeUfficio": "DIREZIONE REGIONALE VV.F. SICILIA",
+            "nomeUfficio": "Direzione Regionale VV.F. SICILIA",
             "tipologiaUfficio": "periferia",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "PA",
             "coordinate": "38.12285,13.35766",
@@ -895,14 +895,14 @@
             "codiceUfficio": "19",
             "codice": "19",
             "codDistaccamento": "0",
-            "nomeUfficio": "DIREZIONE REGIONALE VV.F. BASILICATA",
+            "nomeUfficio": "Direzione Regionale VV.F. BASILICATA",
             "tipologiaUfficio": "periferia",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "PZ",
             "coordinate": "40.64405,15.83283",
@@ -914,14 +914,14 @@
             "codiceUfficio": "20",
             "codice": "20",
             "codDistaccamento": "0",
-            "nomeUfficio": "DIREZIONE REGIONALE VV.F. ABRUZZO",
+            "nomeUfficio": "Direzione Regionale VV.F. ABRUZZO",
             "tipologiaUfficio": "periferia",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "AQ",
             "coordinate": "42.371063,13.349061",
@@ -933,14 +933,14 @@
             "codiceUfficio": "21",
             "codice": "21",
             "codDistaccamento": "0",
-            "nomeUfficio": "DIREZIONE REGIONALE VV.F. MOLISE",
+            "nomeUfficio": "Direzione Regionale VV.F. MOLISE",
             "tipologiaUfficio": "periferia",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "CB",
             "coordinate": "41.56611,14.66530",
@@ -953,7 +953,7 @@
         {
             "codiceUfficio": "300",
             "codiceUfficioSuperiore": "",
-            "nomeTitolare": "Prefetto Franceschelli",
+            "nomeTitolare": "Prefetto",
             "nomeUfficio": "Capo Dipartimento",
             "coloreSfondo": "#495380",
             "ordineVisualizzazione": 1,
@@ -1004,7 +1004,7 @@
             "codiceUfficio": "305",
             "codiceUfficioSuperiore": "",
             "nomeUfficio": "Capo del Corpo Nazionale dei Vigili del Fuoco Vice Capo Dipartimento Vicario",
-            "nomeTitolare": "Ing. Carlo Dall'Oppio",
+            "nomeTitolare": "Capo del Corpo",
             "coloreSfondo": "#840101",
             "ordineVisualizzazione": 2,
             "descrizioneUfficio": "222 Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores aliquid optio nihil eos. Officiis, dignissimos delectus. Sit rerum unde repellat deleniti dignissimos, dolor cupiditate odio facere nihil aut, necessitatibus sunt.",
@@ -1046,7 +1046,7 @@
             "codiceUfficio": "309",
             "codiceUfficioSuperiore": "",
             "nomeUfficio": "Ufficio di collegamento del Capo Dipartimento e del Capo del CNVVF",
-            "nomeTitolare": "Ing. Carlo Dall'Oppio",
+            "nomeTitolare": "titolare",
             "coloreSfondo": "#ff7c7c",
             "ordineVisualizzazione": 3,
             "descrizioneUfficio": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores aliquid optio nihil eos. Officiis, dignissimos delectus. Sit rerum unde repellat deleniti dignissimos, dolor cupiditate odio facere nihil aut, necessitatibus sunt.",
@@ -1174,13 +1174,13 @@
             "id": "02",
             "codice": "02",
             "codDistaccamento": "0",
-            "descrizione": "DIREZIONE REGIONALE VV.F. LOMBARDIA",
+            "descrizione": "Direzione Regionale VV.F. LOMBARDIA",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "MI",
             "coordinate": "45.46489,9.17972",
@@ -1191,13 +1191,13 @@
             "id": "03",
             "codice": "03",
             "codDistaccamento": "0",
-            "descrizione": "DIREZIONE REGIONALE VV.F. LIGURIA",
+            "descrizione": "Direzione Regionale VV.F. LIGURIA",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "GE",
             "coordinate": "44.40921,8.90521",
@@ -1208,13 +1208,13 @@
             "id": "04",
             "codice": "04",
             "codDistaccamento": "0",
-            "descrizione": "DIREZIONE REGIONALE VV.F. VENETO",
+            "descrizione": "Direzione Regionale VV.F. VENETO",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "PD",
             "coordinate": "45.40998,11.87337",
@@ -1225,13 +1225,13 @@
             "id": "05",
             "codice": "05",
             "codDistaccamento": "0",
-            "descrizione": "DIREZIONE REGIONALE VV.F. FRIULI VENEZIA GIULIA",
+            "descrizione": "Direzione Regionale VV.F. FRIULI VENEZIA GIULIA",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "TS",
             "coordinate": "45.64855,13.76876",
@@ -1242,13 +1242,13 @@
             "id": "06",
             "codice": "06",
             "codDistaccamento": "0",
-            "descrizione": "DIREZIONE REGIONALE VV.F. EMILIA ROMAGNA",
+            "descrizione": "Direzione Regionale VV.F. EMILIA ROMAGNA",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "BO",
             "coordinate": "44.535506,11.368185",
@@ -1259,13 +1259,13 @@
             "id": "07",
             "codice": "07",
             "codDistaccamento": "0",
-            "descrizione": "DIREZIONE REGIONALE VV.F. TOSCANA",
+            "descrizione": "Direzione Regionale VV.F. TOSCANA",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "FI",
             "coordinate": "43.78091,11.26828",
@@ -1276,13 +1276,13 @@
             "id": "09",
             "codice": "09",
             "codDistaccamento": "0",
-            "descrizione": "DIREZIONE REGIONALE VV.F. MARCHE",
+            "descrizione": "Direzione Regionale VV.F. MARCHE",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "AN",
             "coordinate": "43.60838,13.51542",
@@ -1293,13 +1293,13 @@
             "id": "10",
             "codice": "10",
             "codDistaccamento": "0",
-            "descrizione": "DIREZIONE REGIONALE VV.F. LAZIO",
+            "descrizione": "Direzione Regionale VV.F. LAZIO",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "RM",
             "coordinate": "41.82691,12.45946",
@@ -1310,13 +1310,13 @@
             "id": "12",
             "codice": "12",
             "codDistaccamento": "0",
-            "descrizione": "DIREZIONE REGIONALE VV.F. UMBRIA",
+            "descrizione": "Direzione Regionale VV.F. UMBRIA",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "PG",
             "coordinate": "43.10535,12.39194",
@@ -1327,13 +1327,13 @@
             "id": "13",
             "codice": "13",
             "codDistaccamento": "0",
-            "descrizione": "DIREZIONE REGIONALE VV.F. CAMPANIA",
+            "descrizione": "Direzione Regionale VV.F. CAMPANIA",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "NA",
             "coordinate": "40.86588,14.29312",
@@ -1344,13 +1344,13 @@
             "id": "15",
             "codice": "15",
             "codDistaccamento": "0",
-            "descrizione": "DIREZIONE REGIONALE VV.F. PUGLIA",
+            "descrizione": "Direzione Regionale VV.F. PUGLIA",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "BA",
             "coordinate": "41.11185,16.90165",
@@ -1361,13 +1361,13 @@
             "id": "16",
             "codice": "16",
             "codDistaccamento": "0",
-            "descrizione": "DIREZIONE REGIONALE VV.F. CALABRIA",
+            "descrizione": "Direzione Regionale VV.F. CALABRIA",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "CZ",
             "coordinate": "38.91112,16.57481",
@@ -1378,13 +1378,13 @@
             "id": "17",
             "codice": "17",
             "codDistaccamento": "0",
-            "descrizione": "DIREZIONE REGIONALE VV.F. SARDEGNA",
+            "descrizione": "Direzione Regionale VV.F. SARDEGNA",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "CA",
             "coordinate": "39.247166,9.117922",
@@ -1395,13 +1395,13 @@
             "id": "18",
             "codice": "18",
             "codDistaccamento": "0",
-            "descrizione": "DIREZIONE REGIONALE VV.F. SICILIA",
+            "descrizione": "Direzione Regionale VV.F. SICILIA",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "PA",
             "coordinate": "38.12285,13.35766",
@@ -1412,13 +1412,13 @@
             "id": "19",
             "codice": "19",
             "codDistaccamento": "0",
-            "descrizione": "DIREZIONE REGIONALE VV.F. BASILICATA",
+            "descrizione": "Direzione Regionale VV.F. BASILICATA",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "PZ",
             "coordinate": "40.64405,15.83283",
@@ -1429,13 +1429,13 @@
             "id": "20",
             "codice": "20",
             "codDistaccamento": "0",
-            "descrizione": "DIREZIONE REGIONALE VV.F. ABRUZZO",
+            "descrizione": "Direzione Regionale VV.F. ABRUZZO",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "AQ",
             "coordinate": "42.371063,13.349061",
@@ -1446,13 +1446,13 @@
             "id": "21",
             "codice": "21",
             "codDistaccamento": "0",
-            "descrizione": "DIREZIONE REGIONALE VV.F. MOLISE",
+            "descrizione": "Direzione Regionale VV.F. MOLISE",
             "tipo": "DIR",
-            "descTipo": "DIREZIONE REGIONALE",
+            "descTipo": "Direzione Regionale",
             "tipoOriginale": "ISP",
             "tipologiaDistaccamento": {
                 "codice": "9",
-                "descrizione": "DIREZIONE REGIONALE"
+                "descrizione": "Direzione Regionale"
             },
             "provincia": "CB",
             "coordinate": "41.56611,14.66530",

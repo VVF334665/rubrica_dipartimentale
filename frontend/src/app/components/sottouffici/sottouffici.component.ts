@@ -11,6 +11,7 @@ import { faEdit, faPlusCircle, faTrashAlt } from '@fortawesome/free-solid-svg-ic
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { UfficiFormComponent } from '../form/uffici-form/uffici-form.component';
 import { Office } from '../../models/Office';
+import { DelUfficio } from '../../store/actions/rubrica.action';
 
 @Component({
     selector: 'vvfrubrica-sottouffici',
@@ -41,7 +42,7 @@ export class SottoufficiComponent {
     ngOnInit() {
         this.ufficioSelezionato$.subscribe(items => {
             this.ufficioSelezionato = { ...items };
-            if (this.ufficioSelezionato?.children.length > 0) {
+            if (this.ufficioSelezionato?.children?.length > 0) {
                 this.testVar.setOffices(this.ufficioSelezionato?.children);
             }
         });
@@ -53,6 +54,7 @@ export class SottoufficiComponent {
 
     onAddClick(id: string) {
         let off: IOffice | null = this.testVar.findOffice(id);
+
         const initialState = {
             title: 'Aggiungi ufficio in: ' + off?.nomeUfficio,
         };
@@ -60,19 +62,27 @@ export class SottoufficiComponent {
         this.openModal(initialState);
     }
 
-    onEditClick(id: string) {
-        let off: IOffice | null = this.testVar.findOffice(id);
+    // onEditClick(id: string) {
+    onEditClick(office: IOffice) {
+        // let off: IOffice | null = this.testVar.findOffice(id);
 
         const initialState = {
-            title: 'Modifica Ufficio: ' + off?.nomeUfficio,
-            ufficio: off,
+            title: 'Modifica Ufficio: ' + office?.nomeUfficio,
+            ufficio: office,
         };
 
         this.openModal(initialState);
     }
 
-    onDelClick() {
-        console.log('delll');
+    onDelClick(ufficio:IOffice) {
+        if (confirm('Cancellare contatto ' + ufficio.nomeUfficio + '?')) {
+            // if (typeof (this.ufficio?.contatti) !== 'undefined') {
+            // if (this.ufficio?.contatti?.length > 0) {
+            // let temp: IContatto | undefined = this.ufficio?.contatti?.find(contact => contact.id != idContatto);
+            this._storeApp$.dispatch(DelUfficio({ ufficio: ufficio }))
+            // }
+            // }
+        }
     }
 
     openModal(initialState: object) {

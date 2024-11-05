@@ -54,18 +54,25 @@
                     <tr>
                         <th>Tipo</th>
                         <th>Contatto</th>
-                        <th></th>
+                        <th class="text-end">
+                            <button type="button" class="btn btn-danger px-3" title="Inserisci personale"
+                                (click)="onAddClick()">
+                                <fa-icon [icon]="faPlusCircle" size="1x"></fa-icon>
+                            </button>
+                        </th>
                     </tr>
                     <tr *ngFor="let contatto of persona?.contatti">
                         <td>{{contatto.tipo}}</td>
                         <td>{{contatto.contatto}}</td>
                         <td class="text-end">
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-danger px-3" title="Modifica personale">
-                                    <fa-icon [icon]="faEdit" size="1x" (click)="onEditClick(contatto.id)"></fa-icon>
+                                <button type="button" class="btn btn-danger px-3" title="Modifica personale"
+                                    (click)="onEditClick(contatto)">
+                                    <fa-icon [icon]="faEdit" size="1x"></fa-icon>
                                 </button>
-                                <button type="button" class="btn btn-danger px-3" title="Cancella personale">
-                                    <fa-icon [icon]="faTrashAlt" size="1x" (click)="onDelClick(contatto.id)"></fa-icon>
+                                <button type="button" class="btn btn-danger px-3" title="Cancella personale"
+                                    (click)="onDelClick(contatto.id)">
+                                    <fa-icon [icon]="faTrashAlt" size="1x"></fa-icon>
                                 </button>
                             </div>
                         </td>
@@ -76,7 +83,7 @@
     </div>
 
     <div class="modal-footer">
-        <!-- <button type="submit" class="btn btn-danger" [disabled]="contattoForm.invalid">Salva</button> -->
+        <button type="submit" class="btn btn-danger" (click)="onSubmit()">Salva</button>
         <button type="button" class="btn btn-danger" (click)="modal.hide()">{{ closeBtnName }}</button>
     </div>
 </form>

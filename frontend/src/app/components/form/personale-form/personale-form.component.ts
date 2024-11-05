@@ -6,12 +6,13 @@ import { Store } from '@ngrx/store';
 import { selectPersonaDaModificare, selectUfficioSelezionato } from '../../../store/selectors/rubrica.selector';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgFor } from '@angular/common';
-import { faEdit, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faPlusCircle, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ContattiFormComponent } from '../contatti-form/contatti-form.component';
-import { DelContattoPersonale } from '../../../store/actions/rubrica.action';
+import { DelContattoPersonale, SavePersonale } from '../../../store/actions/rubrica.action';
 import { IOffice } from '../../../models/IOffice';
 import { ElencoUfficiComponent } from '../../elenco-uffici/elenco-uffici.component';
+import { IContatto } from '../../../models/IContatto';
 
 @Component({
     selector: 'vvfrubrica-personale-form',
@@ -23,6 +24,7 @@ import { ElencoUfficiComponent } from '../../elenco-uffici/elenco-uffici.compone
 export class PersonaleFormComponent {
     faEdit = faEdit;
     faTrashAlt = faTrashAlt;
+    faPlusCircle = faPlusCircle;
 
     title: string = '';
     closeBtnName?: string = 'Chiudi';
@@ -70,14 +72,35 @@ export class PersonaleFormComponent {
         });
     }
 
-    onSubmit() { }
+    onSubmit() {
+        let temp: IPersonale = {
+            id: 0,
+            cognome: this.personaForm.controls['cognome'].value,
+            nome: this.personaForm.controls['nome'].value,
+            qualifica: this.personaForm.controls['qualifica'].value,
+            codiceUfficio: this.personaForm.controls['codiceUfficio'].value,
+        };
+        this._storeApp$.dispatch(SavePersonale({ persona: temp }));
+        this.modal?.hide();
+    }
 
-    onEditClick(idContatto: number) {
-        let temp = this.persona.contatti?.find(cont => cont.id === idContatto);
+    onAddClick() {
+        // let temp = this.persona.contatti?.find(cont => cont.id === idContatto);
 
         const initialState = {
-            contatto: temp,
+            // contatto: temp,
             title: 'Aggiungi contatto ',
+        };
+
+        this.openModal(initialState);
+    }
+
+    onEditClick(contatto: IContatto) {
+        // let temp = this.persona.contatti?.find(cont => cont.id === idContatto);
+
+        const initialState = {
+            contatto: contatto,
+            title: 'Modifica contatto ',
         };
 
         this.openModal(initialState);
@@ -94,8 +117,8 @@ export class PersonaleFormComponent {
         this.modalContatti = this.modalService.show(ContattiFormComponent, { initialState, class: 'gray modal-sm', backdrop: 'static' });
     }
 
-    onClickUffici(){
-        let obj:string='ElencoUfficiComponent';
+    onClickUffici() {
+        let obj: string = 'ElencoUfficiComponent';
 
         const initialState = {
             //title: 'Aggiungi contatto ',
@@ -103,6 +126,5 @@ export class PersonaleFormComponent {
         };
 
         this.modalElencoUffici = this.modalService.show(ElencoUfficiComponent, { initialState, class: 'gray modal-lg m-auto', backdrop: 'static' });
-
     }
 }

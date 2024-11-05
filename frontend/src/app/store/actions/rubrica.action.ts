@@ -12,6 +12,13 @@ export enum RubricaActionType {
     GetUfficiPerifericiSuccess = '[Get Uffici Periferici] Get Uffici Periferici Success',
     GetUfficiPerifericiError = '[Get Uffici Periferici] Get Uffici Periferici Error',
 
+    DelUfficio = '[Del Ufficio] Del Ufficio',
+    DelUfficioSuccess = '[Del Ufficio] Del Ufficio Success',
+    DelUfficioError = '[Del Ufficio] Del Ufficio Error',
+    SaveUfficio = '[Save Ufficio] Save Ufficio',
+    SaveUfficioSuccess = '[Save Ufficio] Save Ufficio Success',
+    SaveUfficioError = '[Save Ufficio] Save Ufficio Error',
+
     GetElencoUffici = '[Get Elenco Uffici] Get Uffici',
     GetElencoUfficiSuccess = '[Get Elenco Uffici] Get Uffici Success',
     GetElencoUfficiError = '[Get Elenco Uffici] Get Uffici Error',
@@ -19,6 +26,14 @@ export enum RubricaActionType {
     GetPersonale = '[Get Personale] Get Personale',
     GetPersonaleSuccess = '[Get Personale] Get Personale',
     GetPersonaleError = '[Get Personale] Get Personale Error',
+
+    DelPersonale = '[Del Personale] Del Personale',
+    DelPersonaleSuccess = '[Del Personale] Del Personale',
+    DelPersonaleError = '[Del Personale] Del Personale Error',
+
+    SavePersonale = '[Save Personale] Del Personale',
+    SavePersonaleSuccess = '[Save Personale] Del Personale',
+    SavePersonaleError = '[Save Personale] Del Personale Error',
 
     GetUfficioSelezionato = '[Get Ufficio Selezionato] Get Ufficio Selezionato',
     GetUfficioSelezionatoSuccess = '[Get Ufficio Selezionato] Get Ufficio Selezionato Success',
@@ -54,9 +69,9 @@ export enum RubricaActionType {
     SetIdSelectedOfficeComponentSuccess = '[Set IdSelectedOfficeComponent Success] Set IdSelectedOfficeComponent Success',
     SetIdSelectedOfficeComponentError = '[Set IdSelectedOfficeComponent Errore] Set IdSelectedOfficeComponent Error',
 
-    SetContatto = '[Set Contatto] Set Contatto',
-    SetContattoSuccess = '[Set Contatto Success] Set Contatto Success',
-    SetContattoError = '[Set Contatto Errore] Set Contatto Error',
+    SaveContatto = '[Save Contatto] Save Contatto',
+    SaveContattoSuccess = '[Save Contatto Success] Save Contatto Success',
+    SaveContattoError = '[Save Contatto Errore] Save Contatto Error',
 
     DelContatto = '[Del Contatto] Del Contatto',
     DelContattoSuccess = '[Del Contatto Success] Del Contatto Success',
@@ -105,6 +120,19 @@ export const GetUfficiPerifericiError = createAction(
     RubricaActionType.GetUfficiPerifericiError
 );
 
+export const DelUfficio = createAction(
+    RubricaActionType.DelUfficio,
+    props<{ ufficio: IOffice | null }>()
+);
+
+export const GetUfficioSuccess = createAction(
+    RubricaActionType.DelUfficioSuccess,
+    //props<{rubrica: Array<IOffice>}>()
+);
+
+export const DelUfficioError = createAction(
+    RubricaActionType.DelUfficioError
+);
 
 export const GetElencoUffici = createAction(
     RubricaActionType.GetElencoUffici,
@@ -132,6 +160,34 @@ export const GetPersonaleSuccess = createAction(
 
 export const GetPersonaleError = createAction(
     RubricaActionType.GetPersonaleError
+);
+
+export const DelPersonale = createAction(
+    RubricaActionType.DelPersonale,
+    props<{ persona: IPersonale | null }>()
+);
+
+export const DelPersonaleSuccess = createAction(
+    RubricaActionType.DelPersonaleSuccess,
+    //props<{rubrica: Array<IOffice>}>()
+);
+
+export const DelPersonaleError = createAction(
+    RubricaActionType.DelPersonaleError
+);
+
+export const SavePersonale = createAction(
+    RubricaActionType.SavePersonale,
+    props<{ persona: IPersonale | null }>()
+);
+
+export const SavePersonaleSuccess = createAction(
+    RubricaActionType.SavePersonaleSuccess,
+    //props<{rubrica: Array<IOffice>}>()
+);
+
+export const SavePersonaleError = createAction(
+    RubricaActionType.SavePersonaleError
 );
 
 export const GetUfficioSelezionato = createAction(
@@ -272,18 +328,18 @@ export const SetIdSelectedOfficeComponentError = createAction(
     RubricaActionType.SetIdSelectedOfficeComponentError
 );
 
-export const SetContatto = createAction(
-    RubricaActionType.SetContatto,
+export const SaveContatto = createAction(
+    RubricaActionType.SaveContatto,
     props<{ contatto: IContatto, codiceUfficio: string }>()
 );
 
-export const SetContattoSuccess = createAction(
-    RubricaActionType.SetContattoSuccess,
+export const SaveContattoSuccess = createAction(
+    RubricaActionType.SaveContattoSuccess,
     //props<{rubrica: Array<IOffice>}>()
 );
 
-export const SetContattoError = createAction(
-    RubricaActionType.SetContattoError
+export const SaveContattoError = createAction(
+    RubricaActionType.SaveContattoError
 );
 
 export const SetPersonaDaMoficiare = createAction(
@@ -329,4 +385,19 @@ export const DelContattoPersonaleSuccess = createAction(
 
 export const DelContattoPersonaleError = createAction(
     RubricaActionType.DelContattoPersonaleError
+);
+
+export const DelContatto = createAction(
+    RubricaActionType.DelContatto,
+    props<{ contatto: IContatto | undefined }>()
+    // props<{ persona: IPersonale | undefined, codiceUfficio: string }>()
+);
+
+export const DelContattoSuccess = createAction(
+    RubricaActionType.DelContattoSuccess,
+    //props<{rubrica: Array<IOffice>}>()
+);
+
+export const DelContattoError = createAction(
+    RubricaActionType.DelContattoError
 );

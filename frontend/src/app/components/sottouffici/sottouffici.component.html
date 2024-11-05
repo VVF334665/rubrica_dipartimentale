@@ -6,10 +6,10 @@
                     <fa-icon [icon]="faPlusCircle" size="1x" (click)="onAddClick(item.codiceUfficio)"></fa-icon>
                 </li>
                 <li class="nav-item">
-                    <fa-icon [icon]="faEdit" size="1x" (click)="onEditClick(item.codiceUfficio)"></fa-icon>
+                    <fa-icon [icon]="faEdit" size="1x" (click)="onEditClick(item)"></fa-icon>
                 </li>
                 <li class="nav-item">
-                    <fa-icon [icon]="faTrashAlt" size="1x" (click)="onDelClick()"></fa-icon>
+                    <fa-icon [icon]="faTrashAlt" size="1x" (click)="onDelClick(item)"></fa-icon>
                 </li>
             </ul>
         </div>

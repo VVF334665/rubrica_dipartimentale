@@ -1,13 +1,13 @@
 <div style="display: flex;min-height: 100vh;background-color: #ac1a17;">
-  <vvfrubrica-side-bar style="width: 80px;height: 100vh; position: fixed"></vvfrubrica-side-bar>
-  <div style="padding-left: 80px;width:100vw;box-sizing: border-box;">
-    <div style="display: flex;flex-direction: column;align-items: center;width: 100%">
-      <div
-        style="display: flex;flex-direction: column;align-items: center;width: 100%;padding: 8px 8px;box-sizing: border-box;">
-        <div style="background-color: #f4f4ed;border-radius: 16px;width:100%;min-height: calc(100vh - 16px);">
-          <router-outlet></router-outlet>
+    <vvfrubrica-side-bar style="width: 80px;height: 100vh; position: fixed"></vvfrubrica-side-bar>
+    <div style="padding-left: 80px;width:100vw;box-sizing: border-box;overflow: scroll;">
+        <div style="display: flex;flex-direction: column;align-items: center;width: 100%">
+            <div
+                style="display: flex;flex-direction: column;align-items: center;width: 100%;padding: 8px 8px;box-sizing: border-box;">
+                <div style="background-color: #f4f4ed;border-radius: 16px;width:100%;min-height: calc(100vh - 16px);">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>

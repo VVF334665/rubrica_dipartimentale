@@ -5,7 +5,7 @@ import { IOffice } from '../../../models/IOffice';
 import { IContatto } from '../../../models/IContatto';
 import { AppState } from '../../../store/states/app.state';
 import { Store } from '@ngrx/store';
-import { SetContatto } from '../../../store/actions/rubrica.action';
+import { SaveContatto } from '../../../store/actions/rubrica.action';
 
 @Component({
     selector: 'vvfrubrica-contatti-form',
@@ -49,35 +49,8 @@ export class ContattiFormComponent {
                 contatto: this.contattoForm.get('contatto')?.value
             };
 
-            this._appStore$.dispatch(SetContatto({ contatto: tempContatto, codiceUfficio: this.ufficio.codiceUfficio }));
+            this._appStore$.dispatch(SaveContatto({ contatto: tempContatto, codiceUfficio: this.ufficio.codiceUfficio }));
             this.modalContatti.hide();
-            //console.log('idUfficio: ', this.idUfficio, 'tipo: ', tipoContatto, ' - contatto: ', contatto);
-            /*
-                        let tempUfficio: IOffice = { ...this.ufficio };
-
-                        if (typeof tempUfficio?.contatti === 'undefined') {
-                            console.log('undefined');
-
-                            tempUfficio.contatti = [tempContatto];
-                        } else {
-                            if (tempUfficio.contatti.length > 0) {
-                                console.log('maggione di zero');
-                                let xx = [...tempUfficio.contatti];
-                                xx.push(tempContatto);
-                                tempUfficio.contatti = [...xx];
-                            } else {
-                                tempUfficio.contatti = [tempContatto];
-                            }
-                        }
-                        this.ufficio = { ...tempUfficio };
-
-                        console.log('oioioioo: ', this.ufficio.contatti);
-                        */
-
-            // this.authService.login(username, password).subscribe({
-            //     next: () => this.router.navigate(['/']),
-            //     error: (err) => alert('Errore di autenticazione!'),
-            // });
         }
     }
 }

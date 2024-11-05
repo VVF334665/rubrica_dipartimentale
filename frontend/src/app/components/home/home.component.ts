@@ -22,6 +22,7 @@ import { MatIconModule } from '@angular/material/icon';
 // import { Office } from '../../models/Office';
 import {
     AddElencoUfficiSelezionati,
+    DelContatto,
     DelElencoUfficiSelezionati,
     RubricaActionType,
     SetHomeTabSelected,
@@ -32,6 +33,7 @@ import { UfficiFormComponent } from '../form/uffici-form/uffici-form.component';
 import { selectLoggedUser } from '../../store/selectors/authuser.selector';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { ContattiFormComponent } from '../form/contatti-form/contatti-form.component';
+import { IContatto } from '../../models/IContatto';
 // import { ModalModule } from 'ngx-bootstrap/modal';
 // import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
@@ -209,13 +211,12 @@ export class HomeComponent {
 
     onDelContactClick(codiceUfficio: string = '', idContatto: number = 0) {
         if (confirm('Cancellare contatto?')) {
-            //if (typeof (this.ufficioSelezionato?.contatti) !== 'undefined') {
-            //    if (this.ufficioSelezionato?.contatti?.length > 0) {
-            // this.ufficioSelezionato?.contatti = this.ufficioSelezionato?.contatti?.filter(contact => contact.id != idContatto) ?? [];
-            //    }
-            //u}
-            console.log('Cancellato !!!!!');
-
+            if (typeof (this.ufficioSelezionato?.contatti) !== 'undefined') {
+                if (this.ufficioSelezionato?.contatti?.length > 0) {
+                    let temp: IContatto | undefined = this.ufficioSelezionato?.contatti?.find(contact => contact.id != idContatto);
+                    this._storeApp$.dispatch(DelContatto({ contatto: temp }))
+                }
+            }
         }
     }
 

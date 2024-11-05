@@ -14,7 +14,7 @@ export class NavBarStoreEffects {
             ofType(NavBarActions.changeItemActive),
             withLatestFrom(this.store.select(NavBarSelectors.getItemNavBar)),
             exhaustMap(([{ id }]) => {
-                console.log(id);
+                // console.log(id);
                 return [
                     NavBarActions.deselectAllItem(),
                     NavBarActions.selectItem({ id })

@@ -11,7 +11,7 @@ export class SedeServizio {
     constructor(private chiamata: HttpClient) { }
 
     getUffici(id: string): Observable<Array<ISede>> {
-        console.log(id);
+        // console.log(id);
 
         if (id == '001') {
             return this.chiamata.get<Array<ISede>>(`${this.host}`);

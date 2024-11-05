@@ -62,11 +62,11 @@
                                     <td class="text-end">
                                         <div class="btn-group" role="group" aria-label="Basic example">
                                             <button type="button" class="btn btn-danger px-3" title="Modifica contatto"
-                                                (click)="onContactEditClick(item.id)">
+                                                (click)="onContactEditClick(item)">
                                                 <fa-icon [icon]="faEdit" size="1x"></fa-icon>
                                             </button>
                                             <button type="button" class="btn btn-danger px-3" title="Cancella contatto"
-                                                (click)="onDelClick()">
+                                                (click)="onDelContattoClick(item)">
                                                 <fa-icon [icon]="faTrashAlt" size="1x"></fa-icon>
                                             </button>
                                         </div>
@@ -85,7 +85,7 @@
                                     <th>Ufficio</th>
                                     <th class="text-end">
                                         <button type="button" class="btn btn-danger px-4" title="Aggiungi ufficio"
-                                            (click)="onAddClick()">
+                                            (click)="onAddUfficioClick()">
                                             <fa-icon [icon]="faPlusCircle" size="1x"></fa-icon>
                                         </button>
                                     </th>
@@ -97,10 +97,11 @@
                                     <td class="text-end">
                                         <div class="btn-group" role="group" aria-label="Basic example">
                                             <button type="button" class="btn btn-danger px-3" title="Modifica ufficio">
-                                                <fa-icon [icon]="faEdit" size="1x" (click)="onEditClick()"></fa-icon>
+                                                <fa-icon [icon]="faEdit" size="1x" (click)="onEditUfficioClick(item)"></fa-icon>
                                             </button>
                                             <button type="button" class="btn btn-danger px-3" title="Cancella ufficio">
-                                                <fa-icon [icon]="faTrashAlt" size="1x" (click)="onDelClick()"></fa-icon>
+                                                <fa-icon [icon]="faTrashAlt" size="1x"
+                                                    (click)="onDelUfficioClick(item)"></fa-icon>
                                             </button>
                                         </div>
                                     </td>
@@ -119,7 +120,8 @@
                                     <th>Qualifica</th>
                                     <th class="text-end">
                                         <button type="button" class="btn btn-danger px-4" title="Aggiungi Personale">
-                                            <fa-icon [icon]="faPlusCircle" size="1x" (click)="onAddClick()"></fa-icon>
+                                            <fa-icon [icon]="faPlusCircle" size="1x"
+                                                (click)="onAddPersonaleClick()"></fa-icon>
                                         </button>
                                     </th>
                                 </tr>
@@ -130,13 +132,13 @@
                                     <td>{{item.qualifica}}</td>
                                     <td class="text-end">
                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                            <button type="button" class="btn btn-danger px-3"
-                                                title="Modifica personale">
-                                                <fa-icon [icon]="faEdit" size="1x" (click)="onEditClick()"></fa-icon>
+                                            <button type="button" class="btn btn-danger px-3" title="Modifica personale"
+                                                (click)="onEditPersonaleClick(item)">
+                                                <fa-icon [icon]="faEdit" size="1x"></fa-icon>
                                             </button>
-                                            <button type="button" class="btn btn-danger px-3"
-                                                title="Cancella personale">
-                                                <fa-icon [icon]="faTrashAlt" size="1x" (click)="onDelClick()"></fa-icon>
+                                            <button type="button" class="btn btn-danger px-3" title="Cancella personale"
+                                                (click)="onDelPersonaleClick(item)">
+                                                <fa-icon [icon]="faTrashAlt" size="1x"></fa-icon>
                                             </button>
                                         </div>
                                     </td>
