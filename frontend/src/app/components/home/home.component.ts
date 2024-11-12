@@ -72,7 +72,7 @@ export class HomeComponent {
     ngOnInit() {
         this._storeApp$.dispatch({ type: RubricaActionType.GetHomeRubrica });
         this.homeItems$.subscribe(items => {
-            this.homeItems = [...items?.rubrica];
+            this.homeItems = [...items?.rubrica ?? ''];
             this.testVar.setOffices(this.homeItems);
         });
 

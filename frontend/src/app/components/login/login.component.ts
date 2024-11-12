@@ -2,13 +2,14 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/login.service';
 import { Router } from '@angular/router';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // Importa ReactiveFormsModule
+import { FormControl, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms'; // Importa ReactiveFormsModule
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -17,9 +18,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
   standalone: true,
   styleUrls: ['./login.component.css'],
   providers: [
-    AuthService
+    AuthService,
+    HttpClient
   ],
   imports: [
+    MatIconModule,
     MatCardModule,
     MatButtonModule,
     MatInputModule,
@@ -38,14 +41,9 @@ export class LoginComponent {
   });
 
   constructor(
-    // private fb: FormBuilder,
-    private authService: AuthService,
-    private router: Router
+    private readonly authService: AuthService,
+    private readonly router: Router
   ) {
-    // this.loginForm = this.fb.group({
-    //   username: ['', [Validators.required, Validators.required]],
-    //   password: ['', Validators.required],
-    // });
   }
 
   onSubmit(): void {
@@ -54,7 +52,10 @@ export class LoginComponent {
       const username = this.loginForm.get('username')!.value;
       const password = this.loginForm.get('password')!.value;
       this.authService.login(username ?? '', password ?? '').subscribe({
-        next: () => this.router.navigate(['/']),
+        next: (n) => {
+            if (n) {
+              this.router.navigate(['/'])
+            }},
         error: (err) => alert('Errore di autenticazione!'),
       });
     }
