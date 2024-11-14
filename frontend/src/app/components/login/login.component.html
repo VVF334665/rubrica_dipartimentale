@@ -1,7 +1,10 @@
 <div class="d-flex align-items-center justify-content-center" style="min-height: calc(100vh - 16px);">
-    <mat-card appearance="outlined" class="col-3"
-        style="padding: 16px;border-radius: 16px; background-color: transparent;">
-        <mat-card-header>
+    <mat-card appearance="outlined" class="col-4"
+        style="align-items: center;padding: 16px;margin: 16px;border-radius: 16px; background-color: #fbecac38;border-color: goldenrod;">
+        <div style="text-align: center;">
+            <img src="Img/vigilfuoco_banner.png" alt="logo_CNVVF">
+        </div>
+        <mat-card-header style="text-align: center;">
             <mat-card-title style="font-weight: 600;">Accedi</mat-card-title>
             <mat-card-subtitle style="font-size: small;color:grey;">neccessario per la gestione della
                 rubrica</mat-card-subtitle>
@@ -12,11 +15,12 @@
                     <mat-form-field appearance="outline" style="margin-top: 8px;">
                         <mat-label>Username/Email</mat-label>
                         <input matInput placeholder="Inserisci la tua email" formControlName="username">
-                        <mat-hint>&Egrave; facoltativo il &#64;vigilfuoco.it</mat-hint>
+                        <mat-hint style="color: gray;">&Egrave; facoltativo il &#64;vigilfuoco.it</mat-hint>
                     </mat-form-field>
                     <mat-form-field appearance="outline" style="margin-top: 16px;">
                         <mat-label>Password</mat-label>
-                        <input matInput type="password" placeholder="Inserisci la tua password" formControlName="password">
+                        <input matInput type="password" placeholder="Inserisci la tua password"
+                            formControlName="password">
                         <mat-error *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
                             La password è obbligatoria.
                         </mat-error>
@@ -24,7 +28,8 @@
                 </div>
             </mat-card-content>
             <mat-card-actions align="end">
-                <button type="submit" mat-button [disabled]="loginForm.invalid">Accedi</button>
+                <button [class.colorRed]="!loginForm.invalid" type="submit" mat-flat-button
+                    [disabled]="loginForm.invalid">Accedi</button>
             </mat-card-actions>
         </form>
     </mat-card>

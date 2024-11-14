@@ -1,3 +1,31 @@
 :host ::ng-deep .mdc-text-field--outlined {
     --mdc-outlined-text-field-container-shape: 28px;
 }
+
+.colorRed {
+    background-color: #ac1a17 !important;
+}
+
+::ng-deep .mdc-notched-outline>* {
+    border-color: goldenrod !important;
+}
+
+::ng-deep .mdc-text-field--focused .mdc-notched-outline>* {
+    border-color: goldenrod !important;
+}
+
+::ng-deep .mdc-text-field--focused .mdc-notched-outline label {
+    color: goldenrod !important;
+}
+
+::ng-deep .mdc-text-field--invalid .mdc-notched-outline>* {
+    border-color: #ac1a17 !important;
+}
+
+::ng-deep .mdc-text-field--invalid .mdc-notched-outline label {
+    border-color: #ac1a17 !important;
+}
+/* 
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: goldenrod;
+} */

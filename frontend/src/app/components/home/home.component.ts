@@ -37,7 +37,6 @@ import { IContatto } from '../../models/IContatto';
 // import { ModalModule } from 'ngx-bootstrap/modal';
 // import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
-
 @Component({
     selector: 'vvfrubrica-home',
     standalone: true,
@@ -98,7 +97,6 @@ export class HomeComponent {
                 this.visualizeActionBar = true;
             }
         });
-
         this._storeApp$.dispatch({ type: RubricaActionType.GetHomeRubrica });
         this.homeItems$.subscribe(items => {
             this.homeItems = [...items?.rubrica];
