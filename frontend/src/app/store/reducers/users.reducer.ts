@@ -21,6 +21,13 @@ export function usersReducer(
         case UsersActionType.SetUserDaModificareSuccess:
             temp['utenteDaModificare'] = null;
             return temp;
+        case UsersActionType.SaveUserSuccess:
+            console.log("KKKKKKKKKKKKKKKK");
+            temp['utenteDaModificare'] = null;
+            return temp;
+        case UsersActionType.GetProfileSuccess:
+            temp['profileList'] = action.profileList;
+            return temp;
         default:
             return usersState;
     }

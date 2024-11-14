@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { AppState } from '../../store/states/app.state';
 import { Store } from '@ngrx/store';
 import { IUser } from '../../models/IUser';
-import { selectUsersList } from '../../store/selectors/users.selector';
-import { DelUser, SetUserDaModificare, UsersActionType } from '../../store/actions/users.action';
+import { selectProfile, selectUsersList } from '../../store/selectors/users.selector';
+import { DelUser, SaveUserSuccess, SetUserDaModificare, UsersActionType } from '../../store/actions/users.action';
 import { NgFor } from '@angular/common';
-import { faEdit, faPlusCircle, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faPlusCircle, faTrashAlt, faUserCircle, faUsers } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { UserFormComponent } from '../form/user-form/user-form.component';
+import { IProfili } from '../../models/IProfili';
 
 @Component({
     selector: 'vvfrubrica-users',
@@ -21,19 +22,28 @@ export class UsersComponent {
     faPlusCircle = faPlusCircle;
     faEdit = faEdit;
     faTrashAlt = faTrashAlt;
+    faUsers = faUsers;
 
     usersList$ = this._storeApp$.select(selectUsersList);
     usersList: Array<IUser> = [];
 
-    modalUSers?: BsModalRef | null;
+    profileList$ = this._storeApp$.select(selectProfile);
+    profileList: Array<IProfili> = [];
+
+    modalUsers?: BsModalRef | null;
 
     constructor(private _storeApp$: Store<AppState>, private modalService: BsModalService) { }
 
     ngOnInit(): void {
         this._storeApp$.dispatch({ type: UsersActionType.GetUsers });
+        this._storeApp$.dispatch({ type: UsersActionType.GetProfile });
 
         this.usersList$.subscribe(items => {
             this.usersList = [...(items ?? [])]
+        });
+
+        this.profileList$.subscribe(items => {
+            this.profileList = [...(items ?? [])]
         });
     }
 
@@ -69,9 +79,16 @@ export class UsersComponent {
             backdrop: true,
             // backdrop: 'static',
             ignoreBackdropClick: true,
-            initialState, class: 'gray modal-xl',
+            initialState, class: 'gray modal-md',
         };
 
-        this.modalUSers = this.modalService.show(UserFormComponent, config);
+        this.modalUsers = this.modalService.show(UserFormComponent, config);
+        this.modalUsers.onHide?.subscribe(data => {
+            this._storeApp$.dispatch(SaveUserSuccess());
+            //console.log(data)
+            if (data) {
+                // you can check if the modal returns any data or not
+            }
+        });
     }
 }

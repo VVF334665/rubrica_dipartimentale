@@ -13,12 +13,13 @@ export const selectUtenteDaModificare = createSelector(
     (state) => state.utenteDaModificare
 );
 
-/*
-export const selectLoggedUser = createSelector(
-    selectAuthUserState,
-    (state) => state.decodeToken
+
+export const selectProfile = createSelector(
+    selectUsersState,
+    (state) => state.profileList
 );
 
+/*
 export const setToken = createSelector(
     selectAuthUserState,
     (state) => state

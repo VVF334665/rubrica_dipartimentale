@@ -1461,12 +1461,28 @@
         {
             "id": 1,
             "username": "utente1",
-            "profilo": 1,
-            "codiceUfficio": "300"
+            "profilo": 2,
+            "descrizioneProfilo": "localAdmin",
+            "codiceUfficio": "300",
+            "uffici": [
+                {
+                    "codiceUfficio": "300",
+                    "descrizione": "Ufficio 1"
+                },
+                {
+                    "codiceUfficio": "301",
+                    "descrizione": "Ufficio 2"
+                },
+                {
+                    "codiceUfficio": "300",
+                    "descrizione": "Ufficio 3"
+                }
+            ]
         },
         {
             "id": 2,
             "username": "utente2",
+            "descrizioneProfilo": "admin",
             "profilo": 1,
             "codiceUfficio": "305"
         },
@@ -1474,18 +1490,21 @@
             "id": 3,
             "username": "utente3",
             "profilo": 2,
+            "descrizioneProfilo": "localAdmin",
             "codiceUfficio": "300"
         },
         {
             "id": 4,
             "username": "utente4",
             "profilo": 2,
+            "descrizioneProfilo": "localAdmin",
             "codiceUfficio": "300"
         },
         {
             "id": 5,
             "username": "utente5",
             "profilo": 2,
+            "descrizioneProfilo": "localAdmin",
             "codiceUfficio": "300"
         }
     ],

@@ -6,6 +6,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '../states/app.state';
 import { UsersService } from '../../services/users.service';
 import { UsersActionType } from '../actions/users.action';
+import { ProfileService } from '../../services/profile.service';
 
 @Injectable()
 export class UserEffects {
@@ -25,23 +26,39 @@ export class UserEffects {
         )
     );
 
-    /*loadDelUser$ = createEffect(
+    loadProfileList$ = createEffect(
+        () => this.actions$.pipe(
+            ofType(UsersActionType.GetProfile),
+            exhaustMap(
+                () => this.profileService.getProfili()
+                    .pipe(
+                        map((result: any) => {
+                            return ({ type: UsersActionType.GetProfileSuccess, profileList: result })
+                        }),
+                        catchError(() => of({ type: UsersActionType.GetProfileError }))
+                    )
+            )
+        )
+    );
+
+    loadDelUser$ = createEffect(
         () => this.actions$.pipe(
             ofType(UsersActionType.DelUser),
             map((action) => action),
             mergeMap(
                 (id: number) => this.usersService.delUser(id)
                     .pipe(
-                        map(result => ({ type: UsersActionType.GetUsersSuccess, id: id })),
-                        catchError(error => of({ type: UsersActionType.GetUsersError, error: error }))
+                        map(result => ({ type: UsersActionType.DelUserSuccess, id: id })),
+                        catchError(error => of({ type: UsersActionType.DelUserError, error: error }))
                     )
             )
         )
-    );*/
+    );
 
     constructor(
         private actions$: Actions,
         private usersService: UsersService,
+        private profileService: ProfileService,
         private _appStore$: Store<AppState>
     ) { }
 }

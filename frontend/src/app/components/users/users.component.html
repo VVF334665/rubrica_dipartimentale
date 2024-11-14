@@ -1,7 +1,8 @@
 
 <div class="row">
-    <div class="col">
-        <h1 class="text-center fs-3">Gestione Utenti</h1>
+    <div class="col text-center pt-4">
+        <fa-icon [icon]="faUsers" size="3x"></fa-icon>
+        <span class="fs-1 ms-3 fw-bold">Gestione Utenti</span>
         <hr>
     </div>
 </div>
@@ -12,7 +13,8 @@
                 <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Username</th>
+                        <th>Utente</th>
+                        <th>Profilo</th>
                         <th class="text-end">
                             <button type="button" class="btn btn-danger px-3" title="Inserisci utente"
                                 (click)="onAddClick()">
@@ -25,6 +27,7 @@
                     <tr *ngFor="let user of usersList??[]">
                         <td>{{user.id}} </td>
                         <td>{{user.username}}</td>
+                        <td>{{user.descrizioneProfilo }}</td>
                         <td class="text-end">
                             <div class="btn-group" role="group" aria-label="Basic example">
                                 <button type="button" class="btn btn-danger px-3" title="Modifica utente"

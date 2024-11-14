@@ -5,6 +5,7 @@ export const environment = {
     apiGetHome: 'http://localhost:3000/ufficiRubrica?tipologiaUfficio=',  // https://localhost:7252/api/Rubrica/Ufficio/Read?CodiceUfficio=UfficiCentrali
     apiElencoUffici: 'http://localhost:3000/elencoUffici',
     apiUsers: 'http://localhost:3000/users',
+    apiProfile: 'http://localhost:3000/profile',
 
     apiGetUfficiPeriferici: 'http://localhost:3000/GetChildSedeFromWauc?id=',
     apiGetChildSedeFromWauc: 'http://localhost:3000/GetChildSedeFromWauc?id=',
