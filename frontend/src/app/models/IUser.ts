@@ -3,6 +3,6 @@ export interface IUser {
     username: string,
     profilo: number,
     descrizioneProfilo: string,
-    uffici?: [];
+    uffici?: any[];
     //nome?: string;
 }

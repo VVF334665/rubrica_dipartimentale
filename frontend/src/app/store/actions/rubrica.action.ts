@@ -23,6 +23,13 @@ export enum RubricaActionType {
     GetElencoUfficiSuccess = '[Get Elenco Uffici] Get Uffici Success',
     GetElencoUfficiError = '[Get Elenco Uffici] Get Uffici Error',
 
+    GetElencoUfficiSelezionatoPerModifica = '[Get Elenco Uffici Selezionato] Get Uffici Selezionato',
+    GetElencoUfficiSelezionatoPerModificaSuccess = '[Get Elenco Uffici Selezionato] Get Uffici Success Selezionato',
+    GetElencoUfficiSelezionatoPerModificaError = '[Get Elenco Uffici Selezionato] Get Uffici Error Selezionato',
+    SetElencoUfficiSelezionatoPerModifica = '[SetElencoUfficiSelezionatoPerModifica] SetElencoUfficiSelezionatoPerModifica',
+    SetElencoUfficiSelezionatoPerModificaSuccess = '[SetElencoUfficiSelezionatoPerModifica Success] SetElencoUfficiSelezionatoPerModifica Success',
+    SetElencoUfficiSelezionatoPerModificaError = '[SetElencoUfficiSelezionatoPerModifica Error] SetElencoUfficiSelezionatoPerModifica Error',
+
     GetPersonale = '[Get Personale] Get Personale',
     GetPersonaleSuccess = '[Get Personale] Get Personale',
     GetPersonaleError = '[Get Personale] Get Personale Error',
@@ -146,6 +153,34 @@ export const GetElencoUfficiSuccess = createAction(
 
 export const GetElencoUfficiError = createAction(
     RubricaActionType.GetElencoUfficiError
+);
+
+export const GetElencoUfficiSelezionatoPerModifica = createAction(
+    RubricaActionType.GetElencoUfficiSelezionatoPerModifica,
+    //props<{rubrica: Array<IOffice>}>()
+);
+
+export const GetElencoUfficiSelezionatoPerModificaSuccess = createAction(
+    RubricaActionType.GetElencoUfficiSelezionatoPerModificaSuccess,
+    //props<{rubrica: Array<IOffice>}>()
+);
+
+export const GetElencoUfficiSelezionatoPerModificaError = createAction(
+    RubricaActionType.GetElencoUfficiSelezionatoPerModificaError
+);
+
+export const SetElencoUfficiSelezionatoPerModifica = createAction(
+    RubricaActionType.SetElencoUfficiSelezionatoPerModifica,
+    props<{ ufficio: IOffice|null }>()
+);
+
+export const SetElencoUfficiSelezionatoPerModificaSuccess = createAction(
+    RubricaActionType.SetElencoUfficiSelezionatoPerModificaSuccess,
+    //props<{rubrica: Array<IOffice>}>()
+);
+
+export const SetElencoUfficiSelezionatoPerModificaError = createAction(
+    RubricaActionType.SetElencoUfficiSelezionatoPerModificaError
 );
 
 export const GetPersonale = createAction(

@@ -1,5 +1,5 @@
 import { IOffice } from "../../models/IOffice";
-import { RubricaActionType, SaveContatto } from "../actions/rubrica.action";
+import { RubricaActionType, SaveContatto, SetElencoUfficiSelezionatoPerModifica } from "../actions/rubrica.action";
 import { inizializeRubricaState, IRubricaState } from "../states/rubrica.state";
 
 export function rubricaReducer(
@@ -125,6 +125,9 @@ export function rubricaReducer(
             return temp;
         case RubricaActionType.SaveContattoPersonale:
             console.log('Contatto Salvato !!!!!!');
+            return temp;
+        case RubricaActionType.SetElencoUfficiSelezionatoPerModifica:
+            temp['elencoUfficiSelezionatoPerModifica']=action.ufficio;
             return temp;
         default:
             return rubricaState

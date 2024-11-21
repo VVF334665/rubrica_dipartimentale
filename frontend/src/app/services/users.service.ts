@@ -20,8 +20,13 @@ export class UsersService {
         return this.http.get<IUser[]>(this.host + queryString);
     }
 
+    saveUser(user: IUser) {
+        return of({ result: true });
+        //return this.http.delete(this.host + '/' + id);
+    }
+
     delUser(id: number) {
-        return of({result: true});
+        return of({ result: true });
         //return this.http.delete(this.host + '/' + id);
     }
 }

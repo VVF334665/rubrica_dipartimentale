@@ -7,6 +7,7 @@ import { AppState } from '../states/app.state';
 import { UsersService } from '../../services/users.service';
 import { UsersActionType } from '../actions/users.action';
 import { ProfileService } from '../../services/profile.service';
+import { IUser } from '../../models/IUser';
 
 @Injectable()
 export class UserEffects {
@@ -50,6 +51,20 @@ export class UserEffects {
                     .pipe(
                         map(result => ({ type: UsersActionType.DelUserSuccess, id: id })),
                         catchError(error => of({ type: UsersActionType.DelUserError, error: error }))
+                    )
+            )
+        )
+    );
+
+    loadSaveUser$ = createEffect(
+        () => this.actions$.pipe(
+            ofType(UsersActionType.SaveUser),
+            map((action) => action),
+            mergeMap(
+                (user: IUser) => this.usersService.saveUser(user)
+                    .pipe(
+                        map(result => ({ type: UsersActionType.SaveUserSuccess, user: user })),
+                        catchError(error => of({ type: UsersActionType.SaveUserError, error: error }))
                     )
             )
         )
