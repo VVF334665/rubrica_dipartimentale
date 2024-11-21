@@ -20,7 +20,8 @@
     </div>
     <select class="form-select" size="15" name="" id="">
         <option *ngFor="let ufficio of elencoUffici" [value]="ufficio.codiceUfficio"
-            [selected]="ufficio.codiceUfficio==codiceUfficioPrecedente?'selected':''">{{ufficio.nomeUfficio}}</option>
+            [selected]="ufficio.codiceUfficio==codiceUfficioPrecedente?'selected':''"
+            (dblclick)="dblClick(ufficio)">{{ufficio.nomeUfficio}}</option>
     </select>
 </div>
 <div class="modal-footer">

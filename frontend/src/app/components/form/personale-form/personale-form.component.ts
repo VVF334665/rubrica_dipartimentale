@@ -3,7 +3,7 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { IPersonale } from '../../../models/IPersonale';
 import { AppState } from '../../../store/states/app.state';
 import { Store } from '@ngrx/store';
-import { selectPersonaDaModificare, selectUfficioSelezionato } from '../../../store/selectors/rubrica.selector';
+import { selectElencoUfficiSelezionatoPerModifica, selectPersonaDaModificare, selectUfficioSelezionato } from '../../../store/selectors/rubrica.selector';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgFor } from '@angular/common';
 import { faEdit, faPlusCircle, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
@@ -33,6 +33,9 @@ export class PersonaleFormComponent {
     persona: IPersonale = { id: 0, cognome: '', nome: '', codiceUfficio: '' };
     ufficioSelezionato$ = this._storeApp$.select(selectUfficioSelezionato);
     ufficioSelezionato: IOffice | null = null;
+
+    elencoUfficiSelezionatoPerModifica$ = this._storeApp$.select(selectElencoUfficiSelezionatoPerModifica);
+    //elencoUfficiSelezionatoPerModifica: IOffice | null = null;
 
     personaForm: FormGroup;
 
@@ -69,6 +72,15 @@ export class PersonaleFormComponent {
         this.ufficioSelezionato$.subscribe(items => {
             this.ufficioSelezionato = { ...items }
             this.personaForm.patchValue({ nomeUfficio: this.ufficioSelezionato?.nomeUfficio ?? '' });
+        });
+
+        this.elencoUfficiSelezionatoPerModifica$.subscribe(temp => {
+            // console.log("ssssssss: ", temp);
+
+            if (!Array.isArray(temp)) {
+                this.personaForm.patchValue({ codiceUfficio: temp.codiceUfficio, nomeUfficio: temp.nomeUfficio })
+            }
+            //this.elencoUfficiSelezionatoPerModifica = temp
         });
     }
 

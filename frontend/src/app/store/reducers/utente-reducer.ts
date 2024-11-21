@@ -1,8 +1,8 @@
 import { createSelector } from "@ngrx/store";
-import { IUser } from "../../models/IUser";
+import { IUserOld } from "../../models/IUserOld";
 
 export interface UserState {
-  user: Array<IUser>;
+  user: Array<IUserOld>;
 }
 
 const inizializzazione: UserState = {

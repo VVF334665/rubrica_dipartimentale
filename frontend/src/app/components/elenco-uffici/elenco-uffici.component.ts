@@ -8,6 +8,8 @@ import { NgFor } from '@angular/common';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
+import { GetElencoUffici, RubricaActionType, SetElencoUfficiSelezionatoPerModifica } from '../../store/actions/rubrica.action';
+import { Actions, ofType } from '@ngrx/effects';
 
 @Component({
     selector: 'vvfrubrica-elenco-uffici',
@@ -32,6 +34,8 @@ export class ElencoUfficiComponent {
     constructor(public modal: BsModalRef, private _appStore$: Store<AppState>) { }
 
     ngOnInit() {
+        this._appStore$.dispatch(GetElencoUffici());
+
         this.elencoUffici$.subscribe(uff => {
             this.elencoUffici = uff;
             this.elencoUfficiBack = uff;
@@ -49,6 +53,12 @@ export class ElencoUfficiComponent {
     }
 
     searchInArray() {
-        this.elencoUffici = this.elencoUfficiBack.filter(uff => uff.nomeUfficio?.toLocaleLowerCase().includes(this.search.toLocaleLowerCase()) );
+        this.elencoUffici = this.elencoUfficiBack.filter(uff => uff.nomeUfficio?.toLocaleLowerCase().includes(this.search.toLocaleLowerCase()));
+    }
+
+    dblClick(ufficio: IOffice) {
+        // console.log("OOOOOOOOOOOOOOOOOOOOO: ", ufficio);
+        this._appStore$.dispatch(SetElencoUfficiSelezionatoPerModifica({ufficio: ufficio}));
+        this.modal.hide();
     }
 }

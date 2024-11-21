@@ -1,0 +1,48 @@
+
+<div class="row">
+    <div class="col text-center pt-4">
+        <fa-icon [icon]="faUsers" size="3x"></fa-icon>
+        <span class="fs-1 ms-3 fw-bold">Gestione Utenti</span>
+        <hr>
+    </div>
+</div>
+<div class="row">
+    <div class="col m-3">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Utente</th>
+                        <th>Profilo</th>
+                        <th class="text-end">
+                            <button type="button" class="btn btn-danger px-3" title="Inserisci utente"
+                                (click)="onAddClick()">
+                                <fa-icon [icon]="faPlusCircle" size="1x"></fa-icon>
+                            </button>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let user of usersList??[]">
+                        <td>{{user.id}} </td>
+                        <td>{{user.username}}</td>
+                        <td>{{user.descrizioneProfilo }}</td>
+                        <td class="text-end">
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" class="btn btn-danger px-3" title="Modifica utente"
+                                    (click)="onEditClick(user)">
+                                    <fa-icon [icon]="faEdit" size="1x"></fa-icon>
+                                </button>
+                                <button type="button" class="btn btn-danger px-3" title="Cancella utente"
+                                    (click)="onDelClick(user.id)">
+                                    <fa-icon [icon]="faTrashAlt" size="1x"></fa-icon>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

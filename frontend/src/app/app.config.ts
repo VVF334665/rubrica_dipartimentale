@@ -15,6 +15,7 @@ import { authInterceptor } from './interceptors/auth.interceptor';
 // import { cfVariableReducer } from './store/reducers/cf-variable.reducer';
 import { NavBarStoreEffects } from './store/NavBarStore/navBarStore.effects';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { UserEffects } from './store/effects/users.effects';
 // import { cfVariableReducer } from './store/reducers/cf-variable.reducer';
 
 export const appConfig: ApplicationConfig = {
@@ -22,7 +23,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideAnimationsAsync(),
     provideStore(appState),
-    provideEffects(RubricaEffects),
+    provideEffects(RubricaEffects,UserEffects),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
     provideRouterStore(),
     provideHttpClient(),
