@@ -1,4 +1,4 @@
-<div class="divCardSedi" style="background-color: {{itemDst.coloreSfondo}};">
+<div class="divCardSedi" [ngStyle]="{'background-color': itemDst.coloreSfondo}">
     <div class="divCardButtonBar">
         <ul class="nav nav-pills flex-column mx-auto my-auto" *ngIf="visualizeActionBar">
                 <li class="nav-item">
@@ -13,7 +13,6 @@
         </ul>
     </div>
     <section class="divCardSediContent">
-        <input type="checkbox" name="collapse" id="{{itemDst.codiceUfficio}}" (click)="leggiSottoAlbero()">
         <h2 class="handle">
             <label for="{{itemDst.codiceUfficio}}">{{itemDst.nomeUfficio}}<br>
                 <span class="smallLabelFont">{{itemDst.nomeTitolare}}</span>
@@ -21,8 +20,7 @@
         </h2>
         <div *ngIf="idSelectedOfficeComponent==itemDst.codiceUfficio">
             <div *ngFor="let office of elencoUfficiSelezionati">
-                <p (click)="onClickUfficioSelezionato()" style=" border-color: {{ufficioSelezionato?.coloreSfondo}};"
-                    *ngIf="office?.codiceUfficioSuperiore!=''">
+                <p (click)="onClickUfficioSelezionato()" [ngStyle]="{'border-color': ufficioSelezionato?.coloreSfondo}" *ngIf="office?.codiceUfficioSuperiore">
                     {{office?.nomeUfficio}}
                 </p>
             </div>

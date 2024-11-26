@@ -1,4 +1,4 @@
-import { createFeatureSelector, createSelector } from "@ngrx/store";
+import { createAction, createFeatureSelector, createSelector } from "@ngrx/store";
 import { ItemNavBar } from "../Interface_store/ItemNavBar";
 
 export const selectNavBarStore = createFeatureSelector<ItemNavBar[]>('barNav');
@@ -14,4 +14,9 @@ export const getItemNavBar = createSelector(
         }
         return 0;
     })
+)
+
+export const getWithPathRouter = (pathRouter: string) => createSelector(
+    selectNavBarStore,
+    (item: ItemNavBar[]) => item.find(x => x.pathRouter == pathRouter)?.id
 )

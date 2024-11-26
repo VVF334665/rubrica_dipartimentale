@@ -4,6 +4,7 @@ import { Store } from "@ngrx/store";
 import * as NavBarActions from './navBarStore.actions';
 import * as NavBarSelectors from './navBarStore.selectors';
 import { exhaustMap, withLatestFrom } from "rxjs";
+import { concatLatestFrom } from '@ngrx/operators';
 
 @Injectable()
 export class NavBarStoreEffects {
@@ -18,6 +19,18 @@ export class NavBarStoreEffects {
                 return [
                     NavBarActions.deselectAllItem(),
                     NavBarActions.selectItem({ id })
+                ]
+            })
+        )
+    );
+
+    fixReloadPage$ = createEffect(() =>
+        this.actions$.pipe(
+            ofType(NavBarActions.fixReloadPage),
+            concatLatestFrom(({ pathRouter }) => this.store.select(NavBarSelectors.getWithPathRouter(pathRouter))),
+            exhaustMap(([, val]) => {
+                return [
+                    NavBarActions.changeItemActive({ id: val ?? 0 })
                 ]
             })
         )
