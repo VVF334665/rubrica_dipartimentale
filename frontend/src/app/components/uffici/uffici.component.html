@@ -1,7 +1,7 @@
 <div class="divCardSedi" [ngStyle]="{'background-color': itemDst.coloreSfondo}">
     <div class="divCardButtonBar">
         <ul class="nav nav-pills flex-column mx-auto my-auto" *ngIf="visualizeActionBar">
-                <li class="nav-item">
+            <li class="nav-item">
                 <fa-icon [icon]="faPlusCircle" size="1x" (click)="onAddClick()"></fa-icon>
             </li>
             <li class="nav-item">
@@ -12,15 +12,23 @@
             </li>
         </ul>
     </div>
-    <section class="divCardSediContent">
-        <h2 class="handle">
+    <!-- <section class="divCardSediContent" [ngStyle]='{background: (codiceUfficioSelezionato$ | async) == itemDst.codiceUfficio ? colorSelected(itemDst.coloreSfondo) : "white"}'> -->
+    <section class="divCardSediContent"
+        [ngStyle]='{background: colorSelected(itemDst.coloreSfondo, (codiceUfficioSelezionato$ | async) == itemDst.codiceUfficio)}'>
+        <h2 class="handle" (click)="leggiSottoAlbero()" (keyup)="leggiSottoAlbero()">
             <label for="{{itemDst.codiceUfficio}}">{{itemDst.nomeUfficio}}<br>
                 <span class="smallLabelFont">{{itemDst.nomeTitolare}}</span>
             </label>
         </h2>
-        <div *ngIf="idSelectedOfficeComponent==itemDst.codiceUfficio">
-            <div *ngFor="let office of elencoUfficiSelezionati">
-                <p (click)="onClickUfficioSelezionato()" [ngStyle]="{'border-color': ufficioSelezionato?.coloreSfondo}" *ngIf="office?.codiceUfficioSuperiore">
+        <div *ngIf="idSelectedOfficeComponent$ | async">
+            <div *ngFor="let office of elencoUfficiSelezionati$ | async">
+                <p (keyup)="onClickUfficioSelezionato()" (click)="onClickUfficioSelezionato()"
+                    [ngStyle]="{
+                        'border-color': (coloreUfficioSelezionato$ | async),
+                        background: colorSelected(itemDst.coloreSfondo, (codiceUfficioSelezionato$ | async) == office.codiceUfficio),
+                        'font-size': '1.1rem'
+                        }"
+                    *ngIf="office?.codiceUfficioSuperiore">
                     {{office?.nomeUfficio}}
                 </p>
             </div>

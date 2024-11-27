@@ -62,7 +62,8 @@ body {
 
 .divCardSedi {
     padding: 1px 1px 1px 0px;
-    background-color: red;
+    /* background-color: red; */
+    background-color: #ac1a17;
     border-radius: 10px;
     margin-left: 10px;
     margin-right: 5px;
@@ -109,7 +110,8 @@ body {
 .divCardSediContent .handle {
     margin: 0;
     /* font-size: 1.125em; */
-    font-size: 2.5rem;
+    /* font-size: 2.5em; */
+    font-size: 2.0rem;
     font-weight: bold;
     line-height: 1.2em;
 }
@@ -144,7 +146,8 @@ body {
 }
 
 .smallLabelFont {
-    font-size: 1.60rem;
+    /* font-size: 1.60rem; */
+    font-size: 1.20rem;
 }
 
 .accordion p:last-child {

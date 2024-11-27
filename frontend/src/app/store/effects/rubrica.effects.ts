@@ -8,11 +8,14 @@ import { Store } from "@ngrx/store";
 
 @Injectable()
 export class RubricaEffects {
-    loadHome$ = createEffect(
-        () => this.actions$.pipe(
+
+    constructor(private readonly actions$: Actions, private readonly rubricaService$: RubricaService, private readonly appStore$: Store<AppState>) { }
+
+    loadHome$ = createEffect(() =>
+        this.actions$.pipe(
             ofType(RubricaActionType.GetHomeRubrica),
-            exhaustMap(
-                () => this.rubricaService$.getHome()
+            exhaustMap(() =>
+                this.rubricaService$.getHome()
                     .pipe(
                         map((result: any) => {
                             return ({ type: RubricaActionType.GetHomeRubricaSuccess, rubrica: result })
@@ -54,9 +57,4 @@ export class RubricaEffects {
         )
     );
 
-    constructor(
-        private actions$: Actions,
-        private rubricaService$: RubricaService,
-        private appStore$: Store<AppState>
-    ) { }
 }

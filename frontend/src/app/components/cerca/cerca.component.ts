@@ -3,6 +3,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IOffice } from '../../models/IOffice';
 import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 import { RubricaService } from '../../services/rubrica.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { RubricaService } from '../../services/rubrica.service';
     standalone: true,
     templateUrl: './cerca.component.html',
     styleUrl: './cerca.component.css',
-    imports: [FontAwesomeModule, FormsModule],
+    imports: [FontAwesomeModule, FormsModule, MatInputModule],
 })
 export class CercaComponent {
     faSearch = faSearch;

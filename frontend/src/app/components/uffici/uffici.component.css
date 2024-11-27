@@ -3,7 +3,7 @@ p {
   font-weight: bold ;
   cursor: pointer;
   border: 1px solid black;
-  border-radius: 10px;
+  border-radius: 16px;
   padding: 1rem;
 }
 
@@ -14,7 +14,7 @@ p {
   /* Allinea i figli in alto */
   border: 1px solid #ccc;
   /* Opzionale: aggiungi un bordo */
-  border-radius: 10px;
+  border-radius: 16px;
   /* Imposta il raggio del bordo arrotondato */
   /* padding: 10px; */
   /* Opzionale: aggiungi spaziatura interna */
@@ -28,7 +28,7 @@ p {
   border: 1px solid red;
   /* #ccc; */
   margin-left: 2em;
-  border-radius: 10px;
+  border-radius: 16px;
   margin-top: 0px;
   padding-top: 0px;
   width: 99%;
@@ -40,7 +40,7 @@ p {
   border: 1px solid red;
   /* #ccc; */
   margin-left: 4em;
-  border-radius: 10px;
+  border-radius: 16px;
   margin: 0px;
   padding: 0px;
   width: 99%;

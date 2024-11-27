@@ -6,33 +6,27 @@
         <vvfrubrica-toprightbar [checkTopRightSelected]="leftComponentSelected"></vvfrubrica-toprightbar>
     </div>
 </div>
-
-<div class="row">
-    <div class="col-sm-12 col-md-5">
+<div class="row" style="padding-bottom: 1rem">
+    <div class="col-sm-12 col-md-5" style="max-height: calc(100vh - 120px); overflow-y: auto;">
         <vvfrubrica-uffici *ngFor="let item of homeItems" [itemDst]="item" (back)="receiveBack($event)"
             [visualizeActionBar]="visualizeActionBar">
         </vvfrubrica-uffici>
     </div>
 
-    <div class="col-sm-12 col-md-7">
+    <div class="col-sm-12 col-md-7" style="max-height: calc(100vh - 120px); overflow-y: auto;">
         <div class="row">
-            <div class="col text-center">
+            <div class="col text-center" style="padding: 0em;">
                 <div *ngIf="leftComponentSelected=='ufficiDipendenti'">
                     <h1>
                         <fa-icon [icon]="faAddressBook" size="1x" [style.fill-opacity]=".2" class="mx-auto"></fa-icon>
                         Elenco Uffici
                     </h1>
-                    <hr>
+                    <hr style="margin-left: calc(var(--bs-gutter-x) * .5); margin-right: calc(var(--bs-gutter-x) * .5);">
                     <vvfrubrica-sottouffici (clickSubOffice)="clickSubOffice($event)"
                         [visualizeActionBar]="visualizeActionBar" class="text-start">
                     </vvfrubrica-sottouffici>
                 </div>
                 <div *ngIf="leftComponentSelected=='componenti'" class="divPersonaleContainer">
-                    <!-- <h2 class="text-center">
-                        <fa-icon [icon]="faAddressBook" size="1x" [style.fill-opacity]=".2" class="mx-auto"></fa-icon>
-                        Contatti
-                    </h2> -->
-                    <!-- <hr> -->
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <tbody>
@@ -58,7 +52,7 @@
                     <vvfrubrica-personale></vvfrubrica-personale>
                 </div>
                 <div class="divBorder" *ngIf="leftComponentSelected=='descrizione'"
-                    style="border-color: {{ufficioSelezionato?.coloreSfondo}};">
+                    style="border-color: '{{ufficioSelezionato?.coloreSfondo}}'">
                     <h2 class="text-center">
                         <fa-icon [icon]="faAddressBook" size="1x" [style.fill-opacity]=".2" class="mx-auto"></fa-icon>
                         Descrizione

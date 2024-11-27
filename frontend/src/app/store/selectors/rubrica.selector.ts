@@ -17,9 +17,9 @@ export const selectElencoUffici = createSelector(
     (state: any) => state.elencoUffici
 );
 
-export const selectElencoUfficiSelezionatoPerModifica=createSelector(
+export const selectElencoUfficiSelezionatoPerModifica = createSelector(
     selectRubricaState,
-    (state:any) => state.elencoUfficiSelezionatoPerModifica
+    (state: any) => state.elencoUfficiSelezionatoPerModifica
 );
 
 export const selectUfficiPeriferici = createSelector(
