@@ -11,7 +11,7 @@
         {
             "codiceUfficio": "300",
             "codiceUfficioSuperiore": "",
-            "nomeTitolare": "Prefetto",
+            "nomeTitolare": "Prefetto Visconti Attilio",
             "nomeUfficio": "Capo Dipartimento",
             "coloreSfondo": "#495380",
             "ordineVisualizzazione": 1,
@@ -21,98 +21,98 @@
                 {
                     "id": 1,
                     "tipo": "telefono",
-                    "contatto": "444444444444"
+                    "contatto": "06 465 37310"
                 },
                 {
                     "id": 2,
                     "tipo": "email",
-                    "contatto": "444444444444"
+                    "contatto": "segreteria.capodip.vvf@vigilfuoco.it"
                 },
                 {
                     "id": 3,
                     "tipo": "pec",
-                    "contatto": "444444444444"
+                    "contatto": "-"
                 },
                 {
                     "id": 4,
                     "tipo": "voip",
-                    "contatto": "444444444444"
+                    "contatto": "70000"
                 }
             ],
             "personale": [
                 {
                     "id": 1,
-                    "cognome": "Cognome",
-                    "nome": "Nome",
-                    "qualifica": "qualifica",
+                    "cognome": "Di Mezza",
+                    "nome": "Stefania",
+                    "qualifica": "ILGE",
                     "codiceUfficio": "300",
                     "contatti": [
                         {
                             "id": 5,
                             "tipo": "telefono",
-                            "contatto": "1234567"
+                            "contatto": "26596"
                         },
                         {
                             "id": 6,
                             "tipo": "email",
-                            "contatto": "nome.cognome@vigilfuoco.it"
+                            "contatto": "stefania.dimezza@vigilfuoco.it"
                         }
                     ]
                 },
                 {
                     "id": 2,
-                    "cognome": "Cognome",
-                    "nome": "Nome",
-                    "qualifica": "qualifica",
+                    "cognome": "Pelliccia",
+                    "nome": "Rossana",
+                    "qualifica": "ILGESC",
                     "codiceUfficio": "300",
                     "contatti": [
                         {
                             "id": 7,
                             "tipo": "telefono",
-                            "contatto": "1234567"
+                            "contatto": "27397"
                         },
                         {
                             "id": 8,
                             "tipo": "email",
-                            "contatto": "nome.cognome@vigilfuoco.it"
+                            "contatto": "rossana.pelliccia@vigilfuoco.it"
                         }
                     ]
                 },
                 {
                     "id": 3,
-                    "cognome": "Cognome",
-                    "nome": "Nome",
-                    "qualifica": "qualifica",
+                    "cognome": "Savini",
+                    "nome": "Laura",
+                    "qualifica": "ILGE",
                     "codiceUfficio": "300",
                     "contatti": [
                         {
                             "id": 9,
                             "tipo": "telefono",
-                            "contatto": "1234567"
+                            "contatto": "27393"
                         },
                         {
                             "id": 10,
                             "tipo": "email",
-                            "contatto": "nome.cognome@vigilfuoco.it"
+                            "contatto": "laura.savini@vigilfuoco.it"
                         }
                     ]
                 },
                 {
                     "id": 4,
-                    "cognome": "Cognome",
-                    "nome": "Nome",
-                    "qualifica": "qualifica",
+                    "cognome": "Ventimiglia",
+                    "nome": "Lorenzo",
+                    "qualifica": "IIE",
                     "codiceUfficio": "300",
                     "contatti": [
                         {
                             "id": 11,
                             "tipo": "telefono",
-                            "contatto": "1234567"
+                            "contatto": "26578"
                         },
                         {
                             "id": 12,
                             "tipo": "email",
-                            "contatto": "nome.cognome@vigilfuoco.it"
+                            "contatto": "lorenzo.ventimiglia@vigilfuoco.it"
                         }
                     ]
                 }
@@ -335,88 +335,33 @@
         },
         {
             "codiceUfficioSuperiore": "",
-            "nomeTitolare": "nomeTitolare",
+            "nomeTitolare": "Dirigente Generale",
             "ordineVisualizzazione": 1,
             "descrizioneUfficio": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores aliquid optio nihil eos. Officiis, dignissimos delectus. Sit rerum unde repellat deleniti dignissimos, dolor cupiditate odio facere nihil aut, necessitatibus sunt.",
             "tipologiaUfficio": "periferia",
-            "personale": [
+            "contatti": [
                 {
-                    "id": 10,
-                    "cognome": "Cognome",
-                    "nome": "Nome",
-                    "qualifica": "qualifica",
-                    "codiceUfficio": "300",
-                    "contatti": [
-                        {
-                            "id": 21,
-                            "tipo": "telefono",
-                            "contatto": "1234567"
-                        },
-                        {
-                            "id": 22,
-                            "tipo": "email",
-                            "contatto": "nome.cognome@vigilfuoco.it"
-                        }
-                    ]
+                    "id": 1,
+                    "tipo": "telefono",
+                    "contatto": "0285464621"
                 },
                 {
-                    "id": 11,
-                    "cognome": "Cognome",
-                    "nome": "Nome",
-                    "qualifica": "qualifica",
-                    "codiceUfficio": "300",
-                    "contatti": [
-                        {
-                            "id": 23,
-                            "tipo": "telefono",
-                            "contatto": "1234567"
-                        },
-                        {
-                            "id": 24,
-                            "tipo": "email",
-                            "contatto": "nome.cognome@vigilfuoco.it"
-                        }
-                    ]
+                    "id": 2,
+                    "tipo": "email",
+                    "contatto": "fabrizio.piccinini@vigilfuoco.it"
                 },
                 {
-                    "id": 12,
-                    "cognome": "Cognome",
-                    "nome": "Nome",
-                    "qualifica": "qualifica",
-                    "codiceUfficio": "300",
-                    "contatti": [
-                        {
-                            "id": 25,
-                            "tipo": "telefono",
-                            "contatto": "1234567"
-                        },
-                        {
-                            "id": 26,
-                            "tipo": "email",
-                            "contatto": "nome.cognome@vigilfuoco.it"
-                        }
-                    ]
+                    "id": 3,
+                    "tipo": "pec",
+                    "contatto": "-"
                 },
                 {
-                    "id": 13,
-                    "cognome": "Cognome",
-                    "nome": "Nome",
-                    "qualifica": "qualifica",
-                    "codiceUfficio": "300",
-                    "contatti": [
-                        {
-                            "id": 27,
-                            "tipo": "telefono",
-                            "contatto": "1234567"
-                        },
-                        {
-                            "id": 28,
-                            "tipo": "email",
-                            "contatto": "nome.cognome@vigilfuoco.it"
-                        }
-                    ]
+                    "id": 4,
+                    "tipo": "voip",
+                    "contatto": "-"
                 }
             ],
+            "personale": [],
             "children": [
                 {
                     "codiceUfficio": "00.1000",
@@ -436,20 +381,20 @@
                             "personale": [
                                 {
                                     "id": 15,
-                                    "cognome": "Cognome",
-                                    "nome": "Nome",
-                                    "qualifica": "qualifica",
+                                    "cognome": "Fama",
+                                    "nome": "Corinne",
+                                    "qualifica": "Operatore Esperto",
                                     "codiceUfficio": "00.0",
                                     "contatti": [
                                         {
                                             "id": 31,
                                             "tipo": "telefono",
-                                            "contatto": "1234567"
+                                            "contatto": "023190-338"
                                         },
                                         {
                                             "id": 32,
                                             "tipo": "email",
-                                            "contatto": "nome.cognome@vigilfuoco.it"
+                                            "contatto": "fama.corinne@vigilfuoco.it"
                                         }
                                     ]
                                 }
