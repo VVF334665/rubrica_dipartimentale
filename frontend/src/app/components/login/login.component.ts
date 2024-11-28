@@ -16,48 +16,37 @@ import { Store } from '@ngrx/store';
 import { AppState } from '../../store/states/app.state';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  standalone: true,
-  styleUrls: ['./login.component.css'],
-  providers: [
-    AuthService,
-    HttpClient
-  ],
-  imports: [
-    MatIconModule,
-    MatCardModule,
-    MatButtonModule,
-    MatInputModule,
-    MatFormFieldModule,
-    FormsModule,
-    ReactiveFormsModule,
-    CommonModule
-  ],
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    standalone: true,
+    styleUrls: ['./login.component.css'],
+    providers: [
+        AuthService,
+        HttpClient
+    ],
+    imports: [
+        MatIconModule,
+        MatCardModule,
+        MatButtonModule,
+        MatInputModule,
+        MatFormFieldModule,
+        FormsModule,
+        ReactiveFormsModule,
+        CommonModule
+    ],
 
 })
 export class LoginComponent {
-   
+
     loginForm = new FormGroup({
         username: new FormControl('', [Validators.required, Validators.minLength(4)]),
-        password: new FormControl('', Validators.required)
+        password: new FormControl('', [Validators.required, /*Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')*/])
     });
 
-    constructor(
-        // private fb: FormBuilder,
-        private authService: AuthService,
-        private router: Router,
-        private store: Store<AppState>
-    ) {
-        // this.loginForm = this.fb.group({
-        //   username: ['', [Validators.required, Validators.required]],
-        //   password: ['', Validators.required],
-        // });
-    }
+    constructor(private authService: AuthService, private router: Router, private store: Store<AppState>) { }
 
     onSubmit(): void {
         if (this.loginForm.valid) {
-            // const { username, password } = this.loginForm.value;
             const username = this.loginForm.get('username')!.value;
             const password = this.loginForm.get('password')!.value;
             this.authService.login(username ?? '', password ?? '').subscribe({
