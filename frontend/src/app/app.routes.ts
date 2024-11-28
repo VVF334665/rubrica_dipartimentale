@@ -5,6 +5,7 @@ import { TestbeComponent } from './components/testbe/testbe.component';
 import { LoginComponent } from './components/login/login.component';
 import { SediPerifericheComponent } from './components/sedi-periferiche/sedi-periferiche.component';
 import { UsersComponent } from './components/users/users.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 export const routes: Routes = [
     { path: "home", component: HomeComponent },
@@ -12,6 +13,7 @@ export const routes: Routes = [
     { path: "sedi-periferiche", component: SediPerifericheComponent },
     { path: "testbe", component: TestbeComponent },
     { path: "login", component: LoginComponent },
+    { path: "logout", component: LogoutComponent },
     { path: "users", component: UsersComponent },
     { path: '**', redirectTo: '/home', pathMatch: 'full' },
 ];

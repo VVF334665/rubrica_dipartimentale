@@ -3,6 +3,11 @@ import { createSelector } from '@ngrx/store';
 // creo selettore
 const selectAuthUserState = (state: any) => state.authUser;
 
+export const existUserLogged = createSelector(
+    selectAuthUserState,
+    (state) => state.token != ""
+);
+
 export const selectAuthUser = createSelector(
     selectAuthUserState,
     (state) => state

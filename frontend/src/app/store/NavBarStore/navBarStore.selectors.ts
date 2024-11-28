@@ -1,4 +1,4 @@
-import { createAction, createFeatureSelector, createSelector } from "@ngrx/store";
+import { createFeatureSelector, createSelector } from "@ngrx/store";
 import { ItemNavBar } from "../Interface_store/ItemNavBar";
 
 export const selectNavBarStore = createFeatureSelector<ItemNavBar[]>('barNav');

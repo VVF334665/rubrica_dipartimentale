@@ -10,6 +10,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { UserFormComponent } from '../form/user-form/user-form.component';
 import { IProfili } from '../../models/IProfili';
+import * as authUserSelectors from '../../store/selectors/authuser.selector';
+import { take } from 'rxjs';
+import { Router } from '@angular/router';
+import { AuthService } from '../../services/login.service';
+import * as navBarStoreActions from '../../store/NavBarStore/navBarStore.actions';
 
 @Component({
     selector: 'vvfrubrica-users',
@@ -32,9 +37,21 @@ export class UsersComponent {
 
     modalUsers?: BsModalRef | null;
 
-    constructor(private _storeApp$: Store<AppState>, private modalService: BsModalService) { }
+    constructor(private readonly _storeApp$: Store<AppState>, private readonly authService: AuthService, private readonly router: Router, private readonly modalService: BsModalService) { }
 
     ngOnInit(): void {
+
+        this._storeApp$.select(authUserSelectors.existUserLogged)
+            .pipe(take(1))
+            .subscribe(v => {
+                if (!v) {
+                    this._storeApp$.dispatch(navBarStoreActions.confirmLogout());
+                    this._storeApp$.dispatch(navBarStoreActions.selectItem({ id: 2 }));
+                    alert("Utente non loggato, loggarsi per la gestione!");
+                    this.router.navigate(['/login']);
+                }
+            })
+
         this._storeApp$.dispatch({ type: UsersActionType.GetUsers });
         this._storeApp$.dispatch({ type: UsersActionType.GetProfile });
 

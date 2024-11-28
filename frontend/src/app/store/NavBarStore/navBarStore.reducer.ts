@@ -34,11 +34,18 @@ const init = [{
     id: 2,
     show: true
 }, {
+    pathRouter: '/users',
+    label: 'Admin',
+    icon: 'admin_panel_settings',
+    status: false,
+    id: 3,
+    show: false
+}, {
     pathRouter: '/logout',
     label: 'Logout',
     icon: 'personlogout',
     status: false,
-    id: 3,
+    id: 4,
     show: false
 }] as ItemNavBar[];
 
@@ -53,6 +60,17 @@ export const navBarStoreReducer = createReducer(
         let newObj = _.cloneDeep(state);
         let dataActive = newObj.find(x => x.id === id);
         dataActive!.status = true;
+        return newObj;
+    }),
+    on(navBarActions.changeItemShow, (state, { id, status }) => {
+        let newObj = _.cloneDeep(state);
+        let dataActive = newObj.find(x => x.id === id);
+        if (status == undefined) {
+            dataActive!.show = !dataActive!.show;
+        }
+        else {
+            dataActive!.show = status;
+        }
         return newObj;
     })
 );

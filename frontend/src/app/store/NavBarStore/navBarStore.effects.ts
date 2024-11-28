@@ -15,10 +15,29 @@ export class NavBarStoreEffects {
             ofType(NavBarActions.changeItemActive),
             withLatestFrom(this.store.select(NavBarSelectors.getItemNavBar)),
             exhaustMap(([{ id }]) => {
-                // console.log(id);
                 return [
                     NavBarActions.deselectAllItem(),
                     NavBarActions.selectItem({ id })
+                ]
+            })
+        )
+    );
+
+    changeSelectSA$ = createEffect(() =>
+        this.actions$.pipe(
+            ofType(NavBarActions.changeItemActiveSA),
+            withLatestFrom(
+                this.store.select(NavBarSelectors.getWithPathRouter("/login")),
+                this.store.select(NavBarSelectors.getWithPathRouter("/logout")),
+                this.store.select(NavBarSelectors.getWithPathRouter("/users"))
+            ),
+            exhaustMap(([_, login, out, user]) => {
+                return [
+                    NavBarActions.changeItemShow({ id: login ?? 2, status: false }),
+                    NavBarActions.changeItemShow({ id: user ?? 4, status: true }),
+                    NavBarActions.changeItemShow({ id: out ?? 3, status: true }),
+                    NavBarActions.deselectAllItem(),
+                    NavBarActions.selectItem({ id: user ?? 4 })
                 ]
             })
         )
@@ -28,9 +47,45 @@ export class NavBarStoreEffects {
         this.actions$.pipe(
             ofType(NavBarActions.fixReloadPage),
             concatLatestFrom(({ pathRouter }) => this.store.select(NavBarSelectors.getWithPathRouter(pathRouter))),
-            exhaustMap(([, val]) => {
+            exhaustMap(([{ pathRouter }, val]) => {
                 return [
-                    NavBarActions.changeItemActive({ id: val ?? 0 })
+                    pathRouter == "/users" ? NavBarActions.changeItemActiveSA() : NavBarActions.changeItemActive({ id: val ?? 0 })
+                ]
+            })
+        )
+    );
+
+    confirmLogIn$ = createEffect(() =>
+        this.actions$.pipe(
+            ofType(NavBarActions.confirmLogin),
+            withLatestFrom(
+                this.store.select(NavBarSelectors.getWithPathRouter("/login")),
+                this.store.select(NavBarSelectors.getWithPathRouter("/logout")),
+                this.store.select(NavBarSelectors.getWithPathRouter("/users"))
+            ),
+            exhaustMap(([{ superAD }, login, out, user]) => {
+                return [
+                    NavBarActions.changeItemShow({ id: login ?? 2, status: false }),
+                    NavBarActions.changeItemShow({ id: user ?? 3, status: superAD }),
+                    NavBarActions.changeItemShow({ id: out ?? 4, status: true }),
+                ]
+            })
+        )
+    );
+
+    confirmLogOut$ = createEffect(() =>
+        this.actions$.pipe(
+            ofType(NavBarActions.confirmLogout),
+            withLatestFrom(
+                this.store.select(NavBarSelectors.getWithPathRouter("/login")),
+                this.store.select(NavBarSelectors.getWithPathRouter("/logout")),
+                this.store.select(NavBarSelectors.getWithPathRouter("/users"))
+            ),
+            exhaustMap(([_, login, out, user]) => {
+                return [
+                    NavBarActions.changeItemShow({ id: login ?? 2, status: true }),
+                    NavBarActions.changeItemShow({ id: user ?? 4, status: false }),
+                    NavBarActions.changeItemShow({ id: out ?? 3, status: false })
                 ]
             })
         )

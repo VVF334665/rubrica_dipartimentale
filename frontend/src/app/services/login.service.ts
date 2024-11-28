@@ -1,13 +1,16 @@
 
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { NavigationEnd, Router } from '@angular/router';
 import { Observable, BehaviorSubject } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { takeWhile, tap } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 import { AppState } from '../store/states/app.state';
 import { Store } from '@ngrx/store';
 import { SetAuthToken } from '../store/actions/authuser.action';
+import { Location } from '@angular/common';
+import * as navBarActions from '../store/NavBarStore/navBarStore.actions';
+
 
 interface AuthResponse {
     token: string;
@@ -18,10 +21,10 @@ interface AuthResponse {
 })
 export class AuthService {
     // private apiUrl = 'http://localhost:5298/api/Auth/'; // URL del server per l'autenticazione
-    private apiUrl = environment.apiCreateToken;
-    private isLoggedInSubject = new BehaviorSubject<boolean>(false);
+    private readonly apiUrl = environment.apiCreateToken;
+    private readonly isLoggedInSubject = new BehaviorSubject<boolean>(false);
 
-    constructor(private http: HttpClient, private router: Router, private _storeApp$: Store<AppState>,) {
+    constructor(private readonly http: HttpClient, private readonly router: Router, private readonly store: Store<AppState>, private readonly location: Location) {
         // Verifica se l'utente è già loggato all'avvio dell'app
         this.isLoggedInSubject.next(!!this.getToken());
     }
@@ -52,7 +55,7 @@ export class AuthService {
     }
 
     saveToken(token: string): void {
-        this._storeApp$.dispatch(SetAuthToken({ token: token }));
+        this.store.dispatch(SetAuthToken({ token: token }));
         // localStorage.setItem('authToken', token);
     }
 
@@ -66,5 +69,17 @@ export class AuthService {
 
     isLoggedIn(): Observable<boolean> {
         return this.isLoggedInSubject.asObservable();
+    }
+
+    reloadNavigationBar() {
+        let flgUnsubscribe: boolean = true;
+        this.router.events
+            .pipe(takeWhile(() => flgUnsubscribe))
+            .subscribe((val) => {
+                if (val instanceof NavigationEnd) {
+                    this.store.dispatch(navBarActions.fixReloadPage({ pathRouter: this.location.path(false) }));
+                    flgUnsubscribe = false
+                }
+            })
     }
 }

@@ -24,7 +24,7 @@
                 <p (keyup)="onClickUfficioSelezionato()" (click)="onClickUfficioSelezionato()"
                     [ngStyle]="{
                         'border-color': elaborateBorder(),
-                        background: colorSelected(itemDst.coloreSfondo, (codiceUfficioSelezionato$ | async) == office.codiceUfficio),
+                        background: colorSelected(office.coloreSfondo, (codiceUfficioSelezionato$ | async) == office.codiceUfficio),
                         'font-size': '1.1rem'
                         }"
                     *ngIf="office?.codiceUfficioSuperiore">

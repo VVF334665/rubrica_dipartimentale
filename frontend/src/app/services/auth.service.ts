@@ -8,10 +8,10 @@ import { HttpClient } from '@angular/common/http';
 export class AuthService {
   private host: string = environment.apiCreateToken;
 
-  constructor(private http: HttpClient) { }
+  constructor(private readonly http: HttpClient) { }
 
-  getAuthToken(){
-    let queryString: string ="";
+  getAuthToken() {
+    let queryString: string = "";
     return this.http.get<any[]>(this.host + queryString);
   }
 }
