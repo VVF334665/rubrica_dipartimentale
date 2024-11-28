@@ -25,6 +25,8 @@ export function authUserReducer(
             temp.loggedUser = temp.decodeToken.name;
 
             return temp;
+        case AuthUserActionType.RemoveAuthToken:
+            return initialAuthState;
 
         default:
             return authUser

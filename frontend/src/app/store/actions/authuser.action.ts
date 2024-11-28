@@ -12,6 +12,8 @@ export enum AuthUserActionType {
     GetLoggedUser = '[AuthUser] Carica utente loggato',
     GetLoggedUserSuccess = '[AuthUser] Carica utente loggato con successo',
     GetLoggedUserError = '[AuthUser] Errore carica utente loggato',
+
+    RemoveAuthToken = '[AuthUser] Rimozione utente loggato'
 }
 
 export const GetLoggedUser = createAction(
@@ -38,4 +40,9 @@ export const SetAuthTokenSuccess = createAction(
 
 export const SetAuthTokenError = createAction(
     AuthUserActionType.SetAuthTokenError
+);
+
+
+export const RemoveAuthToken = createAction(
+    AuthUserActionType.RemoveAuthToken
 );

@@ -5,6 +5,7 @@ import * as NavBarActions from './navBarStore.actions';
 import * as NavBarSelectors from './navBarStore.selectors';
 import { exhaustMap, withLatestFrom } from "rxjs";
 import { concatLatestFrom } from '@ngrx/operators';
+import * as AuthUserAction from "../actions/authuser.action";
 
 @Injectable()
 export class NavBarStoreEffects {
@@ -83,6 +84,7 @@ export class NavBarStoreEffects {
             ),
             exhaustMap(([_, login, out, user]) => {
                 return [
+                    AuthUserAction.RemoveAuthToken(),
                     NavBarActions.changeItemShow({ id: login ?? 2, status: true }),
                     NavBarActions.changeItemShow({ id: user ?? 4, status: false }),
                     NavBarActions.changeItemShow({ id: out ?? 3, status: false })

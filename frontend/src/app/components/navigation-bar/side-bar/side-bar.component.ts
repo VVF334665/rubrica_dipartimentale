@@ -29,6 +29,11 @@ export class SideBarComponent implements OnInit {
         this.authService.reloadNavigationBar();
     }
 
+    navigateToHome():void {
+        this.router.navigate(['/home']);
+        this.authService.reloadNavigationBar();
+    }
+
     allData: Observable<ItemNavBar[]> = this.store.select(navBarStoreSelectors.getItemNavBar);
 
 }
