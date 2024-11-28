@@ -123,14 +123,14 @@
                     "codiceUfficioSuperiore": "300",
                     "nomeUfficio": "Direzione centrale per la Difesa Civile e le attività di Protezione Civile",
                     "nomeTitolare": "Prefetto",
-                    "coloreSfondo": "#495380",
+                    "coloreSfondo": "#4F89E2",
                     "descrizioneUfficio": "figlio1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores aliquid optio nihil eos. Officiis, dignissimos delectus. Sit rerum unde repellat deleniti dignissimos, dolor cupiditate odio facere nihil aut, necessitatibus sunt.",
                     "contatti": [],
                     "children": [
                         {
                             "codiceUfficio": "351",
                             "codiceUfficioSuperiore": "301",
-                            "coloreSfondo": "#495380",
+                            "coloreSfondo": "#91BDE7",
                             "nomeUfficio": "Ufficio I: Coordinamento e attività di protezione civile",
                             "nomeTitolare": "nome titolare",
                             "descrizioneUfficio": "figlio1.1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores aliquid optio nihil eos. Officiis, dignissimos delectus. Sit rerum unde repellat deleniti dignissimos, dolor cupiditate odio facere nihil aut, necessitatibus sunt.",
@@ -138,7 +138,7 @@
                                 {
                                     "codiceUfficio": "302",
                                     "codiceUfficioSuperiore": "351",
-                                    "coloreSfondo": "#495380",
+                                    "coloreSfondo": "#91BDE7",
                                     "nomeUfficio": "CAPO UFFICIO STAFF - VICARIO DIRETTORE CENTRALE ",
                                     "nomeTitolare": "nome titolare",
                                     "descrizioneUfficio": "figlio1.1.1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores aliquid optio nihil eos. Officiis, dignissimos delectus. Sit rerum unde repellat deleniti dignissimos, dolor cupiditate odio facere nihil aut, necessitatibus sunt.",
@@ -192,7 +192,7 @@
                 {
                     "codiceUfficio": "303",
                     "codiceUfficioSuperiore": "300",
-                    "coloreSfondo": "#495380",
+                    "coloreSfondo": "#4F89E2",
                     "nomeUfficio": "Direzione Centrale per le risorse Umane",
                     "nomeTitolare": "Prefetto",
                     "descrizioneUfficio": "figlio2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores aliquid optio nihil eos. Officiis, dignissimos delectus. Sit rerum unde repellat deleniti dignissimos, dolor cupiditate odio facere nihil aut, necessitatibus sunt.",
@@ -200,7 +200,7 @@
                         {
                             "codiceUfficio": "304",
                             "codiceUfficioSuperiore": "303",
-                            "coloreSfondo": "#495380",
+                            "coloreSfondo": "#91BDE7",
                             "nomeUfficio": "Ufficio I - Politiche del personale e affari generali",
                             "nomeTitolare": "nome titolare",
                             "descrizioneUfficio": "figlio2.1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores aliquid optio nihil eos. Officiis, dignissimos delectus. Sit rerum unde repellat deleniti dignissimos, dolor cupiditate odio facere nihil aut, necessitatibus sunt.",
@@ -266,7 +266,7 @@
                     "codiceUfficioSuperiore": "305",
                     "nomeUfficio": "Ufficio del Capo del Corpo nazionale dei vigili del fuoco",
                     "nomeTitolare": "titolare",
-                    "coloreSfondo": "#840101",
+                    "coloreSfondo": "#F27D74",
                     "descrizioneUfficio": "figlio3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores aliquid optio nihil eos. Officiis, dignissimos delectus. Sit rerum unde repellat deleniti dignissimos, dolor cupiditate odio facere nihil aut, necessitatibus sunt.",
                     "children": [
                         {
@@ -274,7 +274,7 @@
                             "codiceUfficioSuperiore": "306",
                             "nomeUfficio": "Ufficio per le Attività Logistico-Gestionali",
                             "nomeTitolare": "titolare",
-                            "coloreSfondo": "#840101",
+                            "coloreSfondo": "#EDBCB9",
                             "descrizioneUfficio": "sottofiglio3.1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores aliquid optio nihil eos. Officiis, dignissimos delectus. Sit rerum unde repellat deleniti dignissimos, dolor cupiditate odio facere nihil aut, necessitatibus sunt.",
                             "children": []
                         }
@@ -283,7 +283,7 @@
                 {
                     "codiceUfficio": "368",
                     "codiceUfficioSuperiore": "305",
-                    "coloreSfondo": "#840101",
+                    "coloreSfondo": "#F27D74",
                     "nomeUfficio": "Ufficio per la regolazione aeronautica e per la certificazione dei servizi di salvataggio e antincendio aeroportuale",
                     "nomeTitolare": "nome titolare",
                     "descrizioneUfficio": "figlio4 Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores aliquid optio nihil eos. Officiis, dignissimos delectus. Sit rerum unde repellat deleniti dignissimos, dolor cupiditate odio facere nihil aut, necessitatibus sunt.",
@@ -291,7 +291,7 @@
                         {
                             "codiceUfficio": "379",
                             "codiceUfficioSuperiore": "368",
-                            "coloreSfondo": "#840101",
+                            "coloreSfondo": "#F27D74",
                             "nomeUfficio": "FUNZIONI DI AUTORITÀ AERONAUTICA ",
                             "nomeTitolare": "nome titolare",
                             "descrizioneUfficio": "figlio4.1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores aliquid optio nihil eos. Officiis, dignissimos delectus. Sit rerum unde repellat deleniti dignissimos, dolor cupiditate odio facere nihil aut, necessitatibus sunt.",
@@ -421,47 +421,18 @@
                 {
                     "codiceUfficio": "00.1000",
                     "codiceUfficioSuperiore": "02",
-                    "nomeUfficio": "COmando xxxxx",
-                    "nomeTitolare": "figlio1",
+                    "nomeUfficio": "Comando VV.F. Milano",
+                    "nomeTitolare": "Dirigente Superiore",
                     "descrizioneUfficio": "figlio1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores aliquid optio nihil eos. Officiis, dignissimos delectus. Sit rerum unde repellat deleniti dignissimos, dolor cupiditate odio facere nihil aut, necessitatibus sunt.",
                     "children": [
                         {
                             "codiceUfficio": "00.10001",
                             "codiceUfficioSuperiore": "00.1000",
-                            "nomeUfficio": "figlio1.1",
-                            "nomeTitolare": "nome titolare",
+                            "nomeUfficio": "Ufficio Prevenzione",
+                            "nomeTitolare": "Responsabile",
                             "descrizioneUfficio": "figlio1.1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores aliquid optio nihil eos. Officiis, dignissimos delectus. Sit rerum unde repellat deleniti dignissimos, dolor cupiditate odio facere nihil aut, necessitatibus sunt.",
-                            "children": [
-                                {
-                                    "codiceUfficio": "00.1003",
-                                    "codiceUfficioSuperiore": "00.10001",
-                                    "nomeUfficio": "figlio1.1.1",
-                                    "nomeTitolare": "nome titolare",
-                                    "descrizioneUfficio": "figlio1.1.1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores aliquid optio nihil eos. Officiis, dignissimos delectus. Sit rerum unde repellat deleniti dignissimos, dolor cupiditate odio facere nihil aut, necessitatibus sunt.",
-                                    "children": [],
-                                    "personale": [
-                                        {
-                                            "id": 14,
-                                            "cognome": "Cognome",
-                                            "nome": "Nome",
-                                            "qualifica": "qualifica",
-                                            "codiceUfficio": "00.0",
-                                            "contatti": [
-                                                {
-                                                    "id": 29,
-                                                    "tipo": "telefono",
-                                                    "contatto": "1234567"
-                                                },
-                                                {
-                                                    "id": 30,
-                                                    "tipo": "email",
-                                                    "contatto": "nome.cognome@vigilfuoco.it"
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                }
-                            ],
+                            "children": []
+                            ,
                             "personale": [
                                 {
                                     "id": 15,
@@ -489,15 +460,15 @@
                 {
                     "codiceUfficio": "00.1001",
                     "codiceUfficioSuperiore": "02",
-                    "nomeUfficio": "figlio2",
-                    "nomeTitolare": "nome titolare",
+                    "nomeUfficio": "Comando VV.F. Brescia",
+                    "nomeTitolare": "Dirigente Superiore",
                     "descrizioneUfficio": "figlio2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores aliquid optio nihil eos. Officiis, dignissimos delectus. Sit rerum unde repellat deleniti dignissimos, dolor cupiditate odio facere nihil aut, necessitatibus sunt.",
                     "children": [
                         {
                             "codiceUfficio": "00.1002",
                             "codiceUfficioSuperiore": "00.1001",
-                            "nomeUfficio": "figlio2.1",
-                            "nomeTitolare": "nome titolare",
+                            "nomeUfficio": "Sala Operativa",
+                            "nomeTitolare": "Responsabile",
                             "descrizioneUfficio": "figlio2.1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores aliquid optio nihil eos. Officiis, dignissimos delectus. Sit rerum unde repellat deleniti dignissimos, dolor cupiditate odio facere nihil aut, necessitatibus sunt.",
                             "children": []
                         }
