@@ -94,9 +94,9 @@ export class UfficiComponent {
     colorSelected(value: string | undefined, primary: boolean) {
         // https://cssgradient.io/
         if (primary) {
-            return "linear-gradient(90deg, rgba(255,255,255,0.85) 90%, " + (value ?? "rgba(172,26,23,1)") + " 100%)"
+            return "linear-gradient(90deg, rgba(255,255,255,0.9) 90%, " + (value ?? "rgba(172,26,23,1)") + " 100%)"
         }
-        return "linear-gradient(90deg, rgba(255,255,255,0.85) 100%, " + (value ?? "rgba(172,26,23,1)") + " 100%)"
+        return "linear-gradient(90deg, rgba(255,255,255,0.9) 100%, " + (value ?? "rgba(172,26,23,1)") + " 100%)"
     }
 
     elaborateBorder() {
