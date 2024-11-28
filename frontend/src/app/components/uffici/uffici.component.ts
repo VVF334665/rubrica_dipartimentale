@@ -11,7 +11,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faEdit, faPlusCircle, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { UfficiFormComponent } from '../form/uffici-form/uffici-form.component';
-import { map, Observable } from 'rxjs';
+import { map, Observable, take } from 'rxjs';
 
 @Component({
     selector: 'vvfrubrica-uffici',
@@ -21,7 +21,7 @@ import { map, Observable } from 'rxjs';
     styleUrl: './uffici.component.css'
 })
 export class UfficiComponent {
-    
+
     faEdit = faEdit;
     faPlusCircle = faPlusCircle;
     faTrashAlt = faTrashAlt;
@@ -94,9 +94,17 @@ export class UfficiComponent {
     colorSelected(value: string | undefined, primary: boolean) {
         // https://cssgradient.io/
         if (primary) {
-            return "linear-gradient(90deg, rgba(255,255,255,0.6) 30%, " + (value ?? "rgba(172,26,23,1)") + " 100%)"
+            return "linear-gradient(90deg, rgba(255,255,255,0.6) 70%, " + (value ?? "rgba(172,26,23,1)") + " 100%)"
         }
         return "linear-gradient(90deg, rgba(255,255,255,0.6) 100%, " + (value ?? "rgba(172,26,23,1)") + " 100%)"
+    }
+
+    elaborateBorder() {
+        let valueOut: string = "";
+        this.coloreUfficioSelezionato$
+            .pipe(take(1))
+            .subscribe((x => valueOut = x));
+        return valueOut ?? "#ac1a17"
     }
 }
 

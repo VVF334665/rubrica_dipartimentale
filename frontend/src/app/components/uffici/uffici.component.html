@@ -12,11 +12,10 @@
             </li>
         </ul>
     </div>
-    <!-- <section class="divCardSediContent" [ngStyle]='{background: (codiceUfficioSelezionato$ | async) == itemDst.codiceUfficio ? colorSelected(itemDst.coloreSfondo) : "white"}'> -->
     <section class="divCardSediContent"
         [ngStyle]='{background: colorSelected(itemDst.coloreSfondo, (codiceUfficioSelezionato$ | async) == itemDst.codiceUfficio)}'>
         <h2 class="handle" (click)="leggiSottoAlbero()" (keyup)="leggiSottoAlbero()">
-            <label for="{{itemDst.codiceUfficio}}">{{itemDst.nomeUfficio}}<br>
+            <label for="{{itemDst.codiceUfficio}}" style="max-width: 90%;">{{itemDst.nomeUfficio}}<br>
                 <span class="smallLabelFont">{{itemDst.nomeTitolare}}</span>
             </label>
         </h2>
@@ -24,7 +23,7 @@
             <div *ngFor="let office of elencoUfficiSelezionati$ | async">
                 <p (keyup)="onClickUfficioSelezionato()" (click)="onClickUfficioSelezionato()"
                     [ngStyle]="{
-                        'border-color': (coloreUfficioSelezionato$ | async),
+                        'border-color': elaborateBorder(),
                         background: colorSelected(itemDst.coloreSfondo, (codiceUfficioSelezionato$ | async) == office.codiceUfficio),
                         'font-size': '1.1rem'
                         }"
