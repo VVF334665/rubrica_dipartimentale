@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
         password: new FormControl('', [Validators.required, Validators.minLength(6)/*Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')*/])
     });
 
-    constructor(private authService: AuthService, private router: Router, private store: Store<AppState>) { }
+    constructor(private readonly authService: AuthService, private readonly router: Router, private readonly store: Store<AppState>) { }
 
     ngOnInit(): void {
         this.authService.reloadNavigationBar();
@@ -50,9 +50,9 @@ export class LoginComponent implements OnInit {
 
     onSubmit(): void {
         if (this.loginForm.valid) {
-            const username = this.loginForm.get('username')!.value;
+            const username = this.loginForm.get('username')!.value?.split('@dipvvf.it')[0].split('@vigilfuoco.it')[0];
             const password = this.loginForm.get('password')!.value;
-            if(username != "giacomo.dallape" && password != "123456789") {
+            if (username != "giacomo.dallape" && password != "123456789") {
                 this.authService.login(username ?? '', password ?? '').subscribe({
                     next: () => {
                         alert("Autenticazione avvenuta con successo!");
